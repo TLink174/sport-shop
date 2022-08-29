@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    List Category - Admin - {{ config('app.name') }}
+    List Blog - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
     Nam 077
@@ -21,23 +21,23 @@
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'category';
+        $menu_parent = 'blog';
         $menu_child = 'index';
     @endphp
 @endsection
 @section('title_component')
-    Category
+    Blog
 @endsection
 @section('title_layout')
-    List Category
+    List Blog
 @endsection
 @section('actions_layout')
     <a href="{{route('admin.categories.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-plus"></i> Add Category
+        <i class="fa fa-plus"></i> Add Blog
     </a>
 @endsection
 @section('title_card')
-    List Category
+    List Blog
 @endsection
 @section('content_card')
     <div class="table-responsive">
@@ -51,11 +51,10 @@
                     </div>
                 </th>
                 <th class="min-w-50">#</th>
-                <th class="min-w-200px">Name Category</th>
+                <th class="min-w-200px">Name Blog</th>
                 <th class="min-w-150px">Slug</th>
                 <th class="min-w-300px">Description</th>
-                <th class="min-w-200px">Parent Category</th>
-                <th class="min-w-200px">Status</th>
+                <th class="min-w-200px">Parent Blog</th>
                 <th class="min-w-200px">Action</th>
             </tr>
             </thead>
@@ -71,34 +70,16 @@
                     <td>{{$category->name}}</td>
                     <td>{{$category->slug}}</td>
                     <td>{{$category->description}}</td>
-
                     <td>{{$category->parent_id}}</td>
-                    <td>
-                        @if($category->status == 1)
-                            <span class="badge badge-success">Active</span>
-                        @elseif($category->status == 0)
-                            <span class="badge badge-info">Inactive</span>
-                        @elseif($category->status == 2)
-                            <span class="badge badge-warning">Pending</span>
-                        @elseif($category->status == 3)
-                            <span class="badge badge-danger">Delete</span>
-                    @endif
                     <td>
                         <a href="{{route('admin.categories.edit', $category->id)}}"
                            class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
                             <i class="fa fa-edit"></i>
                         </a>
-                        @if($category->deleted_at == null)
-                            <a href="{{route('admin.categories.delete', $category->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        @else
-                            <a href="{{route('admin.categories.restore', $category->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">
-                                <i class="fa fa-undo"></i>
-                            </a>
-                        @endif
+                        <a href="{{route('admin.categories.delete', $category->id)}}"
+                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
+                            <i class="fa fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             @endforeach
