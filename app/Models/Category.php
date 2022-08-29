@@ -16,6 +16,7 @@ class Category extends Model
     public function blogs(): HasMany
     {
         return $this->hasMany(Blog::class, 'id_category');
+
     }
     public function parent(): HasOne
     {

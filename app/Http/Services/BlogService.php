@@ -25,15 +25,27 @@ class BlogService
     {
         return $this->blog->find($id);
     }
-    function create(Request $request)
+    function create($request)
     {
         $this->blog->create([
             'title' => $request->title,
             'content' => $request->content,
-            'category_id' => $request->category_id,
-            'user_id' => $request->user_id,
-            'slug' => Str::slug($request->title)
+            'id_category' => $request->id_category,
+            'id_user' => auth()->user()->id,
+            'slug' => Str::slug($request->title),
+            'image_path' => $request->image_path,
+            'status' => $request->status??1,
+            'image_avatar' => $request->image_avatar??null,
+            'description' => $request->description??null,
         ]);
+    }
+    function getAllHasSoftDeletes()
+    {
+        return $this->blog->getAllHasSoftDeletes();
+    }
+    function findHasSoftDeletes($id)
+    {
+        return $this->blog->findHasSoftDeletes($id);
     }
 
 

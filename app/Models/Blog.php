@@ -15,4 +15,12 @@ class Blog extends Model
     {
         return $this->belongsTo(Category::class, 'id_category');
     }
+    public function getAllHasSoftDeletes()
+    {
+        return $this->withTrashed();
+    }
+    public function findHasSoftDeletes($id)
+    {
+        return $this->withTrashed()->find($id);
+    }
 }

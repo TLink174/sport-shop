@@ -20,12 +20,12 @@ return new class extends Migration
             $table->text('description');
             $table->longText('content');
             $table->unsignedBigInteger('id_category');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('id_user');
             $table->string('image_avatar')->nullable();
             $table->text('image_path')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->foreign('id_category')->references('id')->on('categories');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();
         });

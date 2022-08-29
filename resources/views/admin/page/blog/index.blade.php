@@ -32,7 +32,7 @@
     List Blog
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.categories.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+    <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
         <i class="fa fa-plus"></i> Add Blog
     </a>
 @endsection
@@ -51,35 +51,49 @@
                     </div>
                 </th>
                 <th class="min-w-50">#</th>
-                <th class="min-w-200px">Name Blog</th>
-                <th class="min-w-150px">Slug</th>
-                <th class="min-w-300px">Description</th>
-                <th class="min-w-200px">Parent Blog</th>
-                <th class="min-w-200px">Action</th>
+                <th class="min-w-200">Title</th>
+                <th class="min-w-150">Slug</th>
+                <th class="min-w-200">Category</th>
+                <th class="min-w-200">Image</th>
+                <th class="min-w-200">Description</th>
+                <th class="min-w-200">Status</th>
+                <th class="min-w-200">Action</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($categories as $category)
+            @foreach($blogs as $blog)
                 <tr>
                     <td>
                         <div class="form-check form-check-sm form-check-custom form-check-solid">
                             <input class="form-check-input" type="checkbox" value="1">
                         </div>
                     </td>
-                    <td>{{$category->id}}</td>
-                    <td>{{$category->name}}</td>
-                    <td>{{$category->slug}}</td>
-                    <td>{{$category->description}}</td>
-                    <td>{{$category->parent_id}}</td>
+                    <td>{{$blog->id}}</td>
+                    <td>{{$blog->title}}</td>
+                    <td>{{$blog->slug}}</td>
+                    <td>{{$blog->category->name}}</td>
                     <td>
-                        <a href="{{route('admin.categories.edit', $category->id)}}"
-                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
+                        <img src="{{$blog->image_path}}" alt="{{$blog->title}}" width="100px">
+                    </td>
+                    <td>{{$blog->description}}</td>
+                    <td>
+                        @if($blog->status == 1)
+                            <span class="badge badge-success">Active</span>
+                        @elseif($blog->status == 0)
+                            <span class="badge badge-info">Inactive</span>
+                        @elseif($blog->status == 2)
+                            <span class="badge badge-warning">Pending</span>
+                        @elseif($blog->status == 3)
+                            <span class="badge badge-danger">Delete</span>
+                    @endif
+                    <td>
+                        <a href="{{route('admin.blogs.edit', $blog->id)}}" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
                             <i class="fa fa-edit"></i>
                         </a>
-                        <a href="{{route('admin.categories.delete', $category->id)}}"
-                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
+                        <a href="{{route('admin.blogs.delete', $blog->id)}}" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
                             <i class="fa fa-trash"></i>
                         </a>
+
                     </td>
                 </tr>
             @endforeach
@@ -89,7 +103,7 @@
     </div>
 @endsection
 @section('footer_card')
-    {{$categories->links()}}
+    {{$blogs->links()}}
 
 @endsection
 @section('content_layout')

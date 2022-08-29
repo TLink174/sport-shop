@@ -15,7 +15,7 @@
     <script !src="">
         $("#kt_datatable_horizontal_scroll").DataTable({
             dom: 'Bfrtip',
-            order: null,
+            order: [],
         });
     </script>
 @endsection
@@ -53,9 +53,10 @@
                 <th class="min-w-50">#</th>
                 <th class="min-w-200px">Name Category</th>
                 <th class="min-w-150px">Slug</th>
-                <th class="min-w-300px">Description</th>
+                <th class="min-w-200px">Description</th>
                 <th class="min-w-200px">Parent Category</th>
-                <th class="min-w-200px">Status</th>
+                <th class="min-w-200px">Count Blog</th>
+                <th class="min-w-100px">Status</th>
                 <th class="min-w-200px">Action</th>
             </tr>
             </thead>
@@ -71,8 +72,8 @@
                     <td>{{$category->name}}</td>
                     <td>{{$category->slug}}</td>
                     <td>{{$category->description}}</td>
-
                     <td>{{$category->parent_id}}</td>
+                    <td>{{$category->blogs->count()}}</td>
                     <td>
                         @if($category->status == 1)
                             <span class="badge badge-success">Active</span>

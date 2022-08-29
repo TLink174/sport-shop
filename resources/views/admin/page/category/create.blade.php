@@ -3,13 +3,18 @@
     Create Category - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
-    Nam 077
+    {{auth()->user()->name}}
+
+@endsection
+@section('email_user')
+    {{auth()->user()->email}}
 @endsection
 @section('css_custom')
     <link href="{{asset('/admin/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css"/>
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+
 @endsection
 @section('menu')
     @php
@@ -34,6 +39,7 @@
 @section('content_card')
     <form action="{{route('admin.categories.store')}}" method="post" class="form-control-sm">
         @csrf
+
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
             <input name="name" type="text" class="form-control form-control-solid"
@@ -43,7 +49,6 @@
             <label for="exampleFormControlInput1" class="required form-label">Parent Category</label>
             <select class="form-select form-select-solid" data-control="select2"
                     data-placeholder="Select parent category" data-select2-id="1" name="parent_id">
-                <option></option>
                 <option value="0">None</option>
                 @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
@@ -63,7 +68,8 @@
         </div>
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
-            <textarea name="description" id="" cols="20" rows="10" class="form-control form-control-solid">{{old('description')}}</textarea>
+            <textarea name="description" id="" cols="20" rows="10"
+                      class="form-control form-control-solid">{{old('description')}}</textarea>
         </div>
         <div class="mb-10">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">

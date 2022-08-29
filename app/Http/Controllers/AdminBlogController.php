@@ -27,7 +27,7 @@ class AdminBlogController extends Controller
 
     public function index()
     {
-        $blogs = $this->blogService->getAllPaginate();
+        $blogs = $this->blogService->getAllHasSoftDeletes()->paginate(10);
         return view('admin.page.blog.index', compact('blogs'));
     }
 
@@ -38,7 +38,7 @@ class AdminBlogController extends Controller
      */
     public function create()
     {
-        $categories = $this->categoryService->findAllNotHaveSoftDeletes();
+        $categories = $this->categoryService->getAll();
         return view('admin.page.blog.create', compact(['categories']));
     }
 
@@ -50,6 +50,7 @@ class AdminBlogController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+
         $this->blogService->create($request);
         return redirect()->route('admin.blogs.index');
     }
@@ -69,12 +70,15 @@ class AdminBlogController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        //
+        $blog = $this->blogService->findHasSoftDeletes($id);
+        $categories = $this->categoryService->getAll();
+        return view('admin.page.blog.edit', compact(['blog', 'categories']));
     }
+
 
     /**
      * Update the specified resource in storage.
