@@ -1,64 +1,75 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    Create Category - Admin - {{ config('app.name') }}
+    Edit User - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
-    Nam 077
+    {{auth()->user()->name}}
+
+@endsection
+@section('email_user')
+    {{auth()->user()->email}}
 @endsection
 @section('css_custom')
     <link href="{{asset('/admin/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css"/>
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'category';
+        $menu_parent = 'user';
         $menu_child = 'edit';
     @endphp
 @endsection
 @section('title_component')
-    Category
+    User
 @endsection
 @section('title_layout')
-    Create Category
+    Edit User
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.categories.index')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List Category
+    <a href="{{route('admin.users.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+        <i class="fa fa-list"></i> List User
     </a>
 @endsection
 @section('title_card')
-    Create Category
+    Edit User
 @endsection
 @section('content_card')
-    <form action="{{route('admin.categories.update', $category->id)}}" method="post" class="form-control-sm">
+    <form action="{{route('admin.users.update', $user->id)}}" method="post" class="form-control-sm">
         @csrf
         <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
-            <input name="name" value="{{$category -> name}}" type="text" class="form-control form-control-solid"
-                   placeholder="Enter name category" {{old('name')}}>
+            <label for="exampleFormControlInput1" class="required form-label">Name User</label>
+            <input name="name" type="text" class="form-control form-control-solid"
+                   placeholder="Enter name category" {{old('name')}} value="{{$user->name}}">
         </div>
         <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Parent Category</label>
-            <select class="form-select form-select-solid" data-control="select2"
-                    data-placeholder="Select parent category" data-select2-id="1" name="parent_id">
-                <option></option>
-                <option value="0">None</option>
-                @foreach($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+            <label for="exampleFormControlInput1" class="required form-label">Email User</label>
+            <input name="email" type="text" class="form-control form-control-solid"
+                   placeholder="Enter name category" {{old('email')}} value="{{$user->email}}">
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Password User</label>
+            <input name="password" type="password" class="form-control form-control-solid"
+                   placeholder="Enter name category" {{old('password')}}>
+        </div>
+        <div class="mb-10">
+            <label for="" class="form-label">Role</label>
+            <select class="form-select form-select-solid " data-control="select2" data-placeholder="Select an option"
+                    data-allow-clear="true" multiple="multiple" name="roles[]">
+                @foreach($roles as $role)
+                    <option
+                        value="{{$role->id}}" {{$user->roles->contains($role->id) ? 'selected' : ''}}>{{$role->name}}</option>
                 @endforeach
             </select>
-        </div>
-        <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
-            <textarea name="description" id="" cols="20" rows="10" class="form-control form-control-solid">{{$category -> name}}</textarea>
         </div>
         <div class="mb-10">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
                 <i class="fa fa-save"></i> Save
             </button>
         </div>
+
 
     </form>
 @endsection

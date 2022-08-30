@@ -43,16 +43,37 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function roles(): BelongsToMany
     {
         return $this->belongsToMany(Role::class, UserRole::class, 'id_user', 'id_role');
     }
-    public function permissions(){
-        return $this->roles()->with('permissions')->get()->map->permissions->flatten()->pluck('name');
-    }
+
     public function details(): BelongsTo
     {
         return $this->belongsTo(UserDetail::class, 'id_user');
     }
+    public function checkPermission($permissioncheck){
+        $roles = $this->roles()->get();
+        foreach ($roles as $role){
+            $permission = $role->permissions;
+            if( $permission ->contains('slug',$permissioncheck)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public function permissions(){
+        $roles = $this->roles()->get();
+        $permissions = [];
+        foreach ($roles as $role){
+            foreach ($role->permissions as $permission){
+                $permissions[] = $permission->slug;
+            }
+        }
+        return $permissions;
+    }
+
+
 
 }

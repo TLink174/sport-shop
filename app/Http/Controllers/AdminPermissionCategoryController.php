@@ -7,7 +7,7 @@ use App\Http\Services\PermissionCategoryService;
 use App\Models\PermissionCategory;
 use Illuminate\Http\Request;
 
-class AdminPermissonCategoryController extends Controller
+class AdminPermissionCategoryController extends Controller
 {
     private PermissionCategoryService $permissionCategoryService;
 

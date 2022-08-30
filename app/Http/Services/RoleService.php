@@ -45,5 +45,10 @@ class RoleService
         ]);
         $roleUpdate->permissions()->sync($request->permissions);
     }
+    public function delete($id)
+    {
+        $this->role->find($id)->delete();
+    }
+
 
 }

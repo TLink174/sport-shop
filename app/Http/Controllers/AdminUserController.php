@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Services\RoleService;
 use App\Http\Services\UserService;
 use App\Models\User;
@@ -22,11 +23,12 @@ class AdminUserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $users = $this->userService->paginate(10);
+        return view('admin.pages.user.index', compact('users'));
     }
 
     /**
@@ -67,11 +69,14 @@ class AdminUserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        $user = $this->userService->find($id);
+        $roles = $this->roleService->getAll();
+
+        return view('admin.pages.user.edit', compact('user', 'roles'));
     }
 
     /**
@@ -79,12 +84,14 @@ class AdminUserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, $id)
     {
-        //
+        $this->userService->update($request, $id);
+        return redirect()->route('admin.users.index');
     }
+
 
     /**
      * Remove the specified resource from storage.

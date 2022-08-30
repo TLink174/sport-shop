@@ -22,11 +22,12 @@ class AdminPermissionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-
+        $permissionCategories = $this->permissionCategoryService->getAll();
+        return view('admin.pages.permission.index', compact('permissionCategories'));
     }
 
     /**
