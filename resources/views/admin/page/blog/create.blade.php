@@ -123,15 +123,21 @@
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
         <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Status</label>
+            <select class="form-select form-select-solid" data-control="select2"
+                    data-placeholder="Select status" data-select2-id="1" name="status">
+                <option value="1" >Publish</option>
+                <option value="0" >Draft</option>
+                <option value="2" >Private</option>
+            </select>
+        </div>
+        <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Tag</label>
             <select class="form-select form-select-solid tag2 "
-                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
-                <option></option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
-                <option value="5">Option 5</option>
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="tags[]">
+                @foreach($tags as $tag)
+                    <option value="{{$tag->name}}">{{$tag->name}}</option>
+                @endforeach
             </select>
         </div>
         <div class="mb-10">

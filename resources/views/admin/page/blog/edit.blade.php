@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    Edit Blog - Admin - {{ config('app.name') }}
+    Edit Blog - Admin - {{$blog->title}}
 @endsection
 @section('name_user')
     Nam 077
@@ -86,7 +86,7 @@
     Blog
 @endsection
 @section('title_layout')
-    Edit Blog
+    Edit Blog [ {{$blog->title}} ]
 @endsection
 @section('actions_layout')
     <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
@@ -94,10 +94,10 @@
     </a>
 @endsection
 @section('title_card')
-    Edit Blog
+    Edit Blog [{{$blog->title}} ]
 @endsection
 @section('content_card')
-    <form action="{{route('admin.blogs.store')}}" method="post" class="form-control-sm">
+    <form action="{{route('admin.blogs.update', $blog -> id)}}" method="post" class="form-control-sm">
         @csrf
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Title</label>
@@ -123,15 +123,22 @@
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
         <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Status</label>
+            <select class="form-select form-select-solid" data-control="select2"
+                    data-placeholder="Select status" data-select2-id="1" name="status">
+                <option value="1" @if($blog->status == 1) selected @endif>Publish</option>
+                <option value="0" @if($blog->status == 0) selected @endif>Draft</option>
+                <option value="2" @if($blog->status == 2) selected @endif>Private</option>
+                <option value="3" @if($blog->status == 3) selected @endif>Trash</option>
+            </select>
+        </div>
+        <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Tag</label>
             <select class="form-select form-select-solid tag2 "
-                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
-                <option></option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
-                <option value="5">Option 5</option>
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="tags[]">
+                @foreach($tags as $tag)
+                    <option @if(in_array($tag->id, $blog->tags->pluck('id')->toArray())) selected @endif value="{{$tag->name}}">{{$tag->name}}</option>
+                @endforeach
             </select>
         </div>
         <div class="mb-10">
@@ -140,6 +147,8 @@
                       placeholder="Enter description">{{$blog->description}}</textarea>
         </div>
         <div class="mb-10">
+            @php
+            @endphp
             <label for="exampleFormControlInput1" class="required form-label">Content</label>
             <textarea name="content" class="form-control form-control-solid my-editor"
                       placeholder="Enter content">{{$blog->content}}</textarea>

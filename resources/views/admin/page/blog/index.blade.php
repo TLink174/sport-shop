@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    List Blog - Admin - {{ config('app.name') }}
+    List Blog - Admin
 @endsection
 @section('name_user')
     Nam 077
@@ -15,7 +15,7 @@
     <script !src="">
         $("#kt_datatable_horizontal_scroll").DataTable({
             dom: 'Bfrtip',
-            order: null,
+            order: [],
         });
     </script>
 @endsection
@@ -75,29 +75,36 @@
                     <td>
                         <img src="{{$blog->image_path}}" alt="{{$blog->title}}" width="100px">
                     </td>
-                    <td>{{$blog->description}}</td>
+                    <td class="mw-125px">{{$blog->description}}</td>
                     <td>
                         @if($blog->status == 1)
-                            <span class="badge badge-success">Active</span>
+                            <span class="badge badge-success">Publish</span>
                         @elseif($blog->status == 0)
-                            <span class="badge badge-info">Inactive</span>
+                            <span class="badge badge-info">Draft</span>
                         @elseif($blog->status == 2)
-                            <span class="badge badge-warning">Pending</span>
+                            <span class="badge badge-warning">Private</span>
                         @elseif($blog->status == 3)
-                            <span class="badge badge-danger">Delete</span>
+                            <span class="badge badge-danger">Trash</span>
                     @endif
                     <td>
-                        <a href="{{route('admin.blogs.edit', $blog->id)}}" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
+                        <a href="{{route('admin.blogs.edit', $blog->id)}}"
+                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
                             <i class="fa fa-edit"></i>
                         </a>
-                        <a href="{{route('admin.blogs.delete', $blog->id)}}" class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
-                            <i class="fa fa-trash"></i>
-                        </a>
-
+                        @if($blog->status == 1)
+                            <a href="{{route('admin.blogs.delete', $blog->id)}}"
+                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        @elseif($blog->status == 3)
+                            <a href="{{route('admin.blogs.restore', $blog->id)}}"
+                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">
+                                <i class="fa fa-undo"></i>
+                            </a>
+                        @endif
                     </td>
                 </tr>
             @endforeach
-
             </tbody>
         </table>
     </div>

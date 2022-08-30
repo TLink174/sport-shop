@@ -45,6 +45,7 @@ Route::group(['prefix' => 'admin',['middleware' => 'auth']], function () {
         Route::get('/edit/{id}', [AdminBlogController::class, 'edit'])->name('admin.blogs.edit');
         Route::post('/update/{id}', [AdminBlogController::class, 'update'])->name('admin.blogs.update');
         Route::get('/delete/{id}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.delete');
+        Route::get('/restore/{id}', [AdminBlogController::class, 'restore'])->name('admin.blogs.restore');
     });
     Route::group(['prefix' => 'user' ], function () {
         Route::get('/', [AdminUserController::class, 'index'])->name('admin.users.index');

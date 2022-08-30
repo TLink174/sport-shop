@@ -8,10 +8,12 @@ use Illuminate\Support\Str;
 class BlogService
 {
     private Blog $blog;
+    private TagService $tagService;
 
-    public function __construct(Blog $blog)
+    public function __construct(Blog $blog, TagService $tagService)
     {
         $this->blog = $blog;
+        $this->tagService = $tagService;
     }
     function getAllPaginate()
     {
@@ -27,7 +29,7 @@ class BlogService
     }
     function create($request)
     {
-        $this->blog->create([
+       $blogCreated =   $this->blog->create([
             'title' => $request->title,
             'content' => $request->content,
             'id_category' => $request->id_category,
@@ -38,6 +40,8 @@ class BlogService
             'image_avatar' => $request->image_avatar??null,
             'description' => $request->description??null,
         ]);
+        $tagIds = $this->tagService->createMultipleTags($request->tags);
+        $blogCreated->tags()->attach($tagIds);
     }
     function getAllHasSoftDeletes()
     {
@@ -46,6 +50,47 @@ class BlogService
     function findHasSoftDeletes($id)
     {
         return $this->blog->findHasSoftDeletes($id);
+    }
+
+    public function update($id, $request)
+    {
+        $blog = $this->blog->find($id);
+        $blog->update([
+            'title' => $request->title ?? $blog->title,
+            'content' => $request->content ?? $blog->content,
+            'id_category' => $request->id_category ?? $blog->id_category,
+            'id_user' => auth()->user()->id,
+            'slug' => Str::slug($request->title) ?? $blog->slug,
+            'image_path' => $request->image_path ?? $blog->image_path,
+            'status' => $request->status ?? $blog->status,
+            'image_avatar' => $request->image_avatar ?? $blog->image_avatar,
+            'description' => $request->description ?? $blog->description,
+        ]);
+        $tagIds = $this->tagService->createMultipleTags($request->tags);
+        $blog->tags()->sync($tagIds);
+        return $blog;
+    }
+
+    public function delete($id)
+    {
+        $blog = $this->blog->find($id);
+        $blog->update([
+            'status' => 3
+        ]);
+        $blog->delete();
+    }
+
+    public function restore($id)
+    {
+        $blog = $this->blog->withTrashed()->find($id);
+
+        if ($blog && $blog->trashed()) {
+            $blog->restore();
+            $blog->update([
+                'status' => 1
+            ]);
+        }
+        $blog->restore();
     }
 
 
