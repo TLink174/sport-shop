@@ -25,7 +25,7 @@ class AdminCategoryController extends Controller
     public function index()
     {
         $categories = $this->categoryService->findAllHaveSoftDeletes()->paginate(1);
-        return view('admin.page.category.index', compact('categories'));
+        return view('admin.pages.category.index', compact('categories'));
 
     }
 
@@ -37,7 +37,7 @@ class AdminCategoryController extends Controller
     public function create()
     {
         $categories = $this->categoryService->getAll();
-        return view('admin.page.category.create',compact(['categories']));
+        return view('admin.pages.category.create',compact(['categories']));
     }
 
     /**
@@ -74,7 +74,7 @@ class AdminCategoryController extends Controller
     {
         $categories = $this->categoryService->getAll();
         $category = $this->categoryService->getById($id);
-        return view('admin.page.category.edit', compact(['categories','category']));
+        return view('admin.pages.category.edit', compact(['categories','category']));
     }
 
     /**

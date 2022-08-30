@@ -36,7 +36,7 @@ var KTCreateCampaign = function () {
 			}
 		});
 
-		// Validation before going to next page
+		// Validation before going to next pages
 		stepperObj.on('kt.stepper.next', function (stepper) {
 			console.log('stepper.next');
 
@@ -85,7 +85,7 @@ var KTCreateCampaign = function () {
 			// Prevent default button action
 			e.preventDefault();
 
-			// Disable button to avoid multiple click 
+			// Disable button to avoid multiple click
 			formSubmitButton.disabled = true;
 
 			// Show loading indication

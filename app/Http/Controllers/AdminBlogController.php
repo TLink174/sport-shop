@@ -32,7 +32,7 @@ class AdminBlogController extends Controller
     public function index()
     {
         $blogs = $this->blogService->getAllHasSoftDeletes()->paginate(10);
-        return view('admin.page.blog.index', compact('blogs'));
+        return view('admin.pages.blog.index', compact('blogs'));
     }
 
     /**
@@ -44,7 +44,7 @@ class AdminBlogController extends Controller
     {
         $tags = $this->tagService->getAll();
         $categories = $this->categoryService->getAll();
-        return view('admin.page.blog.create', compact(['categories','tags']));
+        return view('admin.pages.blog.create', compact(['categories','tags']));
     }
 
     /**
@@ -82,7 +82,7 @@ class AdminBlogController extends Controller
         $blog = $this->blogService->findHasSoftDeletes($id);
         $tags = $this->tagService->getAll();
         $categories = $this->categoryService->getAll();
-        return view('admin.page.blog.edit', compact(['blog', 'categories', 'tags']));
+        return view('admin.pages.blog.edit', compact(['blog', 'categories', 'tags']));
     }
 
 

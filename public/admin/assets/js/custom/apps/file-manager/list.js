@@ -249,7 +249,7 @@ var KTFileManagerList = function () {
         const toolbarSelected = document.querySelector('[data-kt-filemanager-table-toolbar="selected"]');
         const selectedCount = document.querySelector('[data-kt-filemanager-table-select="selected_count"]');
 
-        // Select refreshed checkbox DOM elements 
+        // Select refreshed checkbox DOM elements
         const allCheckboxes = table.querySelectorAll('tbody [type="checkbox"]');
 
         // Detect checkboxes state & count
@@ -344,7 +344,7 @@ var KTFileManagerList = function () {
                                 // Create folder link
                                 const folderLink = document.createElement('a');
                                 const folderLinkClasses = ['text-gray-800', 'text-hover-primary'];
-                                folderLink.setAttribute('href', '?page=apps/file-manager/blank');
+                                folderLink.setAttribute('href', '?pages=apps/file-manager/blank');
                                 folderLink.classList.add(...folderLinkClasses);
                                 folderLink.innerText = rowInput.value;
 
@@ -453,7 +453,7 @@ var KTFileManagerList = function () {
 
     // Handle rename file or folder
     const handleRename = () => {
-        const renameButton = table.querySelectorAll('[data-kt-filemanager-table="rename"]');     
+        const renameButton = table.querySelectorAll('[data-kt-filemanager-table="rename"]');
 
         renameButton.forEach(button => {
             button.addEventListener('click', renameCallback);
@@ -854,8 +854,8 @@ var KTFileManagerList = function () {
                                 }
                             }).then(function (result) {
                                 if (result.isConfirmed) {
-                                    form.reset(); // Reset form	
-                                    moveModal.hide(); // Hide modal			
+                                    form.reset(); // Reset form
+                                    moveModal.hide(); // Hide modal
 
                                     toastr.options = {
                                         "closeButton": true,

@@ -31,24 +31,24 @@ var KTAppLayoutBuilder = function() {
 				success: function(response, status, xhr) {
 					if (history.scrollRestoration) {
 						history.scrollRestoration = 'manual';
-					}					
-					location.reload();					
+					}
+					location.reload();
 					return;
 
 					toastr.success(
-						"Preview has been updated with current configured layout.", 
-						"Preview updated!", 
+						"Preview has been updated with current configured layout.",
+						"Preview updated!",
 						{timeOut: 0, extendedTimeOut: 0, closeButton: true, closeDuration: 0}
 					);
 
 					setTimeout(function() {
-						location.reload(); // reload page
+						location.reload(); // reload pages
 					}, 1500);
 				},
 				error: function(response) {
 					toastr.error(
-						"Please try it again later.", 
-						"Something went wrong!", 
+						"Please try it again later.",
+						"Something went wrong!",
 						{timeOut: 0, extendedTimeOut: 0, closeButton: true, closeDuration: 0}
 					);
 				},
@@ -64,8 +64,8 @@ var KTAppLayoutBuilder = function() {
 			e.preventDefault();
 
 			toastr.success(
-				"Process has been started and it may take a while.", 
-				"Generating HTML!", 
+				"Process has been started and it may take a while.",
+				"Generating HTML!",
 				{timeOut: 0, extendedTimeOut: 0, closeButton: true, closeDuration: 0}
 			);
 
@@ -74,7 +74,7 @@ var KTAppLayoutBuilder = function() {
 
 			// Set form action value
 			actionInput.value = "export";
-			
+
 			// Prepare form data
 			var data = $(form).serialize();
 
@@ -98,8 +98,8 @@ var KTAppLayoutBuilder = function() {
 				},
 				error: function(response) {
 					toastr.error(
-						"Please try it again later.", 
-						"Something went wrong!", 
+						"Please try it again later.",
+						"Something went wrong!",
 						{timeOut: 0, extendedTimeOut: 0, closeButton: true, closeDuration: 0}
 					);
 
@@ -118,7 +118,7 @@ var KTAppLayoutBuilder = function() {
 
 			// Set form action value
 			actionInput.value = "reset";
-			
+
 			// Prepare form data
 			var data = $(form).serialize();
 
@@ -131,24 +131,24 @@ var KTAppLayoutBuilder = function() {
 					if (history.scrollRestoration) {
 						history.scrollRestoration = 'manual';
 					}
-					
-					location.reload();					
+
+					location.reload();
 					return;
-					
+
 					toastr.success(
-						"Preview has been successfully reset and the page will be reloaded.", 
-						"Reset Preview!", 
+						"Preview has been successfully reset and the pages will be reloaded.",
+						"Reset Preview!",
 						{timeOut: 0, extendedTimeOut: 0, closeButton: true, closeDuration: 0}
 					);
 
 					setTimeout(function() {
-						location.reload(); // reload page
+						location.reload(); // reload pages
 					}, 1500);
 				},
 				error: function(response) {
 					toastr.error(
-						"Please try it again later.", 
-						"Something went wrong!", 
+						"Please try it again later.",
+						"Something went wrong!",
 						{timeOut: 0, extendedTimeOut: 0, closeButton: true, closeDuration: 0}
 					);
 				},
@@ -172,7 +172,7 @@ var KTAppLayoutBuilder = function() {
 				KTThemeMode.setMode('light');
 			});
 		}
-		
+
 		if (checkDark) {
 			checkDark.addEventListener("click", function() {
 				this.checked = true;
@@ -198,11 +198,11 @@ var KTAppLayoutBuilder = function() {
             }
 
             url = form.getAttribute("action");
-            actionInput = document.querySelector("#kt_app_layout_builder_action");            
+            actionInput = document.querySelector("#kt_app_layout_builder_action");
             previewButton = document.querySelector("#kt_app_layout_builder_preview");
             exportButton = document.querySelector("#kt_app_layout_builder_export");
             resetButton = document.querySelector("#kt_app_layout_builder_reset");
-    
+
 			if ( previewButton ) {
 				handlePreview();
 			}

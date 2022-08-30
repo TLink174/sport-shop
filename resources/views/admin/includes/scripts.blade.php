@@ -4,10 +4,10 @@
 <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
 <script src="{{asset('/admin/assets/js/scripts.bundle.js')}}"></script>
 <!--end::Global Javascript Bundle-->
-<!--begin::Vendors Javascript(used by this page)-->
+<!--begin::Vendors Javascript(used by this pages)-->
 <script src="{{asset('/admin/assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
 <!--end::Vendors Javascript-->
-<!--begin::Custom Javascript(used by this page)-->
+<!--begin::Custom Javascript(used by this pages)-->
 <script src="{{asset('/admin/assets/js/custom/apps/ecommerce/settings/settings.js')}}"></script>
 <script src="{{asset('/admin/assets/js/widgets.bundle.js')}}"></script>
 <script src="{{asset('/admin/assets/js/custom/widgets.js')}}"></script>

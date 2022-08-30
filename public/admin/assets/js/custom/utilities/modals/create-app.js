@@ -3,7 +3,7 @@
 // Class definition
 var KTCreateApp = function () {
 	// Elements
-	var modal;	
+	var modal;
 	var modalEl;
 
 	var stepper;
@@ -36,7 +36,7 @@ var KTCreateApp = function () {
 			}
 		});
 
-		// Validation before going to next page
+		// Validation before going to next pages
 		stepperObj.on('kt.stepper.next', function (stepper) {
 			console.log('stepper.next');
 
@@ -92,7 +92,7 @@ var KTCreateApp = function () {
 					// Prevent default button action
 					e.preventDefault();
 
-					// Disable button to avoid multiple click 
+					// Disable button to avoid multiple click
 					formSubmitButton.disabled = true;
 
 					// Show loading indication

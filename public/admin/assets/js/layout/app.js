@@ -31,7 +31,7 @@ var KTApp = function () {
         }
 
         // Initialize popover
-        var tp = new bootstrap.Tooltip(el, options);        
+        var tp = new bootstrap.Tooltip(el, options);
 
         // Handle dismiss
         if (options['dismiss'] && options['dismiss'] === 'click') {
@@ -147,7 +147,7 @@ var KTApp = function () {
                 });
 
                 this.classList.add('active');
-            });       
+            });
 
             group.setAttribute("data-kt-initialized", "1");
         });
@@ -167,7 +167,7 @@ var KTApp = function () {
         var elements = [].slice.call(document.querySelectorAll('[data-kt-daterangepicker="true"]'));
         var start = moment().subtract(29, 'days');
         var end = moment();
-        
+
         elements.map(function (element) {
             if (element.getAttribute("data-kt-initialized") === "1") {
                 return;
@@ -185,7 +185,7 @@ var KTApp = function () {
                         display.innerHTML = start.format('D MMM YYYY');
                     } else {
                         display.innerHTML = start.format('D MMM YYYY') + ' - ' + end.format('D MMM YYYY');
-                    }                    
+                    }
                 }
             }
 
@@ -255,14 +255,14 @@ var KTApp = function () {
 
         if (select2FocusFixInitialized === false) {
             select2FocusFixInitialized = true;
-            
+
             $(document).on('select2:open', function(e) {
                 var elements = document.querySelectorAll('.select2-container--open .select2-search__field');
                 if (elements.length > 0) {
                     elements[elements.length - 1].focus();
-                }                
+                }
             });
-        }        
+        }
     }
 
     var createAutosize = function () {
@@ -335,7 +335,7 @@ var KTApp = function () {
 
             // Window scroll event handler
             window.addEventListener('scroll', createCountUp);
-        }      
+        }
 
         // Tabs shown event handler
         var tabs = [].slice.call(document.querySelectorAll('[data-kt-countup-tabs="true"][data-bs-toggle="tab"]'));
@@ -442,7 +442,7 @@ var KTApp = function () {
                     // An example returning different values based on whether the clicked link was in the header nav or not
                     if (anchor.hasAttribute('data-kt-scroll-offset')) {
                         var val = KTUtil.getResponsiveValue(anchor.getAttribute('data-kt-scroll-offset'));
-                        
+
                         return val;
                     } else {
                         return 0;
@@ -500,9 +500,9 @@ var KTApp = function () {
     }
 
     var initPageLoader = function () {
-        // CSS3 Transitions only after page load(.page-loading or .app-page-loading class added to body tag and remove with JS on page load)
-        KTUtil.removeClass(document.body, 'page-loading');
-        document.body.removeAttribute('data-kt-app-page-loading');
+        // CSS3 Transitions only after pages load(.pages-loading or .app-pages-loading class added to body tag and remove with JS on pages load)
+        KTUtil.removeClass(document.body, 'pages-loading');
+        document.body.removeAttribute('data-kt-app-pages-loading');
     }
 
     return {
@@ -560,7 +560,7 @@ KTUtil.onDOMContentLoaded(function () {
     KTApp.createInstances();
 });
 
-// Initialize page loader on window load
+// Initialize pages loader on window load
 window.addEventListener("load", function() {
     KTApp.initPageLoader();
 });

@@ -3,7 +3,7 @@
 // Class definition
 var KTCreateAccount = function () {
 	// Elements
-	var modal;	
+	var modal;
 	var modalEl;
 
 	var stepper;
@@ -36,7 +36,7 @@ var KTCreateAccount = function () {
 			}
 		});
 
-		// Validation before going to next page
+		// Validation before going to next pages
 		stepperObj.on('kt.stepper.next', function (stepper) {
 			console.log('stepper.next');
 
@@ -93,7 +93,7 @@ var KTCreateAccount = function () {
 					// Prevent default button action
 					e.preventDefault();
 
-					// Disable button to avoid multiple click 
+					// Disable button to avoid multiple click
 					formSubmitButton.disabled = true;
 
 					// Show loading indication
@@ -119,7 +119,7 @@ var KTCreateAccount = function () {
 									confirmButton: "btn btn-primary"
 								}
 							}).then(function (result) {
-								if (result.isConfirmed) { 	
+								if (result.isConfirmed) {
 									location.href = form.getAttribute('data-kt-redirect-url');
 								}
 							});
@@ -356,8 +356,8 @@ var KTCreateAccount = function () {
 			modalEl = document.querySelector('#kt_modal_create_account');
 
 			if ( modalEl ) {
-				modal = new bootstrap.Modal(modalEl);	
-			}					
+				modal = new bootstrap.Modal(modalEl);
+			}
 
 			stepper = document.querySelector('#kt_create_account_stepper');
 

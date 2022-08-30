@@ -15,7 +15,7 @@ var KTAppContactView = function () {
             // Prevent default button action
             e.preventDefault();
 
-            // Show popup confirmation 
+            // Show popup confirmation
             Swal.fire({
                 text: "Delete contact confirmation",
                 icon: "warning",
@@ -39,7 +39,7 @@ var KTAppContactView = function () {
                         }
                     }).then(function (result) {
                         if (result.value) {
-                            // Redirect to customers list page
+                            // Redirect to customers list pages
                             window.location = deleteButton.getAttribute("data-kt-redirect");
                         }
                     });

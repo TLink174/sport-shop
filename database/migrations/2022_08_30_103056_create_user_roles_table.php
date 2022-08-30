@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('user_roles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_user')->nullable(false);
+            $table->unsignedBigInteger('id_role')->nullable(false);
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_role')->references('id')->on('roles');
             $table->timestamps();
         });
     }

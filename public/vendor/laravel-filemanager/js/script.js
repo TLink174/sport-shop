@@ -311,15 +311,15 @@ function loadFolders() {
 }
 
 function generatePaginationHTML(el, args) {
-  var template = '<li class="page-item"><\/li>';
-  var linkTemplate = '<a class="page-link"><\/a>';
+  var template = '<li class="pages-item"><\/li>';
+  var linkTemplate = '<a class="pages-link"><\/a>';
   var currentPage = args.currentPage;
   var totalPage = args.totalPage;
   var rangeStart = args.rangeStart;
   var rangeEnd = args.rangeEnd;
   var i;
 
-  // Disable page range, display all the pages
+  // Disable pages range, display all the pages
   if (args.pageRange === null) {
     for (i = 1; i <= totalPage; i++) {
       var button = $(template)

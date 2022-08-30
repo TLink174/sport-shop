@@ -7,7 +7,7 @@
 // Set Defaults
 
 var defaults = {
-	"language": {		
+	"language": {
 		"info": "Showing _START_ to _END_ of _TOTAL_ records",
     	"infoEmpty": "Showing no records",
 		"lengthMenu": "_MENU_",
@@ -69,14 +69,14 @@ var DataTable = $.fn.dataTable;
 
 /* Set the defaults for DataTables initialisation */
 $.extend( true, DataTable.defaults, {
-	dom: 
+	dom:
 		"<'table-responsive'tr>" +
-		
-		"<'row'" + 
-		"<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'li>" + 
+
+		"<'row'" +
+		"<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'li>" +
 		"<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
 		">",
-	
+
 	renderer: 'bootstrap'
 } );
 
@@ -87,7 +87,7 @@ $.extend( DataTable.ext.classes, {
 	sFilterInput:  "form-control form-control-sm form-control-solid",
 	sLengthSelect: "form-select form-select-sm form-select-solid",
 	sProcessing:   "dataTables_processing",
-	sPageButton:   "paginate_button page-item"
+	sPageButton:   "paginate_button pages-item"
 } );
 
 
@@ -168,7 +168,7 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 								'aria-label': aria[ button ],
 								'data-dt-idx': counter,
 								'tabindex': settings.iTabIndex,
-								'class': 'page-link'
+								'class': 'pages-link'
 							} )
 							.html( btnDisplay )
 						)

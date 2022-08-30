@@ -11,11 +11,10 @@ class PermissionCategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -31,7 +30,7 @@ class PermissionCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePermissionCategoryRequest  $request
+     * @param \App\Http\Requests\StorePermissionCategoryRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StorePermissionCategoryRequest $request)
@@ -42,7 +41,7 @@ class PermissionCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PermissionCategory  $permissionCategory
+     * @param \App\Models\PermissionCategory $permissionCategory
      * @return \Illuminate\Http\Response
      */
     public function show(PermissionCategory $permissionCategory)
@@ -53,7 +52,7 @@ class PermissionCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PermissionCategory  $permissionCategory
+     * @param \App\Models\PermissionCategory $permissionCategory
      * @return \Illuminate\Http\Response
      */
     public function edit(PermissionCategory $permissionCategory)
@@ -64,8 +63,8 @@ class PermissionCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePermissionCategoryRequest  $request
-     * @param  \App\Models\PermissionCategory  $permissionCategory
+     * @param \App\Http\Requests\UpdatePermissionCategoryRequest $request
+     * @param \App\Models\PermissionCategory $permissionCategory
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePermissionCategoryRequest $request, PermissionCategory $permissionCategory)
@@ -76,7 +75,7 @@ class PermissionCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PermissionCategory  $permissionCategory
+     * @param \App\Models\PermissionCategory $permissionCategory
      * @return \Illuminate\Http\Response
      */
     public function destroy(PermissionCategory $permissionCategory)

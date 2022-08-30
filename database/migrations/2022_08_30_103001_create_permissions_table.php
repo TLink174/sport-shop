@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->string('value');
+            $table->string('description')->nullable();
+            $table->unsignedBigInteger('id_permission_category')->nullable(false);
+            $table->foreign('id_permission_category')->references('id')->on('permission_categories');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

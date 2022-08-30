@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -41,4 +43,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function roles(): BelongsToMany
+    {
+        return $this->belongsToMany(Role::class, UserRole::class, 'id_user', 'id_role');
+    }
+    public function permissions(){
+        return $this->roles()->with('permissions')->get()->map->permissions->flatten()->pluck('name');
+    }
+    public function details(): BelongsTo
+    {
+        return $this->belongsTo(UserDetail::class, 'id_user');
+    }
+
 }

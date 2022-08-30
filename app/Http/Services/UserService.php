@@ -6,6 +6,8 @@ use App\Models\User;
 
 class UserService
 {
+    private User $user;
+
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -29,5 +31,46 @@ class UserService
         ]);
         return $userCreate;
     }
+
+    public function create($request)
+    {
+        $userCreated = $this->user->create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+        $userCreated->roles()->attach($request->roles);
+        return $userCreated;
+    }
+    public function update($request, $id)
+    {
+        $user = $this->user->find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return $user;
+    }
+    public function delete($id)
+    {
+        $user = $this->getById($id);
+        $user->delete();
+        return $user;
+    }
+
+    public function getAll()
+    {
+        return $this->user->all();
+    }
+    public function getById($id)
+    {
+        return $this->user->find($id);
+    }
+    public function getByEmail($email)
+    {
+        return $this->user->where('email', $email)->first();
+    }
+
+
 
 }

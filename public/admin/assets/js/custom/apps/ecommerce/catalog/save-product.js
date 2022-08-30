@@ -368,7 +368,7 @@ var KTAppEcommerceSaveProduct = function () {
                                     // Enable submit button after loading
                                     submitButton.disabled = false;
 
-                                    // Redirect to customers list page
+                                    // Redirect to customers list pages
                                     window.location = form.getAttribute("data-kt-redirect");
                                 }
                             });

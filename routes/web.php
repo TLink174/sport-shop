@@ -3,7 +3,12 @@
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminPermissionController;
+use App\Http\Controllers\AdminPermissonCategoryController;
+use App\Http\Controllers\AdminRoleController;
+use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\PermissionCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +25,7 @@ Route::group(['prefix' => 'laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 Route::get('/', function () {
-    return view('admin.page.category.index');
+    return view('admin.pages.category.index');
 })->name('home');
 Route::group(['prefix' => 'admin',['middleware' => 'auth']], function () {
     Route::get('/login', [AdminController::class,'login'])->name('admin.auth.login');
@@ -55,5 +60,41 @@ Route::group(['prefix' => 'admin',['middleware' => 'auth']], function () {
         Route::post('/update/{id}', [AdminUserController::class, 'update'])->name('admin.users.update');
         Route::get('/delete/{id}', [AdminUserController::class, 'destroy'])->name('admin.users.delete');
     });
+    Route::group(['prefix' => 'tag' ], function () {
+        Route::get('/', [AdminTagController::class, 'index'])->name('admin.tags.index');
+        Route::get('/create', [AdminTagController::class, 'create'])->name('admin.tags.create');
+        Route::post('/store', [AdminTagController::class, 'store'])->name('admin.tags.store');
+        Route::get('/edit/{id}', [AdminTagController::class, 'edit'])->name('admin.tags.edit');
+        Route::post('/update/{id}', [AdminTagController::class, 'update'])->name('admin.tags.update');
+        Route::get('/delete/{id}', [AdminTagController::class, 'destroy'])->name('admin.tags.delete');
+        Route::get('/restore/{id}', [AdminTagController::class, 'restore'])->name('admin.tags.restore');
+    });
+    Route::group(['prefix' => 'permission-category' ], function () {
+        Route::get('/', [AdminPermissonCategoryController::class, 'index'])->name('admin.permission-categories.index');
+        Route::get('/create', [AdminPermissonCategoryController::class, 'create'])->name('admin.permission-categories.create');
+        Route::post('/store', [AdminPermissonCategoryController::class, 'store'])->name('admin.permission-categories.store');
+        Route::get('/edit/{id}', [AdminPermissonCategoryController::class, 'edit'])->name('admin.permission-categories.edit');
+        Route::post('/update/{id}', [AdminPermissonCategoryController::class, 'update'])->name('admin.permission-categories.update');
+        Route::get('/delete/{id}', [AdminPermissonCategoryController::class, 'destroy'])->name('admin.permission-categories.delete');
+        Route::get('/restore/{id}', [AdminPermissonCategoryController::class, 'restore'])->name('admin.permission-categories.restore');
+    });
+    Route::group(['prefix' => 'permission' ], function () {
+        Route::get('/', [AdminPermissionController::class, 'index'])->name('admin.permissions.index');
+        Route::get('/create', [AdminPermissionController::class, 'create'])->name('admin.permissions.create');
+        Route::post('/store', [AdminPermissionController::class, 'store'])->name('admin.permissions.store');
+        Route::get('/edit/{id}', [AdminPermissionController::class, 'edit'])->name('admin.permissions.edit');
+        Route::post('/update/{id}', [AdminPermissionController::class, 'update'])->name('admin.permissions.update');
+        Route::get('/delete/{id}', [AdminPermissionController::class, 'destroy'])->name('admin.permissions.delete');
+        Route::get('/restore/{id}', [AdminPermissionController::class, 'restore'])->name('admin.permissions.restore');
+    });
+    Route::group(['prefix' => 'role' ], function () {
+        Route::get('/', [AdminRoleController::class, 'index'])->name('admin.roles.index');
+        Route::get('/create', [AdminRoleController::class, 'create'])->name('admin.roles.create');
+        Route::post('/store', [AdminRoleController::class, 'store'])->name('admin.roles.store');
+        Route::get('/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.roles.edit');
+        Route::post('/update/{id}', [AdminRoleController::class, 'update'])->name('admin.roles.update');
+        Route::get('/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.roles.delete');
+        Route::get('/restore/{id}', [AdminRoleController::class, 'restore'])->name('admin.roles.restore');
+    } );
 });
 
