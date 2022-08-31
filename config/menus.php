@@ -199,5 +199,21 @@ return [
             ]
         ],
     ],
+    [
+        'title' => 'File Manager',
+        'name' => 'file-manager',
+        'type' => 'public',
+        'icon' => 'fa fa-file',
+        'route' => 'admin.file-manager.index',
+        'children' => [
+            [
+                'title' => 'View File',
+                'type' => 'public',
+                'name' => 'index',
+                'icon' => 'fa fa-list',
+                'route' => 'admin.file-manager.index',
+            ]
+        ],
+    ]
 
 ];

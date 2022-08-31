@@ -64,5 +64,9 @@ class AdminController extends Controller
             return redirect()->route('admin.auth.register')->with('error', 'Register failed');
         }
     }
+    public function fileManager()
+    {
+        return view('admin.pages.file_manager.index');
+    }
 
 }

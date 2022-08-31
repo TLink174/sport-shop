@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
 use Illuminate\Support\Facades\Route;
+use UniSharp\LaravelFilemanager\Lfm;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => 'laravel-filemanager'], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    Lfm::routes();
 });
 Route::get('/', function () {
     return view('admin.index');
@@ -33,6 +34,7 @@ Route::post('/admin/register-post', [AdminController::class, 'registerPost'])->n
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.auth.logout');
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/file-manager', [AdminController::class, 'fileManager'])->name('admin.file-manager.index');
     Route::group(['prefix' => 'category'], function () {
         Route::get('/', [AdminCategoryController::class, 'index'])->name('admin.categories.index')->middleware('can:category-list');
         Route::get('/create', [AdminCategoryController::class, 'create'])->name('admin.categories.create')->middleware('can:category-create');
