@@ -21,7 +21,7 @@
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'permission_category';
+        $menu_parent = 'permission-category';
         $menu_child = 'index';
     @endphp
 @endsection

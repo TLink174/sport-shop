@@ -32,9 +32,9 @@ class AdminController extends Controller
         $user = $this->userService->checkLogin($request->email, $request->password);
         if ($user) {
             auth()->login($user);
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.categories.index');
         } elseif ($user == false) {
-            return redirect()->route('admin.login')->with('error', 'Email or password is incorrect');
+            return redirect()->route('admin.auth.login')->with('error', 'Email or password is incorrect');
         }
 
     }

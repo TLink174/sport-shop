@@ -162,7 +162,7 @@
                                     <!--begin::Wrapper-->
                                     <div class="row">
                                         @foreach($permissionCategory->permissions as $permission)
-                                            <div class="col col-auto min-w-225px">
+                                            <div class="col col-auto min-w-175px">
                                                 <label
                                                     class="form-check form-check-custom form-check-solid form-check-@if($permission->value == 'view')success @elseif($permission->value == 'create')success @elseif($permission->value == 'edit')warning @elseif($permission->value == 'delete')danger @elseif($permission->value == 'restore')warning @endif">
                                                     <input class="form-check-input child-permission" type="checkbox"
@@ -172,7 +172,7 @@
                                                            @endif
                                                            id="kt_permission_category_{{$permissionCategory->id}}_{{$permission->id}}">
                                                     <span class="form-check-label"
-                                                          for="kt_permission_category_{{$permissionCategory->id}}_{{$permission->id}}">{{$permission->name}}</span>
+                                                          for="kt_permission_category_{{$permissionCategory->id}}_{{$permission->id}}">{{ucfirst($permission->value)}}</span>
                                                 </label>
                                             </div>
 

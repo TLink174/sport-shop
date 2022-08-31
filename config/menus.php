@@ -8,17 +8,20 @@ return [
         'children' => [
             [
                 'title' => 'List Category',
+                'gate' => 'category-list',
                 'name' => 'index',
                 'route' => 'admin.categories.index',
             ],
             [
                 'title' => 'Create Category',
                 'name' => 'create',
+                'gate' => 'category-create',
                 'route' => 'admin.categories.create',
             ],
             [
                 'title' => 'Edit Category',
                 'name' => 'edit',
+                'gate' => 'category-update',
             ]
 
         ],
@@ -26,22 +29,26 @@ return [
     [
         'title' => 'Blog',
         'name' => 'blog',
+        'type' => 'public',
         'icon' => 'fa fa-list',
         'route' => 'admin.blogs.index',
         'children' => [
             [
                 'title' => 'List Blog',
                 'name' => 'index',
+                'gate' => 'blog-list',
                 'route' => 'admin.blogs.index',
             ],
             [
                 'title' => 'Create Blog',
                 'name' => 'create',
+                'gate' => 'blog-create',
                 'route' => 'admin.blogs.create',
             ],
             [
                 'title' => 'Edit Blog',
                 'name' => 'edit',
+                'gate' => 'blog-update',
             ]
 
         ],
@@ -137,7 +144,7 @@ return [
     ],
     [
         'title' => 'Permission Category',
-        'name' => 'permission_category',
+        'name' => 'permission-category',
         'icon' => 'fa fa-list',
         'route' => 'admin.permission-categories.index',
         'children' => [

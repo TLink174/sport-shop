@@ -91,6 +91,10 @@
                            class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
                             <i class="fa fa-edit"></i>
                         </a>
+                        <a href="{{route('admin.blogs.view', $blog->id)}}"
+                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-success mr-2" title="View">
+                            <i class="fa fa-eye"></i>
+                        </a>
                         @if($blog->status == 1)
                             <a href="{{route('admin.blogs.delete', $blog->id)}}"
                                class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">

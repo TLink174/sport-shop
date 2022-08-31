@@ -81,11 +81,7 @@
 @section('content_card')
     <form action="{{route('admin.roles.store')}}" method="post">
         @csrf
-        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_update_role_scroll" data-kt-scroll="true"
-             data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
-             data-kt-scroll-dependencies="#kt_modal_update_role_header"
-             data-kt-scroll-wrappers="#kt_modal_update_role_scroll" data-kt-scroll-offset="300px"
-             style="max-height: 418px;">
+        <div class="">
             <!--begin::Input group-->
             <div class="fv-row mb-10 fv-plugins-icon-container">
                 <!--begin::Label-->
@@ -108,7 +104,7 @@
                 <!--begin::Table wrapper-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table align-middle table-row-dashed fs-6 gy-5">
+                    <table id="kt_datatable_horizontal_scroll" class="table align-middle table-row-dashed fs-6 gy-5">
                         <!--begin::Table body-->
                         <tbody class="text-gray-600 fw-semibold" id="kt_permissions_list">
                         <!--begin::Table row-->
@@ -143,15 +139,18 @@
                                     <!--begin::Wrapper-->
                                     <div class="row">
                                         @foreach($permissionCategory->permissions as $permission)
-                                            <div class="col col-auto min-w-225px">
+                                            <div class="col col-auto min-w-175px ">
                                                 <label
                                                     class="form-check form-check-custom form-check-solid form-check-@if($permission->value == 'view')success @elseif($permission->value == 'create')success @elseif($permission->value == 'edit')warning @elseif($permission->value == 'delete')danger @elseif($permission->value == 'restore')warning @endif">
-                                                    <input class="form-check-input child-permission" type="checkbox"
+                                                    <input class="form-check-input child-permission "
+                                                           type="checkbox"
                                                            value="{{$permission->id}}"
                                                            name="permissions[]"
+                                                           title="{{$permission->description}}"
                                                            id="kt_permission_category_{{$permissionCategory->id}}_{{$permission->id}}">
                                                     <span class="form-check-label"
-                                                          for="kt_permission_category_{{$permissionCategory->id}}_{{$permission->id}}">{{$permission->name}}</span>
+                                                          title="{{$permission->description}}"
+                                                          for="kt_permission_category_{{$permissionCategory->id}}_{{$permission->id}}">{{ucfirst($permission->value)}}</span>
                                                 </label>
                                             </div>
 
@@ -175,7 +174,7 @@
             </div>
             <!--end::Permissions-->
         </div>
-        <div class="mb-10">
+        <div class="mb-10 mt-3">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
                 <i class="fa fa-save"></i> Save
             </button>

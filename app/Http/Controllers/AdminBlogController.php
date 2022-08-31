@@ -64,11 +64,12 @@ class AdminBlogController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Blog $blog)
+    public function show($id)
     {
-        //
+        $blog = $this->blogService->getById($id);
+        return view('admin.pages.blog.view', compact('blog'));
     }
 
     /**

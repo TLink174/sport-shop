@@ -41,7 +41,7 @@
 @endsection
 @section('content_card')
     <div class="table-responsive">
-        <table id="kt_datatable_horizontal_scroll" class="table table-row-dashed gy-5 gs-7">
+        <table class="table table-row-dashed gy-5 gs-7">
             <thead>
             <tr class="fw-semibold fs-6 text-gray-800">
                 <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.9px;">

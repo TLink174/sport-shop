@@ -62,13 +62,13 @@
         <div id="kt_docs_card_collapsible{{$permissionCategory->id}}" class="collapse show">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="kt_datatable_horizontal_scroll" class="table table-row-dashed gy-5 gs-7">
+                    <table id="kt_datatable_horizontal_scroll{{$permissionCategory->id}}" class="table table-row-dashed gy-5 gs-7">
                         <thead>
                         <tr class="fw-semibold fs-6 text-gray-800">
                             <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.9px;">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                           data-kt-check-target="#kt_datatable_horizontal_scroll .form-check-input" value="1">
+                                           data-kt-check-target="#kt_datatable_horizontal_scroll{{$permissionCategory->id}} .form-check-input" value="1">
                                 </div>
                             </th>
                             <th class="min-w-50">#</th>

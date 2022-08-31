@@ -3,8 +3,8 @@
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminPermissionCategoryController;
 use App\Http\Controllers\AdminPermissionController;
-use App\Http\Controllers\AdminPermissonCategoryController;
 use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
@@ -27,24 +27,25 @@ Route::group(['prefix' => 'laravel-filemanager'], function () {
 Route::get('/', function () {
     return view('admin.pages.category.index');
 })->name('home');
-Route::group(['prefix' => 'admin',['middleware' => 'auth']], function () {
-    Route::get('/login', [AdminController::class,'login'])->name('admin.auth.login');
-    Route::post('/login-post', [AdminController::class, 'loginPost'])->name('admin.auth.login-post');
+Route::get('/admin/login', [AdminController::class,'login'])->name('admin.auth.login');
+Route::post('/admin/login-post', [AdminController::class, 'loginPost'])->name('admin.auth.login-post');
+Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.auth.register');
+Route::post('/admin/register-post', [AdminController::class, 'registerPost'])->name('admin.auth.register-post');
+Route::group(['prefix' => 'admin','middleware' => ['web', 'auth']], function () {
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.auth.logout');
-    Route::get('/register', [AdminController::class, 'register'])->name('admin.auth.register');
-    Route::post('/register-post', [AdminController::class, 'registerPost'])->name('admin.auth.register-post');
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::group(['prefix' => 'category'], function () {
-        Route::get('/', [AdminCategoryController::class, 'index'])->name('admin.categories.index');
-        Route::get('/create', [AdminCategoryController::class, 'create'])->name('admin.categories.create');
-        Route::post('/store', [AdminCategoryController::class, 'store'])->name('admin.categories.store');
-        Route::get('/edit/{id}', [AdminCategoryController::class, 'edit'])->name('admin.categories.edit');
-        Route::post('/update/{id}', [AdminCategoryController::class, 'update'])->name('admin.categories.update');
-        Route::get('/delete/{id}', [AdminCategoryController::class, 'destroy'])->name('admin.categories.delete');
-        Route::get('/restore/{id}', [AdminCategoryController::class, 'restore'])->name('admin.categories.restore');
+        Route::get('/', [AdminCategoryController::class, 'index'])->name('admin.categories.index')->middleware('can:category-list');
+        Route::get('/create', [AdminCategoryController::class, 'create'])->name('admin.categories.create')->middleware('can:category-create');
+        Route::post('/store', [AdminCategoryController::class, 'store'])->name('admin.categories.store')->middleware('can:category-create');
+        Route::get('/edit/{id}', [AdminCategoryController::class, 'edit'])->name('admin.categories.edit')->middleware('can:category-update');
+        Route::post('/update/{id}', [AdminCategoryController::class, 'update'])->name('admin.categories.update')->middleware('can:category-update');
+        Route::get('/delete/{id}', [AdminCategoryController::class, 'destroy'])->name('admin.categories.delete')->middleware('can:category-delete');
+        Route::get('/restore/{id}', [AdminCategoryController::class, 'restore'])->name('admin.categories.restore')->middleware('can:category-delete');
     });
     Route::group(['prefix' => 'blog' ], function () {
         Route::get('/', [AdminBlogController::class, 'index'])->name('admin.blogs.index');
+        Route::get('/view/{id}', [AdminBlogController::class, 'show'])->name('admin.blogs.view');
         Route::get('/create', [AdminBlogController::class, 'create'])->name('admin.blogs.create');
         Route::post('/store', [AdminBlogController::class, 'store'])->name('admin.blogs.store');
         Route::get('/edit/{id}', [AdminBlogController::class, 'edit'])->name('admin.blogs.edit');
@@ -70,13 +71,13 @@ Route::group(['prefix' => 'admin',['middleware' => 'auth']], function () {
         Route::get('/restore/{id}', [AdminTagController::class, 'restore'])->name('admin.tags.restore');
     });
     Route::group(['prefix' => 'permission-category' ], function () {
-        Route::get('/', [AdminPermissonCategoryController::class, 'index'])->name('admin.permission-categories.index');
-        Route::get('/create', [AdminPermissonCategoryController::class, 'create'])->name('admin.permission-categories.create');
-        Route::post('/store', [AdminPermissonCategoryController::class, 'store'])->name('admin.permission-categories.store');
-        Route::get('/edit/{id}', [AdminPermissonCategoryController::class, 'edit'])->name('admin.permission-categories.edit');
-        Route::post('/update/{id}', [AdminPermissonCategoryController::class, 'update'])->name('admin.permission-categories.update');
-        Route::get('/delete/{id}', [AdminPermissonCategoryController::class, 'destroy'])->name('admin.permission-categories.delete');
-        Route::get('/restore/{id}', [AdminPermissonCategoryController::class, 'restore'])->name('admin.permission-categories.restore');
+        Route::get('/', [AdminPermissionCategoryController::class, 'index'])->name('admin.permission-categories.index');
+        Route::get('/create', [AdminPermissionCategoryController::class, 'create'])->name('admin.permission-categories.create');
+        Route::post('/store', [AdminPermissionCategoryController::class, 'store'])->name('admin.permission-categories.store');
+        Route::get('/edit/{id}', [AdminPermissionCategoryController::class, 'edit'])->name('admin.permission-categories.edit');
+        Route::post('/update/{id}', [AdminPermissionCategoryController::class, 'update'])->name('admin.permission-categories.update');
+        Route::get('/delete/{id}', [AdminPermissionCategoryController::class, 'destroy'])->name('admin.permission-categories.delete');
+        Route::get('/restore/{id}', [AdminPermissionCategoryController::class, 'restore'])->name('admin.permission-categories.restore');
     });
     Route::group(['prefix' => 'permission' ], function () {
         Route::get('/', [AdminPermissionController::class, 'index'])->name('admin.permissions.index');

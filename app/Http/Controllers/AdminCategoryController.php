@@ -24,7 +24,7 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->categoryService->findAllHaveSoftDeletes()->paginate(1);
+        $categories = $this->categoryService->findAllHaveSoftDeletes()->paginate(10);
         return view('admin.pages.category.index', compact('categories'));
 
     }

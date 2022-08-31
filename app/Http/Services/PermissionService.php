@@ -55,8 +55,8 @@ class PermissionService
                 $this->permission->firstOrCreate([
                     'name' => ucfirst($permission) . ' ' . ucfirst($categoryPermission->name),
                     'id_permission_category' => $request->id_permission_category,
-                    'value' => strtolower($permission),
-                    'slug' => Str::slug(ucfirst($permission) . ' ' . ucfirst($categoryPermission->name)),
+                    'value' => ucfirst($permission),
+                    'slug' => Str::slug(ucfirst($categoryPermission->name) . ' ' . ucfirst($permission)),
                     'description' => ucfirst($permission) . ' ' . ucfirst($categoryPermission->name),
                 ]);
             }

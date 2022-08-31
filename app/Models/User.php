@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -43,6 +44,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function blogs(): HasMany
+    {
+        return $this->HasMany(Blog::class,'id_user');
+    }
 
     public function roles(): BelongsToMany
     {
@@ -53,11 +58,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo(UserDetail::class, 'id_user');
     }
-    public function checkPermission($permissioncheck){
+    public function checkPermission($value)
+    {
         $roles = $this->roles()->get();
         foreach ($roles as $role){
             $permission = $role->permissions;
-            if( $permission ->contains('slug',$permissioncheck)){
+            if( $permission ->contains('slug',$value)){
                 return true;
             }
         }
@@ -68,12 +74,51 @@ class User extends Authenticatable
         $permissions = [];
         foreach ($roles as $role){
             foreach ($role->permissions as $permission){
-                $permissions[] = $permission->slug;
+                $permissions[] = $permission;
             }
         }
         return $permissions;
     }
 
+    public function hasPermissionTo( $string)
+    {
+        return $this->checkPermission($string);
+    }
+    public function isAdmin()
+    {
+        $role = $this->roles()->get();
+        foreach ($role as $item){
+            if($item->slug == 'admin'){
+                return true;
+            }
+        }
+    }
+    public function getParent()
+    {
+        $permissions = $this->permissions();
+        $parent = [];
+        foreach ($permissions as $permission){
+
+            $parent_name = strtolower($permission->permissionCategory->slug);
+            if(!in_array($parent_name,$parent)){
+                $parent[] = $parent_name;
+            }
+        }
+        return $parent;
+    }
+    public function checkAllow($value)
+    {
+        if ($this->isAdmin()){
+            return true;
+        }
+        $permissions = $this->getParent();
+        foreach ($permissions as $permission){
+            if($permission == $value){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }
