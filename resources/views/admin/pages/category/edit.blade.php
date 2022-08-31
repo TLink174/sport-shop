@@ -24,9 +24,11 @@
     Create Category
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.categories.index')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List Category
-    </a>
+    @can('category-list')
+        <a href="{{route('admin.categories.index')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+            <i class="fa fa-list"></i> List Category
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     Create Category

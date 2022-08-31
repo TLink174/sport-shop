@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Category;
+use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CategoryPolicy
+class PermissionPolicy
 {
     use HandlesAuthorization;
 
@@ -18,25 +18,25 @@ class CategoryPolicy
      */
     public function viewAny(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
-        return $user->hasPermissionTo('category-list');
+        return $user->hasPermissionTo('permission-list');
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function view(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
-        return $user->hasPermissionTo('category-view');
+        return $user->hasPermissionTo('permission-view');
     }
 
     /**
@@ -47,69 +47,69 @@ class CategoryPolicy
      */
     public function create(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
-        return $user->hasPermissionTo('category-create');
+        return $user->hasPermissionTo('permission-create');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function update(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
-        return $user->hasPermissionTo('category-update');
+        return $user->hasPermissionTo('permission-update');
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
-        return $user->hasPermissionTo('category-delete');
+        return $user->hasPermissionTo('permission-delete');
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function restore(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
-        return $user->hasPermissionTo('category-restore');
+        return $user->hasPermissionTo('permission-restore');
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Permission  $permission
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Category $category)
+    public function forceDelete(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()){
             return true;
         }
+        return $user->hasPermissionTo('permission-force-delete');
     }
-
 }

@@ -66,12 +66,14 @@ class AdminPermissionCategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\PermissionCategory $permissionCategory
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(PermissionCategory $permissionCategory)
+    public function edit($id)
     {
-        //
+        $permissionCategory = $this->permissionCategoryService->getById($id);
+        return view('admin.pages.permission_category.edit', compact('permissionCategory'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -80,10 +82,12 @@ class AdminPermissionCategoryController extends Controller
      * @param \App\Models\PermissionCategory $permissionCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PermissionCategory $permissionCategory)
+    public function update(Request $request, $id)
     {
-        //
+        $this->permissionCategoryService->update($request, $id);
+        return redirect()->route('admin.permission-categories.index');
     }
+
 
     /**
      * Remove the specified resource from storage.

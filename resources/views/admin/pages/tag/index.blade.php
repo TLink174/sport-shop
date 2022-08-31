@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    List Role - Admin - {{ config('app.name') }}
+    List Category - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
     Nam 077
@@ -21,29 +21,29 @@
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'role';
+        $menu_parent = 'tag';
         $menu_child = 'index';
     @endphp
 @endsection
 @section('title_component')
-    Role
+    Category
 @endsection
 @section('title_layout')
-    List Role
+    List Category
 @endsection
 @section('actions_layout')
-    @can('role-create')
-        <a href="{{route('admin.roles.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-            <i class="fa fa-plus"></i> Create Role
+    @can('tag-create')
+        <a href="{{route('admin.tags.create')}}" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Create Tag
         </a>
     @endcan
 @endsection
 @section('title_card')
-    List Role
+    List Category
 @endsection
 @section('content_card')
     <div class="table-responsive">
-        <table class="table table-row-dashed gy-5 gs-7">
+        <table id="kt_datatable_horizontal_scroll" class="table table-row-dashed gy-5 gs-7">
             <thead>
             <tr class="fw-semibold fs-6 text-gray-800">
                 <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.9px;">
@@ -53,46 +53,45 @@
                     </div>
                 </th>
                 <th class="min-w-50">#</th>
-                <th class="min-w-200px">Name Role</th>
+                <th class="min-w-200px">Name Tag</th>
                 <th class="min-w-150px">Slug</th>
-                <th class="min-w-200px">Description</th>
-                <th class="min-w-200px">Action</th>
+                @if(auth()->user()->can('tag-update') || auth()->user()->can('tag-delete') || auth()->user()->can('tag-restore'))
+                    <th class="min-w-100px">Action</th>
+                @endif
+
             </tr>
             </thead>
             <tbody>
-            @foreach($roles as $role)
+            @foreach($tags as $tag)
                 <tr>
                     <td>
                         <div class="form-check form-check-sm form-check-custom form-check-solid">
                             <input class="form-check-input" type="checkbox" value="1">
                         </div>
                     </td>
-                    <td>{{$role->id}}</td>
-                    <td>{{$role->name}}</td>
-                    <td>{{$role->slug}}</td>
-                    <td>{{$role->description}}</td>
-
+                    <td>{{$tag->id}}</td>
+                    <td>{{$tag->name}}</td>
+                    <td>{{$tag->slug}}</td>
                     <td>
-                        @can('role-update')
-                            <a href="{{route('admin.roles.edit',$role->id)}}"
+                        @can('tag-update')
+                            <a href="{{route('admin.tags.edit',$tag->id)}}"
                                class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2"
                                title="Edit">
                                 <i class="fa fa-edit"></i>
                             </a>
                         @endcan
-
-                        @if($role->deleted_at == null)
-                            @can('role-delete')
-                                <a href="{{route('admin.roles.delete',$role->id)}}"
-                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger"
-                                   title="Delete">
+                        @if($tag->deleted_at == null)
+                            @can('tag-delete')
+                                <a href="{{route('admin.tags.delete',$tag->id)}}"
+                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger mr-2"
+                                   title="Edit">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             @endcan
                         @else
-                            @can('role-restore')
-                                <a href="{{route('admin.roles.restore',$role->id)}}"
-                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning"
+                            @can('tag-delete')
+                                <a href="{{route('admin.tags.restore',$tag->id)}}"
+                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning mr-2"
                                    title="Restore">
                                     <i class="fa fa-undo"></i>
                                 </a>
@@ -107,8 +106,7 @@
     </div>
 @endsection
 @section('footer_card')
-    {{$roles->links()}}
-
+    {{$tags->links()}}
 @endsection
 @section('content_layout')
     <!--begin::Card-->

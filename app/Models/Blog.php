@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Blog extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
     use SoftDeletes;
     public function category(): BelongsTo

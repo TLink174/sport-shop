@@ -139,7 +139,7 @@
                                     <!--begin::Wrapper-->
                                     <div class="row">
                                         @foreach($permissionCategory->permissions as $permission)
-                                            <div class="col col-auto min-w-175px ">
+                                            <div class="col col-auto min-w-150px ">
                                                 <label
                                                     class="form-check form-check-custom form-check-solid form-check-@if($permission->value == 'view')success @elseif($permission->value == 'create')success @elseif($permission->value == 'edit')warning @elseif($permission->value == 'delete')danger @elseif($permission->value == 'restore')warning @endif">
                                                     <input class="form-check-input child-permission "

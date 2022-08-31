@@ -32,9 +32,11 @@
     List Category
 @endsection
 @section('actions_layout')
+    @can('category-create')
     <a href="{{route('admin.categories.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
         <i class="fa fa-plus"></i> Add Category
     </a>
+    @endcan
 @endsection
 @section('title_card')
     List Category
@@ -57,7 +59,9 @@
                 <th class="min-w-200px">Parent Category</th>
                 <th class="min-w-200px">Count Blog</th>
                 <th class="min-w-100px">Status</th>
-                <th class="min-w-200px">Action</th>
+                @can('category-update', 'category-delete', 'category-restore')
+                    <th class="min-w-100px">Action</th>
+                @endcan
             </tr>
             </thead>
             <tbody>
@@ -85,20 +89,26 @@
                             <span class="badge badge-danger">Delete</span>
                     @endif
                     <td>
+                        @can('category-update')
                         <a href="{{route('admin.categories.edit', $category->id)}}"
                            class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
                             <i class="fa fa-edit"></i>
                         </a>
+                        @endcan
                         @if($category->deleted_at == null)
+                            @can('category-delete')
                             <a href="{{route('admin.categories.delete', $category->id)}}"
                                class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
                                 <i class="fa fa-trash"></i>
                             </a>
+                            @endcan
                         @else
+                            @can('category-restore')
                             <a href="{{route('admin.categories.restore', $category->id)}}"
                                class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">
                                 <i class="fa fa-undo"></i>
                             </a>
+                            @endcan
                         @endif
                     </td>
                 </tr>
@@ -110,7 +120,6 @@
 @endsection
 @section('footer_card')
     {{$categories->links()}}
-
 @endsection
 @section('content_layout')
     <!--begin::Card-->

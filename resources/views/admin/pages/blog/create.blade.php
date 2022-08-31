@@ -39,7 +39,7 @@
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
                 "searchreplace wordcount visualblocks visualchars code fullscreen",
                 "insertdatetime media nonbreaking save table directionality",
-                "emoticons template paste textpattern autoresize"
+                "emoticons template paste textpattern autoresize  "
             ],
             toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
             file_picker_callback: function (callback, value, meta) {
@@ -89,9 +89,12 @@
     Create Blog
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.categories.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List Blog
-    </a>
+    @can('create-blog')
+        <a href="{{route('admin.blogs.create')}}" class="btn btn-primary">
+            <i class="la la-plus-circle"></i>
+            Create Blog
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     Create Blog
@@ -125,7 +128,7 @@
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Status</label>
             <select class="form-select form-select-solid" data-control="select2"
-                    data-placeholder="Select status" data-select2-id="1" name="status">
+                    data-placeholder="Select status" data-select2-id="2" name="status">
                 <option value="1" >Publish</option>
                 <option value="0" >Draft</option>
                 <option value="2" >Private</option>

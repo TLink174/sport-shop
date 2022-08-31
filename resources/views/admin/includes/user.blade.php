@@ -11,7 +11,9 @@
             <!--begin::Username-->
             <div class="d-flex flex-column">
                 <div class="fw-bold d-flex align-items-center fs-5">@yield('name_user')
-                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
+
+                </div>
+
                 <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">@yield('email_user')</a>
             </div>
             <!--end::Username-->
@@ -20,6 +22,11 @@
     <!--end::Menu item-->
     <!--begin::Menu separator-->
     <div class="separator my-2"></div>
+    <div class="menu-item px-5">
+        @foreach(auth()->user()->roles as $role)
+            <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">{{$role->name}}</span>
+        @endforeach
+    </div>
     <!--end::Menu separator-->
     <!--begin::Menu item-->
     <div class="menu-item px-5">
@@ -37,9 +44,7 @@
     </div>
     <!--end::Menu item-->
     <!--begin::Menu item-->
-    <div class="menu-item px-5">
-        <a href="../../demo1/dist/account/statements.html" class="menu-link px-5">My Statements</a>
-    </div>
+
     <!--end::Menu item-->
     <!--begin::Menu separator-->
     <div class="separator my-2"></div>
@@ -52,7 +57,7 @@
     <!--end::Menu item-->
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+        <a href="{{route('admin.auth.logout')}}" class="menu-link px-5">Sign Out</a>
     </div>
     <!--end::Menu item-->
 </div>

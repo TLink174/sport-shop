@@ -13,7 +13,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
     />
 
-
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
@@ -37,9 +36,11 @@
     List Blog
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-plus"></i> Add Blog
-    </a>
+    @can('blog-create')
+        <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+            <i class="fa fa-plus"></i> Add Blog
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     List Blog

@@ -21,7 +21,7 @@
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'users';
+        $menu_parent = 'user';
         $menu_child = 'index';
     @endphp
 @endsection
@@ -32,9 +32,11 @@
     List User
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.users.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-plus"></i> Add User
-    </a>
+    @can('user-create')
+        <a href="{{route('admin.users.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+            <i class="fa fa-plus"></i> Create User
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     List User
@@ -53,7 +55,9 @@
                 <th class="min-w-50">#</th>
                 <th class="min-w-200px">Name User</th>
                 <th class="min-w-200px">Email User</th>
-                <th class="min-w-200px">Action</th>
+                @can('user-update', 'user-delete', 'user-view', 'user-restore')
+                    <th class="min-w-200px">Action</th>
+                @endcan
             </tr>
             </thead>
             <tbody>
@@ -68,21 +72,20 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
+                        @can('user-update')
                         <a href="{{route('admin.users.edit', $user->id)}}"
                            class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
                             <i class="fa fa-edit"></i>
                         </a>
+                        @endcan
+                        @can('user-delete')
                         @if($user->deleted_at == null)
                             <a href="{{route('admin.users.delete', $user->id)}}"
                                class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
                                 <i class="fa fa-trash"></i>
                             </a>
-                            {{--                        @else--}}
-                            {{--                            <a href="{{route('admin.categories.restore', $category->id)}}"--}}
-                            {{--                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">--}}
-                            {{--                                <i class="fa fa-undo"></i>--}}
-                            {{--                            </a>--}}
                         @endif
+                        @endcan
                     </td>
                 </tr>
             @endforeach

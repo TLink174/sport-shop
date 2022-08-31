@@ -100,11 +100,7 @@
 @section('content_card')
     <form action="{{route('admin.roles.update',$role->id)}}" method="post">
         @csrf
-        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_update_role_scroll" data-kt-scroll="true"
-             data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
-             data-kt-scroll-dependencies="#kt_modal_update_role_header"
-             data-kt-scroll-wrappers="#kt_modal_update_role_scroll" data-kt-scroll-offset="300px"
-             style="max-height: 418px;">
+        <div class="d-flex flex-column me-n7 pe-7" >
             <!--begin::Input group-->
             <div class="fv-row mb-10 fv-plugins-icon-container">
                 <!--begin::Label-->
@@ -162,9 +158,9 @@
                                     <!--begin::Wrapper-->
                                     <div class="row">
                                         @foreach($permissionCategory->permissions as $permission)
-                                            <div class="col col-auto min-w-175px">
+                                            <div class="col col-auto min-w-150px">
                                                 <label
-                                                    class="form-check form-check-custom form-check-solid form-check-@if($permission->value == 'view')success @elseif($permission->value == 'create')success @elseif($permission->value == 'edit')warning @elseif($permission->value == 'delete')danger @elseif($permission->value == 'restore')warning @endif">
+                                                    class="form-check form-check-custom form-check-solid form-check-@if(strtolower($permission->value) == 'view')success @elseif(strtolower($permission->value) == 'create')success @elseif(strtolower($permission->value) == 'edit')warning @elseif(strtolower($permission->value) == 'delete')danger @elseif(strtolower($permission->value) == 'restore')warning @endif">
                                                     <input class="form-check-input child-permission" type="checkbox"
                                                            value="{{$permission->id}}"
                                                            name="permissions[]"
@@ -196,7 +192,7 @@
             </div>
             <!--end::Permissions-->
         </div>
-        <div class="mb-10">
+        <div class="mb-10 mt-5">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
                 <i class="fa fa-save"></i> Save
             </button>

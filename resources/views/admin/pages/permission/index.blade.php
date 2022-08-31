@@ -32,9 +32,11 @@
     List Permission
 @endsection
 @section('actions_layout')
+    @can('permission-create')
     <a href="{{route('admin.permissions.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
         <i class="fa fa-plus"></i> Add Permission
     </a>
+    @endcan
 @endsection
 @section('title_card')
     List Permission
@@ -75,7 +77,9 @@
                             <th class="min-w-200px">Name Permission</th>
                             <th class="min-w-150px">Slug</th>
                             <th class="min-w-200px">Description</th>
+                            @can('permission-update','permission-delete','permission-restore')
                             <th class="min-w-200px">Action</th>
+                            @endcan
                         </tr>
                         </thead>
                         <tbody>
@@ -93,15 +97,19 @@
 
                                 <td>
                                     @if($permission->deleted_at == null)
+                                        @can('permission-delete')
                                         <a href="{{route('admin.permissions.delete', $permission->id)}}"
                                            class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
                                             <i class="fa fa-trash"></i>
                                         </a>
+                                        @endcan
                                     @else
+                                        @can('permission-restore')
                                         <a href="{{route('admin.permissions.restore', $permission->id)}}"
                                            class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">
                                             <i class="fa fa-undo"></i>
                                         </a>
+                                        @endcan
                                     @endif
                                 </td>
                             </tr>

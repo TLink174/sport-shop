@@ -54,7 +54,9 @@
                 <th class="min-w-200px">Name Permission Category</th>
                 <th class="min-w-150px">Slug</th>
                 <th class="min-w-200px">Description</th>
-                <th class="min-w-200px">Action</th>
+                @can('permission-category-update', 'permission-category-delete', 'permission-category-restore')
+                    <th class="min-w-200px">Action</th>
+                @endcan
             </tr>
             </thead>
             <tbody>
@@ -76,15 +78,21 @@
                             <i class="fa fa-edit"></i>
                         </a>
                         @if($permissionCategory->deleted_at == null)
-                            <a href="{{route('admin.permission-categories.delete', $permissionCategory->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
-                                <i class="fa fa-trash"></i>
-                            </a>
+                            @can('permission-category-delete')
+                                <a href="{{route('admin.permission-categories.delete', $permissionCategory->id)}}"
+                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger"
+                                   title="Delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            @endcan
                         @else
-                            <a href="{{route('admin.permission-categories.restore', $permissionCategory->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">
-                                <i class="fa fa-undo"></i>
-                            </a>
+                            @can('permission-category-restore')
+                                <a href="{{route('admin.permission-categories.restore', $permissionCategory->id)}}"
+                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning"
+                                   title="Restore">
+                                    <i class="fa fa-undo"></i>
+                                </a>
+                            @endcan
                         @endif
                     </td>
                 </tr>
@@ -95,7 +103,7 @@
     </div>
 @endsection
 @section('footer_card')
-{{--    {{$permissionCategories->links()}}--}}
+    {{--    {{$permissionCategories->links()}}--}}
 
 @endsection
 @section('content_layout')

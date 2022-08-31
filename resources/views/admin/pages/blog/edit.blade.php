@@ -89,9 +89,12 @@
     Edit Blog [ {{$blog->title}} ]
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List Blog
-    </a>
+    @can('create-blog')
+        <a href="{{route('admin.blogs.create')}}" class="btn btn-primary">
+            <i class="la la-plus-circle"></i>
+            Create Blog
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     Edit Blog [{{$blog->title}} ]
@@ -109,7 +112,8 @@
             <select class="form-select form-select-solid" data-control="select2"
                     data-placeholder="Select category" data-select2-id="1" name="id_category">
                 @foreach($categories as $category)
-                    <option @if($blog->id_category == $category->id) selected @endif value="{{$category->id}}">{{$category->name}}</option>
+                    <option @if($blog->id_category == $category->id) selected
+                            @endif value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -118,7 +122,8 @@
                 <span class="input-group-btn"><a id="lfm" data-input="thumbnail" data-preview="holder"
                                                  class="btn btn-primary"><i
                             class="fa fa-picture-o"></i> Choose</a></span>
-                <input name="image_path" id="thumbnail" class="form-control" type="text" name="filepath" value="{{$blog->image_path}}">
+                <input name="image_path" id="thumbnail" class="form-control" type="text" name="filepath"
+                       value="{{$blog->image_path}}">
             </div>
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
@@ -135,9 +140,11 @@
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Tag</label>
             <select class="form-select form-select-solid tag2 "
-                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="tags[]">
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple"
+                    name="tags[]">
                 @foreach($tags as $tag)
-                    <option @if(in_array($tag->id, $blog->tags->pluck('id')->toArray())) selected @endif value="{{$tag->name}}">{{$tag->name}}</option>
+                    <option @if(in_array($tag->id, $blog->tags->pluck('id')->toArray())) selected
+                            @endif value="{{$tag->name}}">{{$tag->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -148,7 +155,7 @@
         </div>
         <div class="mb-10">
             @php
-            @endphp
+                @endphp
             <label for="exampleFormControlInput1" class="required form-label">Content</label>
             <textarea name="content" class="form-control form-control-solid my-editor"
                       placeholder="Enter content">{{$blog->content}}</textarea>

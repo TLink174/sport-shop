@@ -29,9 +29,11 @@
     Create User
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.users.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List User
-    </a>
+    @can('user-list')
+        <a href="{{route('admin.users.index')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+            <i class="fa fa-list"></i> List User
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     Create User

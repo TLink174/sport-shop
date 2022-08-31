@@ -14,7 +14,7 @@
         @csrf
         <div class="form-group">
             <label for="exampleFormControlInput1" class="required form-label">Email</label>
-            <input name="email" type="email" class="form-control form-control-solid"
+            <input name="email" type="text" class="form-control form-control-solid"
                    placeholder="Enter email" {{old('email')}}>
         </div>
         <div class="form-group">

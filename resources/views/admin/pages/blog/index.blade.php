@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    List Blog - Admin
+    List Blog - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
     Nam 077
@@ -32,9 +32,11 @@
     List Blog
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-plus"></i> Add Blog
-    </a>
+    @can('blog-create')
+        <a href="{{route('admin.blogs.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+            <i class="fa fa-plus"></i> Add Blog
+        </a>
+    @endcan
 @endsection
 @section('title_card')
     List Blog
@@ -51,71 +53,88 @@
                     </div>
                 </th>
                 <th class="min-w-50">#</th>
-                <th class="min-w-200">Title</th>
-                <th class="min-w-150">Slug</th>
-                <th class="min-w-200">Category</th>
-                <th class="min-w-200">Image</th>
-                <th class="min-w-200">Description</th>
-                <th class="min-w-200">Status</th>
-                <th class="min-w-200">Action</th>
+                <th class="min-w-200px">Title Blog</th>
+                <th class="min-w-150px">Slug</th>
+                <th class="min-w-150px">Tag</th>
+                <th class="min-w-200px">Image</th>
+                <th class="min-w-200px">Description</th>
+                <th class="min-w-100px">Status</th>
+                @foreach($blogs as $blog)
+                    @if((auth()->user()->can('blog-update',$blog->id)) || (auth()->user()->can('blog-delete',$blog->id)) || (auth()->user()->can('blog-restore',$blog->id)))
+                        <th class="min-w-100px">Action</th>
+                        @break
+                    @endif
+                @endforeach
+
             </tr>
             </thead>
             <tbody>
             @foreach($blogs as $blog)
-                <tr>
-                    <td>
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1">
-                        </div>
-                    </td>
-                    <td>{{$blog->id}}</td>
-                    <td>{{$blog->title}}</td>
-                    <td>{{$blog->slug}}</td>
-                    <td>{{$blog->category->name}}</td>
-                    <td>
-                        <img src="{{$blog->image_path}}" alt="{{$blog->title}}" width="100px">
-                    </td>
-                    <td class="mw-125px">{{$blog->description}}</td>
-                    <td>
-                        @if($blog->status == 1)
-                            <span class="badge badge-success">Publish</span>
-                        @elseif($blog->status == 0)
-                            <span class="badge badge-info">Draft</span>
-                        @elseif($blog->status == 2)
-                            <span class="badge badge-warning">Private</span>
-                        @elseif($blog->status == 3)
-                            <span class="badge badge-danger">Trash</span>
-                    @endif
-                    <td>
-                        <a href="{{route('admin.blogs.edit', $blog->id)}}"
-                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        <a href="{{route('admin.blogs.view', $blog->id)}}"
-                           class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-success mr-2" title="View">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                        @if($blog->status == 1)
-                            <a href="{{route('admin.blogs.delete', $blog->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        @elseif($blog->status == 3)
-                            <a href="{{route('admin.blogs.restore', $blog->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">
-                                <i class="fa fa-undo"></i>
-                            </a>
+                @can('blog-view',$blog->id)
+                    <tr>
+                        <td>
+                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="1">
+                            </div>
+                        </td>
+                        <td>{{$blog->id}}</td>
+                        <td>{{$blog->title}}</td>
+                        <td>{{$blog->slug}}</td>
+                        <td>
+                                @foreach($blog->tags as $tag)
+                                    <span class="badge badge-primary">{{$tag->name}}</span>
+                                @endforeach
+                        </td>
+
+                        <td>
+                            <img class="img-fluid" src="{{$blog->image_path}}" alt="">
+                        </td>
+                        <td>{{$blog->description}}</td>
+                        <td>
+                            @if($blog->status == 1)
+                                <span class="badge badge-success">Active</span>
+                            @elseif($blog->status == 0)
+                                <span class="badge badge-info">Inactive</span>
+                            @elseif($blog->status == 2)
+                                <span class="badge badge-warning">Pending</span>
+                            @elseif($blog->status == 3)
+                                <span class="badge badge-danger">Delete</span>
                         @endif
-                    </td>
-                </tr>
+                        <td>
+                            @can('blog-update',$blog->id)
+                                <a href="{{route('admin.blogs.edit', $blog->id)}}"
+                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2"
+                                   title="Edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            @endcan
+                            @if($blog->deleted_at == null)
+                                @can('blog-delete',$blog->id)
+                                    <a href="{{route('admin.blogs.delete', $blog->id)}}"
+                                       class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger"
+                                       title="Delete">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                @endcan
+
+                                {{--                            @can('blog-restore')--}}
+                                {{--                                <a href="{{route('admin.blogs.restore', $blog->id)}}"--}}
+                                {{--                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">--}}
+                                {{--                                    <i class="fa fa-undo"></i>--}}
+                                {{--                                </a>--}}
+                                {{--                            @endcan--}}
+                            @endif
+                        </td>
+                    </tr>
+                @endcan
             @endforeach
+
             </tbody>
         </table>
     </div>
 @endsection
 @section('footer_card')
     {{$blogs->links()}}
-
 @endsection
 @section('content_layout')
     <!--begin::Card-->

@@ -57,10 +57,20 @@
                 <div class="form-check form-check-custom form-check-solid">
                     <input class="form-check-input" type="checkbox" checked name="permissions[]" value="list">
                     <label class="form-check-label" for="">
+                        List Permission
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <div class="form-check form-check-custom form-check-custom form-check-solid">
+                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="view">
+                    <label class="form-check-label" for="">
                         View Permission
                     </label>
                 </div>
             </div>
+
             <div class="mb-10">
                 <div class="form-check form-check-custom form-check-success form-check-solid">
                     <input class="form-check-input" type="checkbox" checked name="permissions[]" value="create">
@@ -69,11 +79,12 @@
                     </label>
                 </div>
             </div>
+
             <div class="mb-10">
                 <div class="form-check form-check-custom form-check-warning form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="edit">
+                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="update">
                     <label class="form-check-label" for="">
-                        Edit Permission
+                        Update Permission
                     </label>
                 </div>
             </div>

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    private UserService $userService;
+
     public function __construct(UserService $userService)
     {
         $this->userService = $userService;
@@ -24,11 +26,6 @@ class AdminController extends Controller
 
     public function loginPost(Request $request)
     {
-
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
         $user = $this->userService->checkLogin($request->email, $request->password);
         if ($user) {
             auth()->login($user);
@@ -42,7 +39,7 @@ class AdminController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.auth.login');
     }
 
     public function register()

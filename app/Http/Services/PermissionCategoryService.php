@@ -37,4 +37,22 @@ class PermissionCategoryService
         return $this->permissionCategory->find($id);
     }
 
+    public function update($request, $id)
+    {
+        $permissionCategory = $this->permissionCategory->find($id);
+        $permissionCategory->update([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'description' => $request->description,
+        ]);
+        $permissions = $permissionCategory->permissions;
+        foreach ($permissions as $permission) {
+            $permission->update([
+                'name' => ucfirst($permission->value).' '.ucfirst($permissionCategory->name),
+                'slug' => Str::slug($permission->value . ' ' . $permissionCategory->name),
+            ]);
+        }
+        return $permissionCategory;
+    }
+
 }
