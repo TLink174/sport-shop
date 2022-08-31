@@ -33,7 +33,7 @@ Route::get('/admin/register', [AdminController::class, 'register'])->name('admin
 Route::post('/admin/register-post', [AdminController::class, 'registerPost'])->name('admin.auth.register-post');
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.auth.logout');
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/file-manager', [AdminController::class, 'fileManager'])->name('admin.file-manager.index');
     Route::group(['prefix' => 'category'], function () {
         Route::get('/', [AdminCategoryController::class, 'index'])->name('admin.categories.index')->middleware('can:category-list');
