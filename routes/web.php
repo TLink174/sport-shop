@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminPermissionController;
 use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use UniSharp\LaravelFilemanager\Lfm;
 
@@ -24,9 +25,12 @@ use UniSharp\LaravelFilemanager\Lfm;
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     Lfm::routes();
 });
-Route::get('/', function () {
-    return view('admin.index');
-})->name('home');
+
+Route::group(['prefix' => '/'], function (){
+    Route::get('/', [HomeController::class, 'homePage'])->name('home.index');
+    Route::get('/detail/{id}', [HomeController::class, 'detailPage'])->name('home.detail');
+});
+
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.auth.login');
 Route::post('/admin/login-post', [AdminController::class, 'loginPost'])->name('admin.auth.login-post');
 Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.auth.register');

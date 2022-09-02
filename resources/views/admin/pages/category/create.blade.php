@@ -14,6 +14,10 @@
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script !src="">
+        $('#lfm').filemanager('image');
+    </script>
 
 @endsection
 @section('menu')
@@ -46,6 +50,16 @@
             <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
             <input name="name" type="text" class="form-control form-control-solid"
                    placeholder="Enter name category" {{old('name')}}>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Image Category</label>
+            <div class="input-group">
+                <span class="input-group-btn"><a id="lfm" data-input="thumbnail" data-preview="holder"
+                                                 class="btn btn-primary"><i
+                            class="fa fa-picture-o"></i> Choose</a></span>
+                <input name="image_path" id="thumbnail" class="form-control" type="text" name="filepath">
+            </div>
+            <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Parent Category</label>

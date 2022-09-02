@@ -127,16 +127,18 @@
             </div>
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
+        @if(auth()->user()->isBlogManager())
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Status</label>
             <select class="form-select form-select-solid" data-control="select2"
                     data-placeholder="Select status" data-select2-id="1" name="status">
                 <option value="1" @if($blog->status == 1) selected @endif>Publish</option>
                 <option value="0" @if($blog->status == 0) selected @endif>Draft</option>
-                <option value="2" @if($blog->status == 2) selected @endif>Private</option>
+                <option value="2" @if($blog->status == 2) selected @endif>Pending</option>
                 <option value="3" @if($blog->status == 3) selected @endif>Trash</option>
             </select>
         </div>
+        @endif
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Tag</label>
             <select class="form-select form-select-solid tag2 "

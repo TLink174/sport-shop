@@ -10,6 +10,10 @@
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script !src="">
+        $('#lfm').filemanager('image');
+    </script>
 @endsection
 @section('menu')
     @php
@@ -42,6 +46,22 @@
                    placeholder="Enter name category" {{old('name')}}>
         </div>
         <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Image Category</label>
+            <div class="input-group">
+                <span class="input-group-btn"><a id="lfm" data-input="thumbnail" data-preview="holder"
+                                                 class="btn btn-primary"><i
+                            class="fa fa-picture-o"></i> Choose</a></span>
+                <input
+                    name="image_path"
+                    id="thumbnail"
+                    class="form-control"
+                    type="text"
+                    value="{{$category -> image_path}}"
+                    name="filepath">
+            </div>
+            <img id="holder" style="margin-top:15px;max-height:100px;">
+        </div>
+        <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Parent Category</label>
             <select class="form-select form-select-solid" data-control="select2"
                     data-placeholder="Select parent category" data-select2-id="1" name="parent_id">
@@ -54,7 +74,8 @@
         </div>
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
-            <textarea name="description" id="" cols="20" rows="10" class="form-control form-control-solid">{{$category -> name}}</textarea>
+            <textarea name="description" id="" cols="20" rows="10"
+                      class="form-control form-control-solid">{{$category -> name}}</textarea>
         </div>
         <div class="mb-10">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">

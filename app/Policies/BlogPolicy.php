@@ -18,7 +18,7 @@ class BlogPolicy
      */
     public function viewAny(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         return $user->hasPermissionTo('blog-list');
@@ -33,7 +33,7 @@ class BlogPolicy
      */
     public function view(User $user, $id)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         $blog = Blog::withTrashed()->find($id);
@@ -51,7 +51,7 @@ class BlogPolicy
      */
     public function create(User $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         return $user->hasPermissionTo('blog-create');
@@ -66,7 +66,7 @@ class BlogPolicy
      */
     public function update(User $user, $id)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         $blog = Blog::withTrashed()->find($id);
@@ -85,7 +85,7 @@ class BlogPolicy
     public
     function delete(User $user, $id)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         $blog = Blog::withTrashed()->find($id);
@@ -104,7 +104,7 @@ class BlogPolicy
      */
     public function restore(User $user, $id)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         $blog = Blog::withTrashed()->find($id);
@@ -125,7 +125,7 @@ class BlogPolicy
     public function forceDelete(User $user, Blog $blog)
     {
         //
-        if ($user->isAdmin()) {
+        if ($user->isAdmin()|| $user->isBlogManager()) {
             return true;
         }
         if ($user->hasPermissionTo('blog-force-delete') && $blog->id_user == $user->id) {

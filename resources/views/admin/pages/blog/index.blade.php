@@ -81,9 +81,9 @@
                         <td>{{$blog->title}}</td>
                         <td>{{$blog->slug}}</td>
                         <td>
-                                @foreach($blog->tags as $tag)
-                                    <span class="badge badge-primary">{{$tag->name}}</span>
-                                @endforeach
+                            @foreach($blog->tags as $tag)
+                                <span class="badge badge-primary">{{$tag->name}}</span>
+                            @endforeach
                         </td>
 
                         <td>
@@ -92,7 +92,7 @@
                         <td>{{$blog->description}}</td>
                         <td>
                             @if($blog->status == 1)
-                                <span class="badge badge-success">Active</span>
+                                <span class="badge badge-success">Publish</span>
                             @elseif($blog->status == 0)
                                 <span class="badge badge-info">Inactive</span>
                             @elseif($blog->status == 2)
@@ -116,13 +116,15 @@
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 @endcan
+                            @else
+                                @can('blog-restore',$blog->id)
+                                    <a href="{{route('admin.blogs.restore', $blog->id)}}"
+                                       class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning"
+                                       title="Restore">
+                                        <i class="fa fa-undo"></i>
+                                    </a>
+                                @endcan
 
-                                {{--                            @can('blog-restore')--}}
-                                {{--                                <a href="{{route('admin.blogs.restore', $blog->id)}}"--}}
-                                {{--                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">--}}
-                                {{--                                    <i class="fa fa-undo"></i>--}}
-                                {{--                                </a>--}}
-                                {{--                            @endcan--}}
                             @endif
                         </td>
                     </tr>

@@ -36,6 +36,7 @@ class CategoryService
             'parent_id' => $request->parent_id ?? 0,
             'status' => $request->status ?? 1,
             'description' => $request->description ?? null,
+            'image_path' => $request->image_path ?? null,
             'slug' => Str::slug($request->name)
         ]);
     }
@@ -47,6 +48,7 @@ class CategoryService
             'name' => $request->name ?? $category->name,
             'parent_id' => $request->parent_id ?? $category->parent_id,
             'status' => $request->status ?? $category->status,
+            'image_path' => $request->image_path ?? $category->image_path,
             'description' => $request->description ?? $category->description,
             'slug' => Str::slug($request->name) ?? $category->slug
         ]);
@@ -78,6 +80,11 @@ class CategoryService
             ]);
         }
         $category->restore();
+    }
+
+    public function getAllCategoryPublic(int $int)
+    {
+        return $this->category->where('status', 1)->paginate($int);
     }
 
 

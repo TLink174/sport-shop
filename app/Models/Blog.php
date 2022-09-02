@@ -34,4 +34,15 @@ class Blog extends Model
     {
         return $this-> belongsTo(User::class, 'id_user');
     }
+
+    public function getAllBlogPublic($limit)
+    {
+        return $this->where('status', 1)->paginate($limit);
+    }
+    public function comments(): BelongsToMany{
+        return $this->belongsToMany(Comment::class, BlogComment::class, 'id_blog', 'id_comment');
+    }
+
+
+
 }

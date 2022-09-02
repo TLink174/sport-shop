@@ -36,7 +36,7 @@ class BlogService
             'id_user' => auth()->user()->id,
             'slug' => Str::slug($request->title),
             'image_path' => $request->image_path,
-            'status' => $request->status??1,
+            'status' => $request->status??2,
             'image_avatar' => $request->image_avatar??null,
             'description' => $request->description??null,
         ]);
@@ -87,10 +87,19 @@ class BlogService
         if ($blog && $blog->trashed()) {
             $blog->restore();
             $blog->update([
-                'status' => 1
+                'status' => 2
             ]);
         }
         $blog->restore();
+    }
+    public function getAllBlogPublic($limit)
+    {
+        return $this->blog->getAllBlogPublic($limit);
+    }
+
+    public function getBlogById($id)
+    {
+        return $this->getById($id);
     }
 
 

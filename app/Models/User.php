@@ -85,6 +85,18 @@ class User extends Authenticatable
     {
         return $this->checkPermission($string);
     }
+    public function isBlogManager()
+    {
+        if($this->isAdmin()){
+            return true;
+        }
+        $roles = $this->roles()->get();
+        foreach ($roles as $role){
+            if($role->slug == 'blog-manager'){
+                return true;
+            }
+        }
+    }
     public function isAdmin()
     {
         if ($this->name == 'admin') {

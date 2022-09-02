@@ -70,10 +70,7 @@
     </script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script !src="">
-        //
-
         $('#lfm').filemanager('image');
-
     </script>
 @endsection
 @section('menu')
@@ -125,15 +122,17 @@
             </div>
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
-        <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Status</label>
-            <select class="form-select form-select-solid" data-control="select2"
-                    data-placeholder="Select status" data-select2-id="2" name="status">
-                <option value="1" >Publish</option>
-                <option value="0" >Draft</option>
-                <option value="2" >Private</option>
-            </select>
-        </div>
+        @if(auth()->user()->isBlogManager())
+            <div class="mb-10">
+                <label for="exampleFormControlInput1" class="required form-label">Status</label>
+                <select class="form-select form-select-solid" data-control="select2"
+                        data-placeholder="Select status" data-select2-id="2" name="status">
+                    <option value="1">Publish</option>
+                    <option value="0">Draft</option>
+                    <option value="2">Private</option>
+                </select>
+            </div>
+        @endif
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Tag</label>
             <select class="form-select form-select-solid tag2 "

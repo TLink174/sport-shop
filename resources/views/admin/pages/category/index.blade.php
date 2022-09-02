@@ -57,6 +57,7 @@
                 <th class="min-w-150px">Slug</th>
                 <th class="min-w-200px">Description</th>
                 <th class="min-w-200px">Parent Category</th>
+                <th class="min-w-200px">Image Category</th>
                 <th class="min-w-200px">Count Blog</th>
                 <th class="min-w-100px">Status</th>
                 @can('category-update', 'category-delete', 'category-restore')
@@ -77,6 +78,9 @@
                     <td>{{$category->slug}}</td>
                     <td>{{$category->description}}</td>
                     <td>{{$category->parent_id}}</td>
+                    <td>
+                        <img class="img-fluid" src="{{$category->image_path}}" alt="">
+                    </td>
                     <td>{{$category->blogs->count()}}</td>
                     <td>
                         @if($category->status == 1)
