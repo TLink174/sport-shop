@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\BlogService;
 use App\Http\Services\CategoryService;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,6 +19,13 @@ class HomeController extends Controller
     }
 
     public function homePage(){
+        $product = Cart::find(1);
+        if ($product){
+            dd($product);
+        }
+
+
+
         $blogs = $this->blogService->getAllBlogPublic(10);
         $categories = $this->categoryService->getAllCategoryPublic(10);
         if (count($blogs) > 0 && count($categories) > 0){

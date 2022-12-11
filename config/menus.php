@@ -1,92 +1,152 @@
 <?php
 return [
+//    [
+//        'title' => 'Category',
+//        'name' => 'category',
+//        'icon' => 'fa fa-list',
+//        'route' => 'admin.categories.index',
+//        'children' => [
+//            [
+//                'title' => 'List Category',
+//                'gate' => 'category-list',
+//                'icon' => 'fa fa-list',
+//                'name' => 'index',
+//                'route' => 'admin.categories.index',
+//            ],
+//            [
+//                'title' => 'Create Category',
+//                'name' => 'create',
+//                'icon' => 'fa fa-plus',
+//                'gate' => 'category-create',
+//                'route' => 'admin.categories.create',
+//            ],
+//            [
+//                'title' => 'Edit Category',
+//                'name' => 'edit',
+//                'icon' => 'fa fa-edit',
+//                'gate' => 'category-update',
+//            ]
+//
+//        ],
+//    ],
     [
-        'title' => 'Category',
+        'title' => 'Category Product',
+        'type' => 'public',
         'name' => 'category',
         'icon' => 'fa fa-list',
-        'route' => 'admin.categories.index',
+        'route' => 'admin.product-category.index',
         'children' => [
             [
                 'title' => 'List Category',
-                'gate' => 'category-list',
+                'type' => 'public',
                 'icon' => 'fa fa-list',
                 'name' => 'index',
-                'route' => 'admin.categories.index',
+                'route' => 'admin.product-category.index',
             ],
             [
                 'title' => 'Create Category',
                 'name' => 'create',
                 'icon' => 'fa fa-plus',
-                'gate' => 'category-create',
-                'route' => 'admin.categories.create',
+                'type' => 'public',
+                'route' => 'admin.product-category.create',
             ],
             [
                 'title' => 'Edit Category',
                 'name' => 'edit',
+                'type' => 'public',
                 'icon' => 'fa fa-edit',
-                'gate' => 'category-update',
             ]
 
         ],
     ],
     [
-        'title' => 'Blog',
-        'name' => 'blog',
-        'icon' => 'fa fa-blog',
-        'route' => 'admin.blogs.index',
+        'title' => 'Product',
+        'type' => 'public',
+        'name' => 'product',
+        'icon' => 'fa fa-list',
+        'route' => 'admin.product.index',
         'children' => [
             [
-                'title' => 'List Blog',
-                'name' => 'index',
+                'title' => 'List Product',
+                'type' => 'public',
                 'icon' => 'fa fa-list',
-                'gate' => 'blog-list',
-                'route' => 'admin.blogs.index',
+                'name' => 'index',
+                'route' => 'admin.product.index',
             ],
             [
-                'title' => 'Create Blog',
+                'title' => 'Create Product',
                 'name' => 'create',
                 'icon' => 'fa fa-plus',
-                'gate' => 'blog-create',
-                'route' => 'admin.blogs.create',
+                'type' => 'public',
+                'route' => 'admin.product.create',
             ],
             [
-                'title' => 'Edit Blog',
+                'title' => 'Edit Product',
                 'name' => 'edit',
+                'type' => 'public',
                 'icon' => 'fa fa-edit',
-                'gate' => 'blog-list',
             ]
 
         ],
     ],
-    [
-        'title' => 'Tag',
-        'name' => 'tag',
-        'icon' => 'fa fa-tag',
-        'route' => 'admin.tags.index',
-        'children' => [
-            [
-                'title' => 'List Tag',
-                'name' => 'index',
-                'icon' => 'fa fa-list',
-                'gate' => 'tag-list',
-                'route' => 'admin.tags.index',
-            ],
-            [
-                'title' => 'Create Tag',
-                'name' => 'create',
-                'icon' => 'fa fa-plus',
-                'gate' => 'tag-create',
-                'route' => 'admin.tags.create',
-            ],
-            [
-                'title' => 'Edit Tag',
-                'name' => 'edit',
-                'icon' => 'fa fa-edit',
-                'gate' => 'tag-list',
-            ]
-
-        ],
-    ],
+//    [
+//        'title' => 'Blog',
+//        'name' => 'blog',
+//        'icon' => 'fa fa-blog',
+//        'route' => 'admin.blogs.index',
+//        'children' => [
+//            [
+//                'title' => 'List Blog',
+//                'name' => 'index',
+//                'icon' => 'fa fa-list',
+//                'gate' => 'blog-list',
+//                'route' => 'admin.blogs.index',
+//            ],
+//            [
+//                'title' => 'Create Blog',
+//                'name' => 'create',
+//                'icon' => 'fa fa-plus',
+//                'gate' => 'blog-create',
+//                'route' => 'admin.blogs.create',
+//            ],
+//            [
+//                'title' => 'Edit Blog',
+//                'name' => 'edit',
+//                'icon' => 'fa fa-edit',
+//                'gate' => 'blog-list',
+//            ]
+//
+//        ],
+//    ],
+//    [
+//        'title' => 'Tag',
+//        'name' => 'tag',
+//        'icon' => 'fa fa-tag',
+//        'route' => 'admin.tags.index',
+//        'children' => [
+//            [
+//                'title' => 'List Tag',
+//                'name' => 'index',
+//                'icon' => 'fa fa-list',
+//                'gate' => 'tag-list',
+//                'route' => 'admin.tags.index',
+//            ],
+//            [
+//                'title' => 'Create Tag',
+//                'name' => 'create',
+//                'icon' => 'fa fa-plus',
+//                'gate' => 'tag-create',
+//                'route' => 'admin.tags.create',
+//            ],
+//            [
+//                'title' => 'Edit Tag',
+//                'name' => 'edit',
+//                'icon' => 'fa fa-edit',
+//                'gate' => 'tag-list',
+//            ]
+//
+//        ],
+//    ],
     [
         'title' => 'User',
         'name' => 'user',
@@ -114,91 +174,91 @@ return [
                 'icon' => 'fa fa-edit',
             ]
         ],
-      ],
-    [
-        'title' => 'Role',
-        'name' => 'role',
-        'icon' => 'fa fa-user-circle',
-        'route' => 'admin.roles.index',
-        'children' => [
-            [
-                'title' => 'List Role',
-                'name' => 'index',
-                'icon' => 'fa fa-list',
-                'gate' => 'role-list',
-                'route' => 'admin.roles.index',
-            ],
-            [
-                'title' => 'Create Role',
-                'name' => 'create',
-                'icon' => 'fa fa-plus',
-                'gate' => 'role-create',
-                'route' => 'admin.roles.create',
-            ],
-            [
-                'title' => 'Edit Role',
-                'name' => 'edit',
-                'icon' => 'fa fa-edit',
-                'gate' => 'role-update',
-            ]
-        ],
     ],
-    [
-        'title' => 'Permission',
-        'name' => 'permission',
-        'icon' => 'fa fa-key',
-        'route' => 'admin.permissions.index',
-        'children' => [
-            [
-                'title' => 'List Permission',
-                'name' => 'index',
-                'icon' => 'fa fa-list',
-                'gate' => 'permission-list',
-                'route' => 'admin.permissions.index',
-            ],
-            [
-                'title' => 'Create Permission',
-                'name' => 'create',
-                'icon' => 'fa fa-plus',
-                'gate' => 'permission-create',
-                'route' => 'admin.permissions.create',
-            ],
-            [
-                'title' => 'Edit Permission',
-                'gate' => 'permission-update',
-                'name' => 'edit',
-                'icon' => 'fa fa-edit',
-            ]
-        ],
-    ],
-    [
-        'title' => 'Permission Category',
-        'name' => 'permission-category',
-        'icon' => 'fa fa-list',
-        'route' => 'admin.permission-categories.index',
-        'children' => [
-            [
-                'title' => 'List Permission Category',
-                'name' => 'index',
-                'icon' => 'fa fa-list',
-                'gate' => 'permission-category-list',
-                'route' => 'admin.permission-categories.index',
-            ],
-            [
-                'title' => 'Create Permission Category',
-                'name' => 'create',
-                'icon' => 'fa fa-plus',
-                'gate' => 'permission-category-create',
-                'route' => 'admin.permission-categories.create',
-            ],
-            [
-                'title' => 'Edit Permission Category',
-                'name' => 'edit',
-                'icon' => 'fa fa-edit',
-                'gate' => 'permission-category-update',
-            ]
-        ],
-    ],
+//    [
+//        'title' => 'Role',
+//        'name' => 'role',
+//        'icon' => 'fa fa-user-circle',
+//        'route' => 'admin.roles.index',
+//        'children' => [
+//            [
+//                'title' => 'List Role',
+//                'name' => 'index',
+//                'icon' => 'fa fa-list',
+//                'gate' => 'role-list',
+//                'route' => 'admin.roles.index',
+//            ],
+//            [
+//                'title' => 'Create Role',
+//                'name' => 'create',
+//                'icon' => 'fa fa-plus',
+//                'gate' => 'role-create',
+//                'route' => 'admin.roles.create',
+//            ],
+//            [
+//                'title' => 'Edit Role',
+//                'name' => 'edit',
+//                'icon' => 'fa fa-edit',
+//                'gate' => 'role-update',
+//            ]
+//        ],
+//    ],
+//    [
+//        'title' => 'Permission',
+//        'name' => 'permission',
+//        'icon' => 'fa fa-key',
+//        'route' => 'admin.permissions.index',
+//        'children' => [
+//            [
+//                'title' => 'List Permission',
+//                'name' => 'index',
+//                'icon' => 'fa fa-list',
+//                'gate' => 'permission-list',
+//                'route' => 'admin.permissions.index',
+//            ],
+//            [
+//                'title' => 'Create Permission',
+//                'name' => 'create',
+//                'icon' => 'fa fa-plus',
+//                'gate' => 'permission-create',
+//                'route' => 'admin.permissions.create',
+//            ],
+//            [
+//                'title' => 'Edit Permission',
+//                'gate' => 'permission-update',
+//                'name' => 'edit',
+//                'icon' => 'fa fa-edit',
+//            ]
+//        ],
+//    ],
+//    [
+//        'title' => 'Permission Category',
+//        'name' => 'permission-category',
+//        'icon' => 'fa fa-list',
+//        'route' => 'admin.permission-categories.index',
+//        'children' => [
+//            [
+//                'title' => 'List Permission Category',
+//                'name' => 'index',
+//                'icon' => 'fa fa-list',
+//                'gate' => 'permission-category-list',
+//                'route' => 'admin.permission-categories.index',
+//            ],
+//            [
+//                'title' => 'Create Permission Category',
+//                'name' => 'create',
+//                'icon' => 'fa fa-plus',
+//                'gate' => 'permission-category-create',
+//                'route' => 'admin.permission-categories.create',
+//            ],
+//            [
+//                'title' => 'Edit Permission Category',
+//                'name' => 'edit',
+//                'icon' => 'fa fa-edit',
+//                'gate' => 'permission-category-update',
+//            ]
+//        ],
+//    ],
     [
         'title' => 'File Manager',
         'name' => 'file-manager',

@@ -8,7 +8,9 @@ use App\Http\Controllers\AdminPermissionController;
 use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use UniSharp\LaravelFilemanager\Lfm;
 
@@ -101,6 +103,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::post('/update/{id}', [AdminRoleController::class, 'update'])->name('admin.roles.update')->middleware('can:role-update');
         Route::get('/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.roles.delete')->middleware('can:role-delete');
         Route::get('/restore/{id}', [AdminRoleController::class, 'restore'])->name('admin.roles.restore')->middleware('can:role-restore');
+    });
+    Route::group(['prefix' => 'product-category'], function () {
+        Route::get('/', [CategoryProductController::class, 'index'])->name('admin.product-category.index');
+        Route::get('/create', [CategoryProductController::class, 'create'])->name('admin.product-category.create');
+        Route::post('/store', [CategoryProductController::class, 'store'])->name('admin.product-category.store');
+        Route::get('/edit/{id}', [CategoryProductController::class, 'edit'])->name('admin.product-category.edit');
+        Route::post('/update/{id}', [CategoryProductController::class, 'update'])->name('admin.product-category.update');
+        Route::get('/delete/{id}', [CategoryProductController::class, 'destroy'])->name('admin.product-category.delete');
+        Route::get('/restore/{id}', [CategoryProductController::class, 'restore'])->name('admin.product-category.restore');
+    });
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
+        Route::get('/create', [ProductController::class, 'create'])->name('admin.product.create');
+        Route::post('/store', [ProductController::class, 'store'])->name('admin.product.store');
+        Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
+        Route::post('/update/{id}', [ProductController::class, 'update'])->name('admin.product.update');
+        Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
+        Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('admin.product.restore');
     });
 });
 
