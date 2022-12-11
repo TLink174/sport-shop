@@ -56,6 +56,7 @@
                 <th class="min-w-200px">Name Category</th>
                 <th class="min-w-150px">Slug</th>
                 <th class="min-w-200px">Description</th>
+                <th class="min-w-200px">Image</th>
                 <th class="min-w-200px">Count Product</th>
 
                 <th class="min-w-100px">Action</th>
@@ -73,6 +74,9 @@
                     <td>{{$category->name}}</td>
                     <td>{{$category->slug}}</td>
                     <td>{{$category->description}}</td>
+                    <td>
+                        <img class="img-fluid" src="{{$category->image}}" alt="">
+                    </td>
                     <td>{{$category->products->count()}}</td>
 
                     <td>
