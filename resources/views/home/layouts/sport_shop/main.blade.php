@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Foxic HTML Template - Index Page - Sport</title>
+	<title>Sport Shop</title>
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	<!-- Vendor CSS -->
 	<link href="css/vendor/bootstrap.min.css" rel="stylesheet">
@@ -563,9 +563,7 @@
 							<div class="row no-gutters align-items-center">
 								<div class="col-auto"><i class="icon-gift icon--giftAnimate"></i></div>
 								<div class="col">
-									<div class="countdown-txt">WHEN BUYING TWO
-										THINGS A THIRD AS A GIFT
-									</div>
+									<div class="countdown-txt">WHEN BUYING TWO THINGS A THIRD AS A GIFT </div>
 									<div class="countdown js-countdown" data-countdown="2021/07/01"></div>
 								</div>
 							</div>
@@ -574,8 +572,7 @@
 					<div class="minicart-drop-info d-none d-md-block">
 						<div class="shop-feature-single row no-gutters align-items-center">
 							<div class="shop-feature-icon col-auto"><i class="icon-truck"></i></div>
-							<div class="shop-feature-text col"><b>SHIPPING!</b> Continue shopping to add more products
-								and receive free shipping</div>
+							<div class="shop-feature-text col"><b>SHIPPING!</b> Continue shopping to add more products and receive free shipping</div>
 						</div>
 					</div>
 				</div>
