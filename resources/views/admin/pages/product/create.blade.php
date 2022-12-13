@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    Create Permission - Admin - {{ config('app.name') }}
+    Create Product - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
     {{auth()->user()->name}}
@@ -14,42 +14,71 @@
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script !src="">
+        $('#lfm').filemanager('image');
+    </script>
 
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'permission';
+        $menu_parent = 'product';
         $menu_child = 'create';
     @endphp
 @endsection
 @section('title_component')
-    Permission
+    Product
 @endsection
 @section('title_layout')
-    Create Permission
+    Create Product
 @endsection
 @section('actions_layout')
-    <a href="{{route('admin.permissions.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List Permission
+    <a href="{{route('admin.product.create')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+        <i class="fa fa-list"></i> List Product
     </a>
 @endsection
 @section('title_card')
-    Create Permission
+    Create Product
 @endsection
 @section('content_card')
 
-    <form action="{{route('admin.permissions.store')}}" method="post" class="form-control-sm">
+    <form action="{{route('admin.product.store')}}" method="post" class="form-control-sm">
         @csrf
 
 
         <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Category Permission</label>
+            <label for="exampleFormControlInput1" class="required form-label">Category Product</label>
             <select class="form-select form-select-solid" data-control="select2"
                     data-placeholder="Select category" data-select2-id="1" name="id_permission_category">
-                @foreach($permissionCategories as $permissionCategory)
-                    <option value="{{$permissionCategory->id}}">{{$permissionCategory->name}}</option>
+                @foreach($categoryProduct as $productCategory)
+                    <option value="{{$productCategory->id}}">{{$productCategory->name}}</option>
                 @endforeach
             </select>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Name Product</label>
+            <input name="name" type="text" class="form-control form-control-solid"
+                   placeholder="Enter name product" value="{{old('name')}}">
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Image</label>
+            <div class="input-group">
+                <span class="input-group-btn"><a id="lfm" data-input="thumbnail" data-preview="holder"
+                                                 class="btn btn-primary"><i
+                            class="fa fa-picture-o"></i> Choose</a></span>
+                <input name="image" id="thumbnail" class="form-control" type="text" name="filepath">
+            </div>
+            <img id="holder" style="margin-top:15px;max-height:100px;">
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Price</label>
+            <input name="price" type="" class="form-control form-control-solid"
+                   placeholder="Enter price" value="{{old('price')}}">
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Description</label>
+            <textarea name="description" id="" cols="20" rows="10"
+                      class="form-control form-control-solid">{{old('description')}}</textarea>
         </div>
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Choose Permission</label>

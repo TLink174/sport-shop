@@ -4,6 +4,7 @@
 namespace App\Http\Services;
 
 use App\Models\Color;
+use Illuminate\Support\Str;
 
 class ColorService
 {
@@ -16,9 +17,21 @@ class ColorService
         $this->color = $color;
     }
 
+    public function createMultipleColors($colors)
+    {
+        foreach ($colors as $item) {
+            $colorCreated = $this->color->firstOrCreate([
+                'name' => $item,
+                'value' => $item,
+            ]);
+            $colorIds[] = $colorCreated->id;
+        }
+        return $colorIds;
+    }
+
     public function create($request)
     {
-        $colorCreated = $this->color->create([
+        $this->color->firstOrCreate([
             'name' => $request->name,
             'value' => $request->value,
         ]);
@@ -39,6 +52,11 @@ class ColorService
     public function getById($id)
     {
         return $this->color->find($id);
+    }
+
+    public function getPaginated(int $int)
+    {
+        return $this->color->paginate($int);
     }
 
     public function find($id)
