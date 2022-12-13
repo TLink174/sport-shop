@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Services\BlogService;
 use App\Http\Services\CategoryService;
 use App\Models\Cart;
+use App\Models\Size;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,7 +20,7 @@ class HomeController extends Controller
     }
 
     public function homePage(){
-        $product = Cart::find(1);
+        $product = Size::find(1);
         if ($product){
             dd($product);
         }

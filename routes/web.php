@@ -26,6 +26,9 @@ use UniSharp\LaravelFilemanager\Lfm;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('home.pages.index');
+});
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     Lfm::routes();
 });
@@ -124,6 +127,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
         Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('admin.product.restore');
     });
+//<<<<<<< HEAD
     Route::group(['prefix' => 'color'], function () {
         Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
         Route::get('/create', [ColorController::class, 'create'])->name('admin.color.create');
@@ -142,5 +146,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::get('/delete/{id}', [SizeController::class, 'destroy'])->name('admin.size.delete');
         Route::get('/restore/{id}', [SizeController::class, 'restore'])->name('admin.size.restore');
     });
+//=======
+//
+//>>>>>>> 37d453e1697aa819090c0fb4b530f128e06301d3
 });
 

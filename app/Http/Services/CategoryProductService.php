@@ -68,4 +68,13 @@ class CategoryProductService
     {
         return $this->categoryProduct->paginate(10);
     }
+    public function restore($id)
+    {
+        $categoryProduct = $this->categoryProduct->withTrashed()->find($id);
+
+        if ($categoryProduct && $categoryProduct->trashed()) {
+            $categoryProduct->restore();
+        }
+        $categoryProduct->restore();
+    }
 }

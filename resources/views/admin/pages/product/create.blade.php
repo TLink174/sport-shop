@@ -15,6 +15,12 @@
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        $(".tag2").select2({
+            tags: true,
+            tokenSeparators: [',']
+        })
+    </script>
     <script !src="">
         $('#lfm').filemanager('image');
     </script>
@@ -49,7 +55,7 @@
         <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Category Product</label>
             <select class="form-select form-select-solid" data-control="select2"
-                    data-placeholder="Select category" data-select2-id="1" name="id_permission_category">
+                    data-placeholder="Select category" data-select2-id="1" name="id_category">
                 @foreach($categoryProduct as $productCategory)
                     <option value="{{$productCategory->id}}">{{$productCategory->name}}</option>
                 @endforeach
@@ -71,6 +77,24 @@
             <img id="holder" style="margin-top:15px;max-height:100px;">
         </div>
         <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Size</label>
+            <select class="form-select form-select-solid tag2 "
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="sizes[]">
+                @foreach($sizes as $size)
+                    <option value="{{$size->name}}">{{$size->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Color</label>
+            <select class="form-select form-select-solid tag2 "
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="colors[]">
+                @foreach($colors as $color)
+                    <option value="{{$color->name}}">{{$color->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-10">
             <label for="exampleFormControlInput1" class="required form-label">Price</label>
             <input name="price" type="" class="form-control form-control-solid"
                    placeholder="Enter price" value="{{old('price')}}">
@@ -79,60 +103,6 @@
             <label for="exampleFormControlInput1" class="required form-label">Description</label>
             <textarea name="description" id="" cols="20" rows="10"
                       class="form-control form-control-solid">{{old('description')}}</textarea>
-        </div>
-        <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Choose Permission</label>
-            <div class="mb-10">
-                <div class="form-check form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="list">
-                    <label class="form-check-label" for="">
-                        List Permission
-                    </label>
-                </div>
-            </div>
-
-            <div class="mb-10">
-                <div class="form-check form-check-custom form-check-custom form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="view">
-                    <label class="form-check-label" for="">
-                        View Permission
-                    </label>
-                </div>
-            </div>
-
-            <div class="mb-10">
-                <div class="form-check form-check-custom form-check-success form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="create">
-                    <label class="form-check-label" for="">
-                        Create Permission
-                    </label>
-                </div>
-            </div>
-
-            <div class="mb-10">
-                <div class="form-check form-check-custom form-check-warning form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="update">
-                    <label class="form-check-label" for="">
-                        Update Permission
-                    </label>
-                </div>
-            </div>
-            <div class="mb-10">
-                <div class="form-check form-check-custom form-check-danger form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="delete">
-                    <label class="form-check-label" for="">
-                        Delete Permission
-                    </label>
-                </div>
-            </div>
-            <div class="mb-10">
-                <div class="form-check form-check-custom form-check-warning form-check-solid">
-                    <input class="form-check-input" type="checkbox" checked name="permissions[]" value="restore">
-                    <label class="form-check-label" for="">
-                        Restore Permission
-                    </label>
-                </div>
-            </div>
         </div>
         <div class="mb-10">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
