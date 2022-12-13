@@ -149,35 +149,35 @@ return [
 
         ],
     ],
-//    [
-//        'title' => 'Blog',
-//        'name' => 'blog',
-//        'icon' => 'fa fa-blog',
-//        'route' => 'admin.blogs.index',
-//        'children' => [
-//            [
-//                'title' => 'List Blog',
-//                'name' => 'index',
-//                'icon' => 'fa fa-list',
-//                'gate' => 'blog-list',
-//                'route' => 'admin.blogs.index',
-//            ],
-//            [
-//                'title' => 'Create Blog',
-//                'name' => 'create',
-//                'icon' => 'fa fa-plus',
-//                'gate' => 'blog-create',
-//                'route' => 'admin.blogs.create',
-//            ],
-//            [
-//                'title' => 'Edit Blog',
-//                'name' => 'edit',
-//                'icon' => 'fa fa-edit',
-//                'gate' => 'blog-list',
-//            ]
-//
-//        ],
-//    ],
+    [
+        'title' => 'Blog',
+        'name' => 'blog',
+        'icon' => 'fa fa-blog',
+        'route' => 'admin.blogs.index',
+        'children' => [
+            [
+                'title' => 'List Blog',
+                'name' => 'index',
+                'icon' => 'fa fa-list',
+                'gate' => 'blog-list',
+                'route' => 'admin.blogs.index',
+            ],
+            [
+                'title' => 'Create Blog',
+                'name' => 'create',
+                'icon' => 'fa fa-plus',
+                'gate' => 'blog-create',
+                'route' => 'admin.blogs.create',
+            ],
+            [
+                'title' => 'Edit Blog',
+                'name' => 'edit',
+                'icon' => 'fa fa-edit',
+                'gate' => 'blog-list',
+            ]
+
+        ],
+    ],
 //    [
 //        'title' => 'Tag',
 //        'name' => 'tag',
@@ -319,21 +319,21 @@ return [
 //            ]
 //        ],
 //    ],
-//    [
-//        'title' => 'File Manager',
-//        'name' => 'file-manager',
-//        'type' => 'public',
-//        'icon' => 'fa fa-file',
-//        'route' => 'admin.file-manager.index',
-//        'children' => [
-//            [
-//                'title' => 'View File',
-//                'type' => 'public',
-//                'name' => 'index',
-//                'icon' => 'fa fa-list',
-//                'route' => 'admin.file-manager.index',
-//            ]
-//        ],
-//    ]
+    [
+        'title' => 'File Manager',
+        'name' => 'file-manager',
+        'type' => 'public',
+        'icon' => 'fa fa-file',
+        'route' => 'admin.file-manager.index',
+        'children' => [
+            [
+                'title' => 'View File',
+                'type' => 'public',
+                'name' => 'index',
+                'icon' => 'fa fa-list',
+                'route' => 'admin.file-manager.index',
+            ]
+        ],
+    ]
 
 ];

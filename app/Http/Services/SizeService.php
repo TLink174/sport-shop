@@ -63,4 +63,9 @@ class SizeService
     {
         return $this->size->find($id);
     }
+    public function restore($id)
+    {
+        $this->size->restore($id);
+        return redirect()->route('admin.size.index');
+    }
 }

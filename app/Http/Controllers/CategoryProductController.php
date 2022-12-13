@@ -91,8 +91,14 @@ class CategoryProductController extends Controller
      * @param  \App\Models\CategoryProduct  $categoryProduct
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryProduct $categoryProduct)
+    public function destroy($id)
     {
-        //
+        $this->categoryProductService->delete($id);
+        return redirect()->route('admin.product-category.index');
+    }
+    public function restore($id)
+    {
+        $this->categoryProductService->restore($id);
+        return redirect()->route('admin.product-category.index');
     }
 }
