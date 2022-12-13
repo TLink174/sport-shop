@@ -36,24 +36,25 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        $products = $this->productService->getAll();
-        return ;
+        $categoryProduct = $this->categoryProductService->getAll();
+        return view('admin.pages.product.create', compact('categoryProduct'));
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreProductRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreProductRequest $request)
     {
         $this->productService->create($request);
-        return ;
+        return redirect()->route('admin.products.index');
     }
 
     /**

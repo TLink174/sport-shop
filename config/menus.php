@@ -89,6 +89,66 @@ return [
 
         ],
     ],
+    [
+        'title' => 'Color',
+        'type' => 'public',
+        'name' => 'color',
+        'icon' => 'fa fa-tag',
+        'route' => 'admin.color.index',
+        'children' => [
+            [
+                'title' => 'List Color',
+                'name' => 'index',
+                'icon' => 'fa fa-list',
+                'type' => 'public',
+                'route' => 'admin.color.index',
+            ],
+            [
+                'title' => 'Create Color',
+                'name' => 'create',
+                'icon' => 'fa fa-plus',
+                'type' => 'public',
+                'route' => 'admin.color.create',
+            ],
+            [
+                'title' => 'Edit Color',
+                'name' => 'edit',
+                'icon' => 'fa fa-edit',
+                'type' => 'public',
+            ]
+
+        ],
+    ],
+    [
+        'title' => 'Size',
+        'type' => 'public',
+        'name' => 'size',
+        'icon' => 'fa fa-tag',
+        'route' => 'admin.size.index',
+        'children' => [
+            [
+                'title' => 'List Size',
+                'name' => 'index',
+                'icon' => 'fa fa-list',
+                'type' => 'public',
+                'route' => 'admin.size.index',
+            ],
+            [
+                'title' => 'Create Size',
+                'name' => 'create',
+                'icon' => 'fa fa-plus',
+                'type' => 'public',
+                'route' => 'admin.size.create',
+            ],
+            [
+                'title' => 'Edit Size',
+                'name' => 'edit',
+                'icon' => 'fa fa-edit',
+                'type' => 'public',
+            ]
+
+        ],
+    ],
 //    [
 //        'title' => 'Blog',
 //        'name' => 'blog',
@@ -259,21 +319,21 @@ return [
 //            ]
 //        ],
 //    ],
-    [
-        'title' => 'File Manager',
-        'name' => 'file-manager',
-        'type' => 'public',
-        'icon' => 'fa fa-file',
-        'route' => 'admin.file-manager.index',
-        'children' => [
-            [
-                'title' => 'View File',
-                'type' => 'public',
-                'name' => 'index',
-                'icon' => 'fa fa-list',
-                'route' => 'admin.file-manager.index',
-            ]
-        ],
-    ]
+//    [
+//        'title' => 'File Manager',
+//        'name' => 'file-manager',
+//        'type' => 'public',
+//        'icon' => 'fa fa-file',
+//        'route' => 'admin.file-manager.index',
+//        'children' => [
+//            [
+//                'title' => 'View File',
+//                'type' => 'public',
+//                'name' => 'index',
+//                'icon' => 'fa fa-list',
+//                'route' => 'admin.file-manager.index',
+//            ]
+//        ],
+//    ]
 
 ];

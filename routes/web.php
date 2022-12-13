@@ -9,8 +9,10 @@ use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CategoryProductController;
+use App\Http\Controllers\ColorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SizeController;
 use Illuminate\Support\Facades\Route;
 use UniSharp\LaravelFilemanager\Lfm;
 
@@ -125,6 +127,27 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
         Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('admin.product.restore');
     });
+// <<<<<<< HEAD
     
+// =======
+    Route::group(['prefix' => 'color'], function () {
+        Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
+        Route::get('/create', [ColorController::class, 'create'])->name('admin.color.create');
+        Route::post('/store', [ColorController::class, 'store'])->name('admin.color.store');
+        Route::get('/edit/{id}', [ColorController::class, 'edit'])->name('admin.color.edit');
+        Route::post('/update/{id}', [ColorController::class, 'update'])->name('admin.color.update');
+        Route::get('/delete/{id}', [ColorController::class, 'destroy'])->name('admin.color.delete');
+        Route::get('/restore/{id}', [ColorController::class, 'restore'])->name('admin.color.restore');
+    });
+    Route::group(['prefix' => 'size'], function () {
+        Route::get('/', [SizeController::class, 'index'])->name('admin.size.index');
+        Route::get('/create', [SizeController::class, 'create'])->name('admin.size.create');
+        Route::post('/store', [SizeController::class, 'store'])->name('admin.size.store');
+        Route::get('/edit/{id}', [SizeController::class, 'edit'])->name('admin.size.edit');
+        Route::post('/update/{id}', [SizeController::class, 'update'])->name('admin.size.update');
+        Route::get('/delete/{id}', [SizeController::class, 'destroy'])->name('admin.size.delete');
+        Route::get('/restore/{id}', [SizeController::class, 'restore'])->name('admin.size.restore');
+    });
+// >>>>>>> 218d64474b3ec0628f7e573e8c5124f4669f253e
 });
 
