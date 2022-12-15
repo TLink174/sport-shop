@@ -11,4 +11,4 @@
 <script src="public/js/vendor/vendor.min.js"></script>
 
 <script src="public/js/app-html.js"></script>
-@yield('js_custom')
+@yield('js_sport')

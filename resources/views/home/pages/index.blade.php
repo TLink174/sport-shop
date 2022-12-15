@@ -1,7 +1,6 @@
-@extends('home.layouts.main')
-@section('hero-area')
+@extends('home.layouts.sport_shop.main')
+<!-- @section('hero-area')
     @include('home.includes.hero-area')
-@endsection
-@section('content')
-    @include('home.includes.homePage')
-@endsection
+@endsection -->
+
+    @include('home.includes.sport_shop.homePage')

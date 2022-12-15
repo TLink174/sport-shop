@@ -63,4 +63,9 @@ class ColorService
     {
         return $this->color->find($id);
     }
+    public function restore($id)
+    {
+        $this->color->restore($id);
+        return redirect()->route('admin.color.index');
+    }
 }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\CartService;
 use App\Http\Services\CategoryProductService;
+use App\Http\Services\ColorService;
 use App\Http\Services\ProductService;
+use App\Http\Services\SizeService;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -19,15 +21,19 @@ class ProductController extends Controller
 
     private ProductService $productService;
     private CategoryProductService $categoryProductService;
+    private SizeService $sizeService;
+    private ColorService $colorService;
 
 
-    public function __construct(ProductService $productService, CategoryProductService $categoryProductService)
+    public function __construct(ProductService $productService, CategoryProductService $categoryProductService, SizeService $sizeService, ColorService $colorService)
     {
         $this->productService = $productService;
         $this->categoryProductService = $categoryProductService;
+        $this->sizeService = $sizeService;
+        $this->colorService = $colorService;
 
     }
-    public function index()
+    public function index(StoreProductRequest $request)
     {
         $productCategories = $this->categoryProductService->getAll();
         return view('admin.pages.product.index', compact('productCategories'));
@@ -40,8 +46,11 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $sizes = $this->sizeService->getAll();
+        $colors = $this->colorService->getAll();
         $categoryProduct = $this->categoryProductService->getAll();
-        return view('admin.pages.product.create', compact('categoryProduct'));
+
+        return view('admin.pages.product.create', compact(['categoryProduct', 'sizes', 'colors']));
 
     }
 
@@ -54,7 +63,9 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $this->productService->create($request);
-        return redirect()->route('admin.products.index');
+        $sizes = $this->sizeService->getAll();
+        $colors = $this->colorService->getAll();
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -63,9 +74,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = $this->productService->getById($id);
+        return view('admin.pages.product.view', compact('product'));
     }
 
     /**
@@ -76,7 +88,12 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->find($id);
+        $product = $this->productService->findHasSoftDeletes();
+        $sizes = $this->sizeService->getAll();
+        $colors = $this->colorService->getAll();
+        $categoryProduct = $this->categoryProductService->getAll();
+        return view('admin.pages.product.edit', compact(['product', 'categoryProduct', 'sizes', 'colors']));
+
     }
 
     /**
@@ -88,7 +105,8 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, $id)
     {
-        $this->update($request, $id);
+        $this->productService->update($request, $id);
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -97,8 +115,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $this->productService->delete($id);
+        return redirect()->route('admin.product.index');
     }
 }
