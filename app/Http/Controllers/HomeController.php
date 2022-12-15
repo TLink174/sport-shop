@@ -23,15 +23,17 @@ class HomeController extends Controller
         $product = Size::find(1);
         if ($product){
             dd($product);
+            
         }
+        return view('home.pages.index');
 
+        
 
-
-        $blogs = $this->blogService->getAllBlogPublic(10);
-        $categories = $this->categoryService->getAllCategoryPublic(10);
-        if (count($blogs) > 0 && count($categories) > 0){
-            return view('home.pages.index', compact('blogs', 'categories'));
-        }
+        // $blogs = $this->blogService->getAllBlogPublic(10);
+        // $categories = $this->categoryService->getAllCategoryPublic(10);
+        // if (count($blogs) > 0 && count($categories) > 0){
+           
+        // }
 
     }
 
