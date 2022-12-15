@@ -21,6 +21,7 @@ class ProductService
     }
     public function create($request)
     {
+
         $productCreated = $this->product->create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
