@@ -86,5 +86,9 @@ class ProductService
         }
         $product->restore();
     }
+    public function getAll()
+    {
+        return $this->product->all();
+    }
 
 }

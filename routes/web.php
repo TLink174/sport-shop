@@ -33,8 +33,9 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::group(['prefix' => '/'], function (){
     Route::get('/', [HomeController::class, 'homePage'])->name('home.index');
-    Route::get('/cart', [HomeController::class, 'detailPage'])->name('home.detail');
+    Route::get('/cart', [HomeController::class, 'detailPage'])->name('home.cart');
     Route::get('/product', [HomeController::class, 'product'])->name('home.product');
+    Route::get('/category', [HomeController::class, 'category'])->name('home.category');
 
 });
 

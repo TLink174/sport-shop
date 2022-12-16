@@ -34,7 +34,7 @@
 								alt="Logo"></a>
 					</div>
 					<div class="hdr-phone hide-mobile">
-						<i class="icon-phone"></i><span>+ 7 555 35 305</span>
+						<i class="icon-phone"></i><span>+ 84 944917526</span>
 					</div>
 					<!--navigation-->
 					<div class="hdr-nav hide-mobile nav-holder-s">
@@ -136,46 +136,63 @@
 							<div class="hdr-inline-link">
 
 								<!-- Header Language -->
-{{--								<div class="dropdn_language">--}}
-{{--									<div class="dropdn dropdn_language dropdn_language--noimg dropdn_caret">--}}
-{{--										<a href="#" class="dropdn-link js-dropdn-link"><span--}}
-{{--												class="js-dropdn-select-current">English</span><i--}}
-{{--												class="icon-angle-down"></i></a>--}}
-{{--										<div class="dropdn-content">--}}
-{{--											<ul>--}}
-{{--												<li class="active"><a href="#"><img src="images/flags/en.png"--}}
-{{--															alt="">English</a></li>--}}
-{{--												<li><a href="#"><img src="images/flags/sp.png" alt="">Spanish</a></li>--}}
-{{--												<li><a href="#"><img src="images/flags/de.png" alt="">German</a></li>--}}
-{{--												<li><a href="#"><img src="images/flags/fr.png" alt="">French</a></li>--}}
-{{--											</ul>--}}
-{{--										</div>--}}
-{{--									</div>--}}
-{{--								</div>--}}
+							<div class="dropdn_language">
+								<div class="dropdn dropdn_language dropdn_language--noimg dropdn_caret">
+									<a href="#" class="dropdn-link js-dropdn-link"><span
+											class="js-dropdn-select-current">English</span><i
+											class="icon-angle-down"></i></a>
+									<div class="dropdn-content">
+										<ul>
+											<li class="active"><a href="#"><img src="images/flags/en.png"
+														alt="">English</a></li>
+											<li><a href="#"><img src="images/flags/sp.png" alt="">Spanish</a></li>
+											<li><a href="#"><img src="images/flags/de.png" alt="">German</a></li>
+											<li><a href="#"><img src="images/flags/fr.png" alt="">French</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 								<!-- /Header Language -->
 								<!-- Header Currency -->
-{{--								<div class="dropdn_currency">--}}
-{{--									<div class="dropdn dropdn_caret">--}}
-{{--										<a href="#" class="dropdn-link js-dropdn-link">US dollars<i--}}
-{{--												class="icon-angle-down"></i></a>--}}
-{{--										<div class="dropdn-content">--}}
-{{--											<ul>--}}
-{{--												<li class="active"><a href="#"><span>US dollars</span></a></li>--}}
-{{--												<li><a href="#"><span>Euro</span></a></li>--}}
-{{--												<li><a href="#"><span>UK pounds</span></a></li>--}}
+							<div class="dropdn_currency">
+								<div class="dropdn dropdn_caret">
+									<a href="#" class="dropdn-link js-dropdn-link">US dollars<i
+											class="icon-angle-down"></i></a>
+									<div class="dropdn-content">
+										<ul>
+											<li class="active"><a href="#"><span>US dollars</span></a></li>
+											<li><a href="#"><span>Euro</span></a></li>
+											<li><a href="#"><span>UK pounds</span></a></li>
 
-{{--											</ul>--}}
-{{--										</div>--}}
-{{--									</div>--}}
-{{--								</div>--}}
+										</ul>
+									</div>
+								</div>
+							</div>
 								<!-- /Header Currency -->
 								<div class="hdr_container_desktop">
 									<!-- Header Account -->
 									<div class="dropdn dropdn_account dropdn_fullheight">
-                                        @if(!auth()->check())
-                                            <li class="active">
-										<a href="#" class="dropdn-link js-dropdn-link" data-panel="#dropdnAccount"><i
-												class="icon-user"></i><span class="dropdn-link-txt">Account</span></a>
+									<ul class="mmenu mmenu-js">
+                                            @if(!auth()->check())
+                                                <li class="mmenu-item--simple">
+                                                    <a href="#" class="dropdn-link js-dropdn-link" data-panel="#dropdnAccount"><i
+                                                            class="icon-user"></i><span class="dropdn-link-txt">Account</span></a>
+                                                    <div class="mmenu-submenu">
+                                                    <ul class="submenu-list">
+                                                        <li><a href="{{route('admin.auth.login')}}"><span>Log In</span><i class="icon-login"></i></a></li>
+                                                        <li><a href="{{route('admin.auth.register')}}"><span>Register</span><i class="icon-user2"></i></a></li>
+                                                    </ul>
+                                                    </div>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a class="nav-link dropdown-toggle" href="#">{{Auth::user()->name}}</a>
+                                                    <ul>
+                                                        <li><a class="dropdown-item" href="{{route('admin.auth.logout')}}">Đăng xuất</a></li>
+                                                    </ul>
+                                                </li>
+                                            @endif
+                                        </ul>
 									</div>
 									<!-- /Header Account -->
 								</div>
@@ -198,7 +215,7 @@
 									alt="Logo"></a>
 						</div>
 						<div class="hdr-phone">
-							<i class="icon-phone"></i><span>+ 7 555 35 305</span>
+							<i class="icon-phone"></i><span>+84 944917526</span>
 						</div>
 						<!--navigation-->
 
@@ -302,33 +319,28 @@
 							</li>
 							<li><a href="#">Pages<span class="arrow"><i class="icon-angle-right"></i></span></a>
 								<ul class="nav-level-2">
-									<li><a href="product.html">Product page<span class="arrow"><i
+									<li><a href="{{'home.product'}}">Product page<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="product.html">Product page variant 1<span
+											<li><a href="{{'home.product'}}">Product page variant 1<span
 														class="menu-label menu-label--color3">Popular</span></a></li>
-											<li><a href="product-2.html">Product page variant 2</a></li>
-											<li><a href="product-3.html">Product page variant 3</a></li>
-											<li><a href="product-4.html">Product page variant 4</a></li>
-											<li><a href="product-5.html">Product page variant 5</a></li>
-											<li><a href="product-6.html">Product page variant 6</a></li>
-											<li><a href="product-7.html">Product page variant 7</a></li>
+											
 										</ul>
 									</li>
-									<li><a href="category.html">Category page<span class="arrow"><i
+									<li><a href="home.category">Category page<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Left sidebar filters</a></li>
+											<li><a href="home.category">Left sidebar filters</a></li>
 											<li><a href="category-closed-filter.html">Closed filters</a></li>
 											<li><a href="category-horizontal-filter.html">Horizontal filters</a></li>
 											<li><a href="category-listview.html">Listing View</a></li>
 											<li><a href="category-empty.html">Empty category</a></li>
 										</ul>
 									</li>
-									<li><a href="cart.html">Cart & Checkout<span class="arrow"><i
+									<li><a href="home.cart">Cart & Checkout<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="home.cart">Cart Page</a></li>
 											<li><a href="cart-empty.html">Empty cart</a></li>
 											<li><a href="checkout.html">Checkout variant 1</a></li>
 											<li><a href="checkout-2.html">Checkout variant 2</a></li>
@@ -366,65 +378,65 @@
 									<li><a href="coming-soon.html" target="_blank">Coming soon</a></li>
 								</ul>
 							</li>
-							<li><a href="category.html">New Arrivals<span class="arrow"><i
+							<li><a href="home.category">New Arrivals<span class="arrow"><i
 											class="icon-angle-right"></i></span></a>
 								<ul class="nav-level-2">
-									<li><a href="category.html">Shoes<span class="arrow"><i
+									<li><a href="home.category">Shoes<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Heels</a></li>
-											<li><a href="category.html">Boots</a></li>
-											<li><a href="category.html">Flats</a></li>
-											<li><a href="category.html">Sneakers &amp; Athletic</a></li>
-											<li><a href="category.html">Clogs &amp; Mules</a></li>
+											<li><a href="home.category">Heels</a></li>
+											<li><a href="home.category">Boots</a></li>
+											<li><a href="home.category">Flats</a></li>
+											<li><a href="home.category">Sneakers &amp; Athletic</a></li>
+											<li><a href="home.category">Clogs &amp; Mules</a></li>
 										</ul>
 									</li>
-									<li><a href="category.html">Tops<span class="arrow"><i
+									<li><a href="home.category">Tops<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Dresses</a></li>
-											<li><a href="category.html">Shirts &amp; Tops</a></li>
-											<li><a href="category.html">Coats &amp; Outerwear</a></li>
-											<li><a href="category.html">Sweaters</a></li>
+											<li><a href="home.category">Dresses</a></li>
+											<li><a href="home.category">Shirts &amp; Tops</a></li>
+											<li><a href="home.category">Coats &amp; Outerwear</a></li>
+											<li><a href="home.category">Sweaters</a></li>
 										</ul>
 									</li>
-									<li><a href="category.html">Shoes<span class="arrow"><i
+									<li><a href="home.category">Shoes<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Heels</a></li>
-											<li><a href="category.html">Boots</a></li>
-											<li><a href="category.html">Flats</a></li>
-											<li><a href="category.html">Sneakers &amp; Athletic</a></li>
-											<li><a href="category.html">Clogs &amp; Mules</a></li>
+											<li><a href="home.category">Heels</a></li>
+											<li><a href="home.category">Boots</a></li>
+											<li><a href="home.category">Flats</a></li>
+											<li><a href="home.category">Sneakers &amp; Athletic</a></li>
+											<li><a href="home.category">Clogs &amp; Mules</a></li>
 										</ul>
 									</li>
-									<li><a href="category.html">Bottoms<span class="arrow"><i
+									<li><a href="home.category">Bottoms<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Jeans</a></li>
-											<li><a href="category.html">Pants</a></li>
-											<li><a href="category.html">slippers</a></li>
-											<li><a href="category.html">suits</a></li>
-											<li><a href="category.html">socks</a></li>
+											<li><a href="home.category">Jeans</a></li>
+											<li><a href="home.category">Pants</a></li>
+											<li><a href="home.category">slippers</a></li>
+											<li><a href="home.category">suits</a></li>
+											<li><a href="home.category">socks</a></li>
 										</ul>
 									</li>
-									<li><a href="category.html">Accessories<span class="arrow"><i
+									<li><a href="home.category">Accessories<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Sunglasses</a></li>
-											<li><a href="category.html">Hats</a></li>
-											<li><a href="category.html">Watches</a></li>
-											<li><a href="category.html">Jewelry</a></li>
-											<li><a href="category.html">Belts</a></li>
+											<li><a href="home.category">Sunglasses</a></li>
+											<li><a href="home.category">Hats</a></li>
+											<li><a href="home.category">Watches</a></li>
+											<li><a href="home.category">Jewelry</a></li>
+											<li><a href="home.category">Belts</a></li>
 										</ul>
 									</li>
-									<li><a href="category.html">Bags<span class="arrow"><i
+									<li><a href="home.category">Bags<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="category.html">Handbags</a></li>
-											<li><a href="category.html">Backpacks</a></li>
-											<li><a href="category.html">Luggage</a></li>
-											<li><a href="category.html">wallets</a></li>
+											<li><a href="home.category">Handbags</a></li>
+											<li><a href="home.category">Backpacks</a></li>
+											<li><a href="home.category">Luggage</a></li>
+											<li><a href="home.category">wallets</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -496,7 +508,7 @@
 				<div class="minicart-drop-content js-dropdn-content-scroll">
 					<div class="minicart-prd row">
 						<div class="minicart-prd-image image-hover-scale-circle col">
-							<a href="product.html"><img class="lazyload fade-up"
+							<a href="{{'home.product'}}"><img class="lazyload fade-up"
 									src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 									data-src="images/skins/fashion/products/product-01-1.jpg" alt=""></a>
 						</div>
@@ -516,7 +528,7 @@
 					</div>
 					<div class="minicart-prd row">
 						<div class="minicart-prd-image image-hover-scale-circle col">
-							<a href="product.html"><img class="lazyload fade-up"
+							<a href="{{'home.product'}}"><img class="lazyload fade-up"
 									src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 									data-src="images/skins/fashion/products/product-16-1.jpg" alt=""></a>
 						</div>
@@ -600,7 +612,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-auto sticky-addcart_image">
-						<a href="product.html">
+						<a href="{{'home.product'}}">
 							<img src="images/skins/fashion/products/product-01-1.jpg" alt="" />
 						</a>
 					</div>
@@ -648,14 +660,14 @@
 					</div>
 					<div class="col popup-addedtocart_info">
 						<div class="row">
-							<a href="product.html" class="col-auto popup-addedtocart_image">
+							<a href="{{'home.product'}}" class="col-auto popup-addedtocart_image">
 								<span class="image-container w-100">
 									<img src="images/skins/fashion/products/product-01-1.jpg" alt="" />
 								</span>
 							</a>
 							<div class="col popup-addedtocart_text">
-								<a href="product.html" class="popup-addedtocart_title"></a>
-								<span class="popup-addedtocart_message">Added to <a href="cart.html"class="underline">Cart</a></span>
+								<a href="{{'home.product'}}" class="popup-addedtocart_title"></a>
+								<span class="popup-addedtocart_message">Added to <a href="home.cart"class="underline">Cart</a></span>
 								<span class="popup-addedtocart_error_message"></span>
 							</div>
 						</div>
@@ -726,7 +738,7 @@
 	<div class="footer-sticky">
 		<div class="payment-notification-wrap js-pn" data-visible-time="3000" data-hidden-time="3000" data-delay="500"
 			data-from="Aberdeen,Bakersfield,Birmingham,Cambridge,Youngstown"
-			data-products='[{"productname":"Leather Pegged Pants", "productlink":"product.html","productimage":"images/skins/fashion/products/product-01-1.jpg"},{"productname":"Black Fabric Backpack", "productlink":"product.html","productimage":"images/skins/fashion/products/product-28-1.jpg"},{"productname":"Combined Chunky Sneakers", "productlink":"product.html","productimage":"images/skins/fashion/products/product-23-1.jpg"}]'>
+			data-products='[{"productname":"Leather Pegged Pants", "productlink":"{{'home.product'}}","productimage":"images/skins/fashion/products/product-01-1.jpg"},{"productname":"Black Fabric Backpack", "productlink":"{{'home.product'}}","productimage":"images/skins/fashion/products/product-28-1.jpg"},{"productname":"Combined Chunky Sneakers", "productlink":"{{'home.product'}}","productimage":"images/skins/fashion/products/product-23-1.jpg"}]'>
 			<div class="payment-notification">
 				<div class="payment-notification-inside">
 					<div class="payment-notification-container">
@@ -736,7 +748,7 @@
 						<div class="payment-notification-content-wrapper">
 							<div class="payment-notification-content">
 								<div class="payment-notification-text">Someone purchased</div>
-								<a href="product.html" class="payment-notification-name js-pn-name js-pn-link">Apple
+								<a href="{{'home.product'}}" class="payment-notification-name js-pn-name js-pn-link">Apple
 									watch</a>
 								<div class="payment-notification-bottom">
 									<div class="payment-notification-when"><span class="js-pn-time">32</span> min ago
@@ -792,11 +804,9 @@
 			</div>
 		</div>
 	</div>
-{{--<<<<<<< HEAD--}}
+
  @include('home.includes.sport_shop.js')
-{{--=======--}}
-	@include('home.includes.sport_shop.js')
-{{-->>>>>>> bb755fce839e33b3f18b0ce60f380a8939f2e081--}}
+
 </body>
 
 </html>

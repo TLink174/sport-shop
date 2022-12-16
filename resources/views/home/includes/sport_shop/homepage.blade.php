@@ -739,7 +739,9 @@
 										</ul>
 
 									</div>
+								
 									<div class="prd-info">
+									
 										<div class="prd-info-wrap">
 											<div class="prd-info-top">
 												<div class="prd-rating"><i class="icon-star-fill fill"></i><i
@@ -796,6 +798,7 @@
 												</div>
 											</div>
 										</div>
+									
 									</div>
 								</div>
 							</div>
@@ -1147,10 +1150,16 @@
 								</div>
 							</div>
 							<div class="prd ">
+							
 								<div class="prd-inside">
+								
+                                                            
+                                                                    
+                                
 									<div class="prd-img-area">
+								
 										<a href="#" class="prd-img image-hover-scale image-container">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+											<img src="{{$product->image}}"
 												data-src="images/products/product-05.jpg"
 												alt="Fitness Jumpsuit Khaki/Black" class="js-prd-img lazyload">
 											<div class="foxic-loader"></div>
@@ -1176,7 +1185,7 @@
 													VIEW</span></a>
 
 										</div>
-
+										
 									</div>
 									<div class="prd-info">
 										<div class="prd-info-wrap">
@@ -1239,6 +1248,7 @@
 									</div>
 								</div>
 							</div>
+						
 						</div>
 					</div>
 				</div>
