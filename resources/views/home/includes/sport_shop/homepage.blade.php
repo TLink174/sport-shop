@@ -635,8 +635,9 @@
 						</div>
 					</div>
 					<div class="col-sm-13">
-                        @foreach($product as $product)
+
 						<div class="prd-grid data-to-show-3 data-to-show-md-2 data-to-show-sm-2 data-to-show-xs-2">
+                            @foreach($product as $product)
 							<div class="prd ">
 								<div class="prd-inside">
 
@@ -674,71 +675,7 @@
 												data-src="ajax/ajax-quickview.html"><i class="icon-eye"></i><span>QUICK
 													VIEW</span></a>
 
-											<div
-												class="colorswatch-label colorswatch-label--variants js-prd-colorswatch">
-												<i class="icon-palette"><span class="path1"></span><span
-														class="path2"></span><span class="path3"></span><span
-														class="path4"></span><span class="path5"></span><span
-														class="path6"></span><span class="path7"></span><span
-														class="path8"></span><span class="path9"></span><span
-														class="path10"></span></i>
-												<ul>
-													<li data-image="images/products/product-01.jpg"><a
-															class="js-color-toggle" data-toggle="tooltip"
-															data-placement="left" title="Color Name"><img
-																src="images/colorswatch/color-red.png" alt=""></a></li>
-													<li data-image="images/products/product-01-1.jpg"><a
-															class="js-color-toggle" data-toggle="tooltip"
-															data-placement="left" title="Color Name"><img
-																src="images/colorswatch/color-mint.png" alt=""></a></li>
-													<li data-image="images/products/product-01-2.jpg"><a
-															class="js-color-toggle" data-toggle="tooltip"
-															data-placement="left" title="Color Name"><img
-																src="images/colorswatch/color-violet.png" alt=""></a>
-													</li>
-													<li data-image="images/products/product-01-3.jpg"><a
-															class="js-color-toggle" data-toggle="tooltip"
-															data-placement="left" title="Color Name"><img
-																src="images/colorswatch/color-green.png" alt=""></a>
-													</li>
-												</ul>
-											</div>
-
 										</div>
-
-										<ul class="list-options color-swatch">
-											<li data-image="images/products/product-01.jpg" class="active"><a href="#"
-													class="js-color-toggle" data-toggle="tooltip" data-placement="right"
-													title="Color Name"><img
-														src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-														data-src="images/products/product-01.jpg"
-														class="lazyload fade-up" alt="Color Name"></a></li>
-
-											<li data-image="images/products/product-01-1.jpg"><a href="#"
-													class="js-color-toggle" data-toggle="tooltip" data-placement="right"
-													title="Color Name"><img
-														src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-														data-src="images/products/product-01-1.jpg"
-														class="lazyload fade-up" alt="Color Name"></a></li>
-
-
-											<li data-image="images/products/product-01-2.jpg"><a href="#"
-													class="js-color-toggle" data-toggle="tooltip" data-placement="right"
-													title="Color Name"><img
-														src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-														data-src="images/products/product-01-2.jpg"
-														class="lazyload fade-up" alt="Color Name"></a></li>
-
-
-											<li data-image="images/products/product-01-3.jpg"><a href="#"
-													class="js-color-toggle" data-toggle="tooltip" data-placement="right"
-													title="Color Name"><img
-														src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-														data-src="images/products/product-01-3.jpg"
-														class="lazyload fade-up" alt="Color Name"></a></li>
-
-
-										</ul>
 									</div>
 									<div class="prd-info">
 										<div class="prd-info-wrap">
@@ -801,9 +738,8 @@
 
 								</div>
 							</div>
-
-						</div>
                             @endforeach
+						</div>
 					</div>
 
 				</div>
