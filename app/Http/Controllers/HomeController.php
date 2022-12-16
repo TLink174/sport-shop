@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Services\ProductService;
 use App\Http\Services\CategoryProductService;
 use App\Models\Cart;
+use App\Models\CartDetail;
 use App\Models\Size;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class HomeController extends Controller
 
     public function homePage(){
 //<<<<<<< HEAD
-//        $product = Size::find(1);
+//        $product = CartDetail::find(2);
 //        if ($product){
 //            dd($product);
 //
@@ -34,7 +35,8 @@ class HomeController extends Controller
         // }
 //>>>>>>> bb755fce839e33b3f18b0ce60f380a8939f2e081
         $categoryProduct = $this->categoryProductService->getAll();
-        return view('home.pages.index', compact('categoryProduct'));
+        $product = $this->productService->getAll();
+        return view('home.pages.index', compact('categoryProduct', 'product'));
 
 
 
@@ -57,7 +59,10 @@ class HomeController extends Controller
         // }
         return view('home.pages.sport_shop.cart');
     }
-    public function product(){
-        return view('home.pages.sport_shop.product');
+    public function product()
+    {
+        $categoryProduct = $this->categoryProductService->getAll();
+        $product = $this->productService->getAll();
+        return view('home.pages.sport_shop.product', compact('categoryProduct', 'product'));
     }
 }

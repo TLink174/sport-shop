@@ -2,20 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\CartService;
+use App\Http\Services\ProductService;
 use App\Models\CartDetail;
 use App\Http\Requests\StoreCartDetailRequest;
 use App\Http\Requests\UpdateCartDetailRequest;
 
 class CartDetailController extends Controller
 {
+    private cartService $cartService;
+    private ProductService $productService;
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(cartService $cartService, ProductService $productService)
+    {
+        $this->cartService = $cartService;
+        $this->productService = $productService;
+    }
+
     public function index()
     {
-        //
+
     }
 
     /**

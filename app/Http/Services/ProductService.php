@@ -71,7 +71,11 @@ class ProductService
     }
     public function getAllProductPublic($limit)
     {
-        return $this->product->getAllBlogPublic($limit);
+        return $this->product->getAllProductPublic($limit);
+    }
+    public function getAll()
+    {
+        return $this->product->all();
     }
     public function getByid($id)
     {
