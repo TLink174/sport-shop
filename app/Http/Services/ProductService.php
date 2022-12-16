@@ -21,6 +21,7 @@ class ProductService
     }
     public function create($request)
     {
+
         $productCreated = $this->product->create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
@@ -70,7 +71,11 @@ class ProductService
     }
     public function getAllProductPublic($limit)
     {
-        return $this->product->getAllBlogPublic($limit);
+        return $this->product->getAllProductPublic($limit);
+    }
+    public function getAll()
+    {
+        return $this->product->all();
     }
     public function getByid($id)
     {
@@ -78,7 +83,12 @@ class ProductService
     }
     public function restore($id)
     {
-        $this->product->restore($id);
-        return redirect()->route('admin.product.index');
+        $product = $this->product->withTrashed()->find($id);
+
+        if ($product && $product->trashed()) {
+            $product->restore();
+        }
+        $product->restore();
     }
+
 }

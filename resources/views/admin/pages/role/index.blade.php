@@ -56,7 +56,7 @@
                 <th class="min-w-200px">Name Role</th>
                 <th class="min-w-150px">Slug</th>
                 <th class="min-w-200px">Description</th>
-                <th class="min-w-200px">Action</th>
+{{--                <th class="min-w-200px">Action</th>--}}
             </tr>
             </thead>
             <tbody>
@@ -72,33 +72,33 @@
                     <td>{{$role->slug}}</td>
                     <td>{{$role->description}}</td>
 
-                    <td>
-                        @can('role-update')
-                            <a href="{{route('admin.roles.edit',$role->id)}}"
-                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2"
-                               title="Edit">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                        @endcan
+{{--                    <td>--}}
+{{--                        @can('role-update')--}}
+{{--                            <a href="{{route('admin.roles.edit',$role->id)}}"--}}
+{{--                               class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2"--}}
+{{--                               title="Edit">--}}
+{{--                                <i class="fa fa-edit"></i>--}}
+{{--                            </a>--}}
+{{--                        @endcan--}}
 
-                        @if($role->deleted_at == null)
-                            @can('role-delete')
-                                <a href="{{route('admin.roles.delete',$role->id)}}"
-                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger"
-                                   title="Delete">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            @endcan
-                        @else
-                            @can('role-restore')
-                                <a href="{{route('admin.roles.restore',$role->id)}}"
-                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning"
-                                   title="Restore">
-                                    <i class="fa fa-undo"></i>
-                                </a>
-                            @endcan
-                        @endif
-                    </td>
+{{--                        @if($role->deleted_at == null)--}}
+{{--                            @can('role-delete')--}}
+{{--                                <a href="{{route('admin.roles.delete',$role->id)}}"--}}
+{{--                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger"--}}
+{{--                                   title="Delete">--}}
+{{--                                    <i class="fa fa-trash"></i>--}}
+{{--                                </a>--}}
+{{--                            @endcan--}}
+{{--                        @else--}}
+{{--                            @can('role-restore')--}}
+{{--                                <a href="{{route('admin.roles.restore',$role->id)}}"--}}
+{{--                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning"--}}
+{{--                                   title="Restore">--}}
+{{--                                    <i class="fa fa-undo"></i>--}}
+{{--                                </a>--}}
+{{--                            @endcan--}}
+{{--                        @endif--}}
+{{--                    </td>--}}
                 </tr>
             @endforeach
 

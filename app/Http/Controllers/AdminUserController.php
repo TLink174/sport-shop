@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\s\CartService;
 use App\Http\Services\RoleService;
 use App\Http\Services\UserService;
 use App\Models\User;
@@ -13,11 +14,13 @@ class AdminUserController extends Controller
 {
     private UserService $userService;
     private RoleService $roleService;
+    private CartService $cartService;
 
-    public function __construct(UserService $userService, RoleService $roleService)
+    public function __construct(UserService $userService, RoleService $roleService,CartService $cartService)
     {
         $this->userService = $userService;
         $this->roleService = $roleService;
+        $this->cartService = $cartService;
     }
 
     /**
@@ -51,6 +54,8 @@ class AdminUserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $this->userService->create($request);
+        dd($this->userService->getByEmail($request->email)->id);
+        $this->cartService->create($this->userService->getByEmail($request->email)->id);
         return redirect()->route('admin.users.index');
     }
 
@@ -97,10 +102,16 @@ class AdminUserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $this->userService->delete($id);
+        return redirect()->route('admin.users.index');
+    }
+    public function restore($id)
+    {
+        $this->userService->restore($id);
+        return redirect()->route('admin.users.index');
     }
 }

@@ -2,15 +2,19 @@
 
 namespace App\Http\Services;
 
+use App\Models\Cart;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
     private User $user;
+    private Cart $cart;
 
-    public function __construct(User $user)
+    public function __construct(User $user, Cart $cart)
     {
         $this->user = $user;
+        $this->cart = $cart;
     }
 
     public function checkLogin($email, $password)
@@ -29,7 +33,7 @@ class UserService
         $userCreate = $this->user->create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => $this->hashPassword($request->password),
         ]);
         return $userCreate;
     }
@@ -39,9 +43,10 @@ class UserService
         $userCreated = $this->user->create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => $this->hashPassword($request->password),
         ]);
         $userCreated->roles()->attach($request->roles);
+
         return $userCreated;
     }
 
@@ -87,17 +92,21 @@ class UserService
     {
         return $this->user->find($id);
     }
-
-    public function getPermissions($id)
+    public function hashPassword($password)
     {
-        $user = $this->user->find($id);
-        $roles = $user->roles;
-        $permissions = [];
-        foreach ($roles as $role) {
-            foreach ($role->permissions as $permission) {
-                $permissions[] = $permission->value;
-            }
-        }
-        return $permissions;
+        return hash::make($password);
     }
+
+//    public function getPermissions($id)
+//    {
+//        $user = $this->user->find($id);
+//        $roles = $user->roles;
+//        $permissions = [];
+//        foreach ($roles as $role) {
+//            foreach ($role->permissions as $permission) {
+//                $permissions[] = $permission->value;
+//            }
+//        }
+//        return $permissions;
+//    }
 }

@@ -15,6 +15,7 @@
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script src=""></script>
     <script>
         $(".tag2").select2({
             tags: true,

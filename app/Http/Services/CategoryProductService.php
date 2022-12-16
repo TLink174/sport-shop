@@ -5,7 +5,7 @@ namespace App\Http\Services;
 use App\Models\CategoryProduct;
 use Illuminate\Support\Str;
 
-class CategoryProductService
+class  CategoryProductService
 {
     private CategoryProduct $categoryProduct;
 
