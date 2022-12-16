@@ -49,11 +49,11 @@ class AdminController extends Controller
 
     public function registerPost(Request $request)
     {
-        $request->validate([
-            'name' => 'required|min:3',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed'
-        ]);
+//        $request->validate([
+//            'name' => 'required|min:3',
+//            'email' => 'required|email|unique:users',
+//            'password' => 'required|min:6|confirmed'
+//        ]);
         $user = $this->userService->register($request);
         if ($user) {
             //set auth user

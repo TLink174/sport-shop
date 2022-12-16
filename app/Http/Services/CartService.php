@@ -1,23 +1,26 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Http\s;
 
 use App\Models\Cart;
+use App\Models\User;
 
 class CartService
 {
 
     private Cart $cart;
+    private User $user;
 
 
-    public function __construct(Cart $cart)
+    public function __construct(Cart $cart, User $user)
     {
         $this->cart = $cart;
+        $this->user = $user;
     }
-    public function create($request)
+    public function create($id_user)
     {
         $cartCreated = $this->cart->create([
-            'id_user' => $request->id_user,
+            'id_user' =>$this->user->getById($id_user),
         ]);
     }
     public function delete($id)

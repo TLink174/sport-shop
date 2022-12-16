@@ -5,4 +5,3 @@
 <link href="css/style-sport.css" rel="stylesheet">
 <!-- Custom font -->
 <link href="fonts/icomoon/icons.css" rel="stylesheet">
-@yield('css_sport')

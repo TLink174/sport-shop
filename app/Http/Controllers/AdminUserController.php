@@ -97,10 +97,16 @@ class AdminUserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $this->userService->delete($id);
+        return redirect()->route('admin.users.index');
+    }
+    public function restore($id)
+    {
+        $this->userService->restore($id);
+        return redirect()->route('admin.users.index');
     }
 }

@@ -39,14 +39,14 @@ use UniSharp\LaravelFilemanager\Lfm;
     Route::get('/trangchu', [HomeController::class, 'homePage'])->name('home.index');
 
 
-// Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.auth.login');
-// Route::post('/admin/login-post', [AdminController::class, 'loginPost'])->name('admin.auth.login-post');
-// Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.auth.register');
-// Route::post('/admin/register-post', [AdminController::class, 'registerPost'])->name('admin.auth.register-post');
-// Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
-//     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.auth.logout');
-//     Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
-//     Route::get('/file-manager', [AdminController::class, 'fileManager'])->name('admin.file-manager.index');
+ Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.auth.login');
+ Route::post('/admin/login-post', [AdminController::class, 'loginPost'])->name('admin.auth.login-post');
+ Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.auth.register');
+ Route::post('/admin/register-post', [AdminController::class, 'registerPost'])->name('admin.auth.register-post');
+ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
+     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.auth.logout');
+     Route::get('/index', [AdminController::class, 'index'])->name('admin.index')->middleware('role::class');
+     Route::get('/file-manager', [AdminController::class, 'fileManager'])->name('admin.file-manager.index');
 //     Route::group(['prefix' => 'category'], function () {
 //         Route::get('/', [AdminCategoryController::class, 'index'])->name('admin.categories.index')->middleware('can:category-list');
 //         Route::get('/create', [AdminCategoryController::class, 'create'])->name('admin.categories.create')->middleware('can:category-create');
@@ -66,14 +66,14 @@ use UniSharp\LaravelFilemanager\Lfm;
 //         Route::get('/delete/{id}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.delete')->middleware('can:blog-delete,id');
 //         Route::get('/restore/{id}', [AdminBlogController::class, 'restore'])->name('admin.blogs.restore')->middleware('can:blog-restore,id');
 //     });
-//     Route::group(['prefix' => 'user'], function () {
-//         Route::get('/', [AdminUserController::class, 'index'])->name('admin.users.index')->middleware('can:user-list');
-//         Route::get('/create', [AdminUserController::class, 'create'])->name('admin.users.create')->middleware('can:user-create');
-//         Route::post('/store', [AdminUserController::class, 'store'])->name('admin.users.store')->middleware('can:user-create');
-//         Route::get('/edit/{id}', [AdminUserController::class, 'edit'])->name('admin.users.edit')->middleware('can:user-update');
-//         Route::post('/update/{id}', [AdminUserController::class, 'update'])->name('admin.users.update')->middleware('can:user-update');
-//         Route::get('/delete/{id}', [AdminUserController::class, 'destroy'])->name('admin.users.delete')->middleware('can:user-delete');
-//     });
+     Route::group(['prefix' => 'user'], function () {
+         Route::get('/', [AdminUserController::class, 'index'])->name('admin.users.index');
+         Route::get('/create', [AdminUserController::class, 'create'])->name('admin.users.create');
+         Route::post('/store', [AdminUserController::class, 'store'])->name('admin.users.store');
+         Route::get('/edit/{id}', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+         Route::post('/update/{id}', [AdminUserController::class, 'update'])->name('admin.users.update');
+         Route::get('/delete/{id}', [AdminUserController::class, 'destroy'])->name('admin.users.delete');
+     });
 //     Route::group(['prefix' => 'tag'], function () {
 //         Route::get('/', [AdminTagController::class, 'index'])->name('admin.tags.index')->middleware('can:tag-list');
 //         Route::get('/create', [AdminTagController::class, 'create'])->name('admin.tags.create')->middleware('can:tag-create');
@@ -101,55 +101,55 @@ use UniSharp\LaravelFilemanager\Lfm;
 //         Route::get('/delete/{id}', [AdminPermissionController::class, 'destroy'])->name('admin.permissions.delete')->middleware('can:permission-delete');
 //         Route::get('/restore/{id}', [AdminPermissionController::class, 'restore'])->name('admin.permissions.restore')->middleware('can:permission-restore');
 //     });
-//     Route::group(['prefix' => 'role'], function () {
-//         Route::get('/', [AdminRoleController::class, 'index'])->name('admin.roles.index')->middleware('can:role-list');
-//         Route::get('/create', [AdminRoleController::class, 'create'])->name('admin.roles.create')->middleware('can:role-create');
-//         Route::post('/store', [AdminRoleController::class, 'store'])->name('admin.roles.store')->middleware('can:role-create');
-//         Route::get('/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.roles.edit')->middleware('can:role-update');
-//         Route::post('/update/{id}', [AdminRoleController::class, 'update'])->name('admin.roles.update')->middleware('can:role-update');
-//         Route::get('/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.roles.delete')->middleware('can:role-delete');
-//         Route::get('/restore/{id}', [AdminRoleController::class, 'restore'])->name('admin.roles.restore')->middleware('can:role-restore');
-//     });
-//     Route::group(['prefix' => 'product-category'], function () {
-//         Route::get('/', [CategoryProductController::class, 'index'])->name('admin.product-category.index');
-//         Route::get('/create', [CategoryProductController::class, 'create'])->name('admin.product-category.create');
-//         Route::post('/store', [CategoryProductController::class, 'store'])->name('admin.product-category.store');
-//         Route::get('/edit/{id}', [CategoryProductController::class, 'edit'])->name('admin.product-category.edit');
-//         Route::post('/update/{id}', [CategoryProductController::class, 'update'])->name('admin.product-category.update');
-//         Route::get('/delete/{id}', [CategoryProductController::class, 'destroy'])->name('admin.product-category.delete');
-//         Route::get('/restore/{id}', [CategoryProductController::class, 'restore'])->name('admin.product-category.restore');
-//     });
-//     Route::group(['prefix' => 'product'], function () {
-//         Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
-//         Route::get('/create', [ProductController::class, 'create'])->name('admin.product.create');
-//         Route::post('/store', [ProductController::class, 'store'])->name('admin.product.store');
-//         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
-//         Route::post('/update/{id}', [ProductController::class, 'update'])->name('admin.product.update');
-//         Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
-//         Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('admin.product.restore');
-//     });
+     Route::group(['prefix' => 'role'], function () {
+         Route::get('/', [AdminRoleController::class, 'index'])->name('admin.roles.index');
+         Route::get('/create', [AdminRoleController::class, 'create'])->name('admin.roles.create');
+         Route::post('/store', [AdminRoleController::class, 'store'])->name('admin.roles.store');
+         Route::get('/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.roles.edit');
+         Route::post('/update/{id}', [AdminRoleController::class, 'update'])->name('admin.roles.update');
+         Route::get('/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.roles.delete');
+         Route::get('/restore/{id}', [AdminRoleController::class, 'restore'])->name('admin.roles.restore');
+     });
+     Route::group(['prefix' => 'product-category'], function () {
+         Route::get('/', [CategoryProductController::class, 'index'])->name('admin.product-category.index');
+         Route::get('/create', [CategoryProductController::class, 'create'])->name('admin.product-category.create');
+         Route::post('/store', [CategoryProductController::class, 'store'])->name('admin.product-category.store');
+         Route::get('/edit/{id}', [CategoryProductController::class, 'edit'])->name('admin.product-category.edit');
+         Route::post('/update/{id}', [CategoryProductController::class, 'update'])->name('admin.product-category.update');
+         Route::get('/delete/{id}', [CategoryProductController::class, 'destroy'])->name('admin.product-category.delete');
+         Route::get('/restore/{id}', [CategoryProductController::class, 'restore'])->name('admin.product-category.restore');
+     });
+     Route::group(['prefix' => 'product'], function () {
+         Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
+         Route::get('/create', [ProductController::class, 'create'])->name('admin.product.create');
+         Route::post('/store', [ProductController::class, 'store'])->name('admin.product.store');
+         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('admin.product.edit');
+         Route::post('/update/{id}', [ProductController::class, 'update'])->name('admin.product.update');
+         Route::get('/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
+         Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('admin.product.restore');
+     });
 
-//     Route::group(['prefix' => 'color'], function () {
-//         Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
-//         Route::get('/create', [ColorController::class, 'create'])->name('admin.color.create');
-//         Route::post('/store', [ColorController::class, 'store'])->name('admin.color.store');
-//         Route::get('/edit/{id}', [ColorController::class, 'edit'])->name('admin.color.edit');
-//         Route::post('/update/{id}', [ColorController::class, 'update'])->name('admin.color.update');
-//         Route::get('/delete/{id}', [ColorController::class, 'destroy'])->name('admin.color.delete');
-//         Route::get('/restore/{id}', [ColorController::class, 'restore'])->name('admin.color.restore');
-//     });
-//     Route::group(['prefix' => 'size'], function () {
-//         Route::get('/', [SizeController::class, 'index'])->name('admin.size.index');
-//         Route::get('/create', [SizeController::class, 'create'])->name('admin.size.create');
-//         Route::post('/store', [SizeController::class, 'store'])->name('admin.size.store');
-//         Route::get('/edit/{id}', [SizeController::class, 'edit'])->name('admin.size.edit');
-//         Route::post('/update/{id}', [SizeController::class, 'update'])->name('admin.size.update');
-//         Route::get('/delete/{id}', [SizeController::class, 'destroy'])->name('admin.size.delete');
-//         Route::get('/restore/{id}', [SizeController::class, 'restore'])->name('admin.size.restore');
-//     });
-    
-    
+     Route::group(['prefix' => 'color'], function () {
+         Route::get('/', [ColorController::class, 'index'])->name('admin.color.index');
+         Route::get('/create', [ColorController::class, 'create'])->name('admin.color.create');
+         Route::post('/store', [ColorController::class, 'store'])->name('admin.color.store');
+         Route::get('/edit/{id}', [ColorController::class, 'edit'])->name('admin.color.edit');
+         Route::post('/update/{id}', [ColorController::class, 'update'])->name('admin.color.update');
+         Route::get('/delete/{id}', [ColorController::class, 'destroy'])->name('admin.color.delete');
+         Route::get('/restore/{id}', [ColorController::class, 'restore'])->name('admin.color.restore');
+     });
+     Route::group(['prefix' => 'size'], function () {
+         Route::get('/', [SizeController::class, 'index'])->name('admin.size.index');
+         Route::get('/create', [SizeController::class, 'create'])->name('admin.size.create');
+         Route::post('/store', [SizeController::class, 'store'])->name('admin.size.store');
+         Route::get('/edit/{id}', [SizeController::class, 'edit'])->name('admin.size.edit');
+         Route::post('/update/{id}', [SizeController::class, 'update'])->name('admin.size.update');
+         Route::get('/delete/{id}', [SizeController::class, 'destroy'])->name('admin.size.delete');
+         Route::get('/restore/{id}', [SizeController::class, 'restore'])->name('admin.size.restore');
+     });
 
 
-// });
+
+
+ });
 

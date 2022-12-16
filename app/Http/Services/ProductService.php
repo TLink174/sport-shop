@@ -79,7 +79,12 @@ class ProductService
     }
     public function restore($id)
     {
-        $this->product->restore($id);
-        return redirect()->route('admin.product.index');
+        $product = $this->product->withTrashed()->find($id);
+
+        if ($product && $product->trashed()) {
+            $product->restore();
+        }
+        $product->restore();
     }
+
 }

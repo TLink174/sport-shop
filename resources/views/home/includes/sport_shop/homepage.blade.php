@@ -7,7 +7,7 @@
 							<div class="row flex-nowrap four-in-row">
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-01.png"
 												class="prd-img-first lazyload" alt="">
@@ -20,7 +20,7 @@
 										</div>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Legging Red/Black</a></h2>
+										<h2 class="prd-title"><a href="#">Legging Red/Black</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-old">$299</div>
@@ -31,7 +31,7 @@
 													<button class="btn js-select-add-to-cart" data-product='{
 												"name": "Legging Red/Black",
 												"path":"images/products/product-01.jpg",
-												"url":"product.html",
+												"url":"#",
 												"aspect_ratio":0.778,
 												"variants":{
 													"Red": {
@@ -39,7 +39,7 @@
 														"variant_name": "Red",
 														"aspect_ratio":"0.778",
 														"path":"images/products/product-01.jpg",
-														"url":"product.html",
+														"url":"#",
 														"price_old":"$299",
 														"price_actual":"$149",
 														"disabled":true},
@@ -48,7 +48,7 @@
 														"variant_name": "Mint",
 														"aspect_ratio":"0.778",
 														 "path":"images/products/product-01-1.jpg",
-														 "url":"product.html",
+														 "url":"#",
 														 "price_old":"$299",
 														 "price_actual":"$139",
 														 "disabled":true},
@@ -57,7 +57,7 @@
 														"variant_name": "Violet",
 														"aspect_ratio":"0.778",
 														 "path":"images/products/product-01-2.jpg",
-														 "url":"product.html",
+														 "url":"#",
 														 "price_old":"$299",
 														 "price_actual":"$179",
 														 "disabled":true},
@@ -66,7 +66,7 @@
 														"variant_name": "Lime",
 														"aspect_ratio":"0.778",
 														 "path":"images/products/product-01-3.jpg",
-														 "url":"product.html",
+														 "url":"#",
 														 "price_old":"$299",
 														 "price_actual":"$119",
 														 "disabled":true}
@@ -79,7 +79,7 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-02.png"
 												class="prd-img-first lazyload" alt="">
@@ -89,7 +89,7 @@
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Leggings Snake print</a></h2>
+										<h2 class="prd-title"><a href="#">Leggings Snake print</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$299</div>
@@ -97,7 +97,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Leggings Snake print", "path":"images/products/product-02.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Leggings Snake print", "path":"images/products/product-02.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -106,7 +106,7 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-03.png"
 												class="prd-img-first lazyload" alt="">
@@ -116,7 +116,7 @@
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Striped Leggings and Top</a></h2>
+										<h2 class="prd-title"><a href="#">Striped Leggings and Top</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$289</div>
@@ -124,7 +124,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Striped Leggings and Top", "path":"images/products/product-03.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Striped Leggings and Top", "path":"images/products/product-03.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -133,7 +133,7 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-04.png"
 												class="prd-img-first lazyload" alt="">
@@ -143,7 +143,7 @@
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit</a></h2>
+										<h2 class="prd-title"><a href="#">Fitness Jumpsuit</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$399</div>
@@ -151,7 +151,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit", "path":"images/products/product-04.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Fitness Jumpsuit", "path":"images/products/product-04.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -165,7 +165,7 @@
 							<div class="row flex-nowrap four-in-row">
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-05.png"
 												class="prd-img-first lazyload" alt="">
@@ -178,7 +178,7 @@
 										</div>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit Khaki/Black</a>
+										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Khaki/Black</a>
 										</h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
@@ -188,7 +188,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Khaki/Black", "path":"images/products/product-05.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Fitness Jumpsuit Khaki/Black", "path":"images/products/product-05.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -197,7 +197,7 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-06.png"
 												class="prd-img-first lazyload" alt="">
@@ -210,7 +210,7 @@
 										</div>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit Camouflage</a>
+										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Camouflage</a>
 										</h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
@@ -220,7 +220,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Camouflage", "path":"images/products/product-06.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Fitness Jumpsuit Camouflage", "path":"images/products/product-06.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -229,7 +229,7 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-07.png"
 												class="prd-img-first lazyload" alt="">
@@ -242,7 +242,7 @@
 										</div>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit Black</a></h2>
+										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Black</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-old">$399</div>
@@ -251,7 +251,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Black", "path":"images/products/product-07.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Fitness Jumpsuit Black", "path":"images/products/product-07.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -260,7 +260,7 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-08.png"
 												class="prd-img-first lazyload" alt="">
@@ -273,7 +273,7 @@
 										</div>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit Blue with black
+										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Blue with black
 												accents</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
@@ -283,7 +283,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Blue with black accents", "path":"images/products/product-08.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Fitness Jumpsuit Blue with black accents", "path":"images/products/product-08.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -297,14 +297,14 @@
 							<div class="row flex-nowrap four-in-row">
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-09.png"
 												class="prd-img-first lazyload" alt="">
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">T-shirt Black</a></h2>
+										<h2 class="prd-title"><a href="#">T-shirt Black</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$117</div>
@@ -312,7 +312,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "T-shirt Black", "path":"images/products/product-09.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "T-shirt Black", "path":"images/products/product-09.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -321,14 +321,14 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-10.png"
 												class="prd-img-first lazyload" alt="">
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Sport Shirt Black</a></h2>
+										<h2 class="prd-title"><a href="#">Sport Shirt Black</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$87</div>
@@ -336,7 +336,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Sport Shirt Black", "path":"images/products/product-10.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Sport Shirt Black", "path":"images/products/product-10.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -345,14 +345,14 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-11.png"
 												class="prd-img-first lazyload" alt="">
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">T-shirt White</a></h2>
+										<h2 class="prd-title"><a href="#">T-shirt White</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$97</div>
@@ -360,7 +360,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "T-shirt Whit", "path":"images/products/product-11.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "T-shirt Whit", "path":"images/products/product-11.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -369,14 +369,14 @@
 								</div>
 								<div class="col">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img prd-img--noequal">
+										<a href="#" class="prd-img prd-img--noequal">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-srcset="images/products/product-category-12.png"
 												class="prd-img-first lazyload" alt="">
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="product.html">Full Zipper Hoodies</a></h2>
+										<h2 class="prd-title"><a href="#">Full Zipper Hoodies</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
 												<div class="price-new">$239</div>
@@ -384,7 +384,7 @@
 											<div class="creative-product-carousel-action">
 												<form action="#">
 													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Full Zipper Hoodies", "path":"images/products/product-12.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+														data-product='{"name": "Full Zipper Hoodies", "path":"images/products/product-12.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 														To Cart</button>
 												</form>
 											</div>
@@ -639,7 +639,7 @@
 							<div class="prd ">
 								<div class="prd-inside">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img image-hover-scale image-container">
+										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-src="images/products/product-01.jpg" alt="Legging Red/Black"
 												class="js-prd-img lazyload">
@@ -749,7 +749,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="product.html">Legging Red/Black</a></h2>
+											<h2 class="prd-title"><a href="#">Legging Red/Black</a></h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
 												litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante
@@ -780,7 +780,7 @@
 												<div class="prd-action-left">
 													<form action="#">
 														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Legging Red/Black", "path":"images/products/product-01.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+															data-product='{"name": "Legging Red/Black", "path":"images/products/product-01.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 															To Cart</button>
 													</form>
 												</div>
@@ -802,7 +802,7 @@
 							<div class="prd ">
 								<div class="prd-inside">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img image-hover-scale image-container">
+										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-src="images/products/product-06.jpg"
 												alt="Fitness Jumpsuit Camouflage" class="js-prd-img lazyload">
@@ -838,7 +838,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit Camouflage</a>
+											<h2 class="prd-title"><a href="#">Fitness Jumpsuit Camouflage</a>
 											</h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
@@ -868,7 +868,7 @@
 												<div class="prd-action-left">
 													<form action="#">
 														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Fitness Jumpsuit Camouflage", "path":"images/products/product-06.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+															data-product='{"name": "Fitness Jumpsuit Camouflage", "path":"images/products/product-06.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 															To Cart</button>
 													</form>
 												</div>
@@ -890,7 +890,7 @@
 							<div class="prd ">
 								<div class="prd-inside">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img image-hover-scale image-container">
+										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-src="images/products/product-07.jpg" alt="Fitness Jumpsuit Black"
 												class="js-prd-img lazyload">
@@ -924,7 +924,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit Black</a></h2>
+											<h2 class="prd-title"><a href="#">Fitness Jumpsuit Black</a></h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
 												litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante
@@ -953,7 +953,7 @@
 												<div class="prd-action-left">
 													<form action="#">
 														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Fitness Jumpsuit Black", "path":"images/products/product-07.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+															data-product='{"name": "Fitness Jumpsuit Black", "path":"images/products/product-07.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 															To Cart</button>
 													</form>
 												</div>
@@ -975,7 +975,7 @@
 							<div class="prd ">
 								<div class="prd-inside">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img image-hover-scale image-container">
+										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-src="images/products/product-03.jpg" alt="Striped Leggings and Top"
 												class="js-prd-img lazyload">
@@ -1014,7 +1014,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="product.html">Striped Leggings and Top</a>
+											<h2 class="prd-title"><a href="#">Striped Leggings and Top</a>
 											</h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
@@ -1046,7 +1046,7 @@
 												<div class="prd-action-left">
 													<form action="#">
 														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Striped Leggings and Top", "path":"images/products/product-03.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+															data-product='{"name": "Striped Leggings and Top", "path":"images/products/product-03.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 															To Cart</button>
 													</form>
 												</div>
@@ -1068,7 +1068,7 @@
 							<div class="prd ">
 								<div class="prd-inside">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img image-hover-scale image-container">
+										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-src="images/products/product-04.jpg" alt="Fitness Jumpsuit"
 												class="js-prd-img lazyload">
@@ -1098,7 +1098,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit</a></h2>
+											<h2 class="prd-title"><a href="#">Fitness Jumpsuit</a></h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
 												litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante
@@ -1127,7 +1127,7 @@
 												<div class="prd-action-left">
 													<form action="#">
 														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Fitness Jumpsuit", "path":"images/products/product-04.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+															data-product='{"name": "Fitness Jumpsuit", "path":"images/products/product-04.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 															To Cart</button>
 													</form>
 												</div>
@@ -1149,7 +1149,7 @@
 							<div class="prd ">
 								<div class="prd-inside">
 									<div class="prd-img-area">
-										<a href="product.html" class="prd-img image-hover-scale image-container">
+										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 												data-src="images/products/product-05.jpg"
 												alt="Fitness Jumpsuit Khaki/Black" class="js-prd-img lazyload">
@@ -1188,7 +1188,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="product.html">Fitness Jumpsuit
+											<h2 class="prd-title"><a href="#">Fitness Jumpsuit
 													Khaki/Black</a></h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
@@ -1220,7 +1220,7 @@
 												<div class="prd-action-left">
 													<form action="#">
 														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Fitness Jumpsuit Khaki/Black", "path":"images/products/product-05.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+															data-product='{"name": "Fitness Jumpsuit Khaki/Black", "path":"images/products/product-05.jpg", "url":"#", "aspect_ratio":0.778}'>Add
 															To Cart</button>
 													</form>
 												</div>
