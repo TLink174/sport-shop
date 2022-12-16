@@ -46,6 +46,7 @@ class UserService
             'password' => $this->hashPassword($request->password),
         ]);
         $userCreated->roles()->attach($request->roles);
+
         return $userCreated;
     }
 

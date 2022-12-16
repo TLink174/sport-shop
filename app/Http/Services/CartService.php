@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\s;
+namespace App\Http\Services;
 
 use App\Models\Cart;
 use App\Models\User;
@@ -20,7 +20,7 @@ class CartService
     public function create($id_user)
     {
         $cartCreated = $this->cart->create([
-            'id_user' =>$this->user->getById($id_user),
+            'id_user' =>$id_user,
         ]);
     }
     public function delete($id)

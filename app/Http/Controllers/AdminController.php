@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+
+
+use App\Http\Services\CartService;
+use App\Http\Services\CategoryProductService;
 use App\Http\Services\UserService;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    private CartService $cartService;
     private UserService $userService;
 
-    public function __construct(UserService $userService)
+    public function __construct(UserService $userService, CartService $cartService)
     {
         $this->userService = $userService;
+        $this->cartService = $cartService;
     }
 
     public function index()
@@ -55,8 +61,10 @@ class AdminController extends Controller
 //            'password' => 'required|min:6|confirmed'
 //        ]);
         $user = $this->userService->register($request);
+        $this->cartService->create($this->userService->getByEmail($request->email)->id);
         if ($user) {
             //set auth user
+
             auth()->login($user);
             return redirect()->route('admin.auth.login')->with('success', 'Register success');
 
