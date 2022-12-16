@@ -38,7 +38,7 @@
 					</div>
 					<!--navigation-->
 					<div class="hdr-nav hide-mobile nav-holder-s">
-					@include('home.includes.sport_shop.menu')
+
 					</div>
 					<!--//navigation-->
 					<div class="hdr-links-wrap col-auto ml-auto">
@@ -479,25 +479,11 @@
 			<div class="dropdn-content-block">
 				<div class="dropdn-close"><span class="js-dropdn-close">Close</span></div>
 				<ul>
-					<li><a href="account-create.html"><span>Log In</span><i class="icon-login"></i></a></li>
-					<li><a href="account-create.html"><span>Register</span><i class="icon-user2"></i></a></li>
+					<li><a href="admin/login"><span>Log In</span><i class="icon-login"></i></a></li>
+					<li><a href="admin/register"><span>Register</span><i class="icon-user2"></i></a></li>
 					<li><a href="checkout.html"><span>Checkout</span><i class="icon-card"></i></a></li>
 				</ul>
-				<div class="dropdn-form-wrapper">
-					<h5>Quick Login</h5>
-					<form action="#">
-						<div class="form-group">
-							<input type="text" class="form-control form-control--sm is-invalid"
-								placeholder="Enter your e-mail">
-							<div class="invalid-feedback">Can't be blank</div>
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control form-control--sm"
-								placeholder="Enter your password">
-						</div>
-						<button type="submit" class="btn">Enter</button>
-					</form>
-				</div>
+				
 			</div>
 			<div class="drop-overlay js-dropdn-close"></div>
 		</div>
@@ -582,7 +568,7 @@
 						<div class="minicart-drop-total-price col" data-header-cart-total="">$340</div>
 					</div>
 					<div class="minicart-drop-actions">
-						<a href="cart.html" class="btn btn--md btn--grey"><i class="icon-basket"></i><span>Cart
+						<a href="cart" class="btn btn--md btn--grey"><i class="icon-basket"></i><span>Cart
 								Page</span></a>
 						<a href="checkout.html" class="btn btn--md"><i class="icon-checkout"></i><span>Check
 								out</span></a>
@@ -803,7 +789,7 @@
 			</div>
 		</div>
 	</div>
-	
+	@include('home.includes.sport_shop.js')
 </body>
 
 </html>

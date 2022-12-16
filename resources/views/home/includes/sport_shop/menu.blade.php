@@ -59,58 +59,24 @@
 											<li><a href="#">T-Shirts Skin <span class="menu-label">Coming
 														Soon</span></a><span class="submenu-link-image"><img
 														src="images/screen/screen-tshirts.png" alt=""></span></li>
-											<li><a href="index-02.html">Home page 2</a><span
-													class="submenu-link-image"><img src="images/screen/screen02.png"
-														alt=""></span></li>
-											<li><a href="index-03.html">Home page 3</a><span
-													class="submenu-link-image"><img src="images/screen/screen03.png"
-														alt=""></span></li>
-											<li><a href="index-04.html">Home page 4</a><span
-													class="submenu-link-image"><img src="images/screen/screen04.png"
-														alt=""></span></li>
-											<li><a href="index-05.html">Home page 5</a><span
-													class="submenu-link-image"><img src="images/screen/screen05.png"
-														alt=""></span></li>
-											<li><a href="index-06.html">Home page 6</a><span
-													class="submenu-link-image"><img src="images/screen/screen06.png"
-														alt=""></span></li>
-											<li><a href="index-07.html">Home page 7</a><span
-													class="submenu-link-image"><img src="images/screen/screen07.png"
-														alt=""></span></li>
-											<li><a href="index-08.html">Home page 8</a><span
-													class="submenu-link-image"><img src="images/screen/screen08.png"
-														alt=""></span></li>
-											<li><a href="index-09.html">Home page 9</a><span
-													class="submenu-link-image"><img src="images/screen/screen09.png"
-														alt=""></span></li>
-											<li><a href="index-10.html">Home page 10</a><span
-													class="submenu-link-image"><img src="images/screen/screen10.png"
-														alt=""></span></li>
-											<li><a href="index-rtl.html">Home page RTL</a><span
-													class="submenu-link-image"><img src="images/screen/screen-rtl.png"
-														alt=""></span></li>
+											
 										</ul>
 									</div>
 								</li>
 								<li class="mmenu-item--simple"><a href="#">Pages</a>
 									<div class="mmenu-submenu">
 										<ul class="submenu-list">
-											<li><a href="product.html">Product page</a>
+											<li><a href="product">Product page</a>
 												<ul>
 													<li><a href="product.html">Product page variant 1<span
 																class="menu-label menu-label--color3">Popular</span></a>
 													</li>
-													<li><a href="product-2.html">Product page variant 2</a></li>
-													<li><a href="product-3.html">Product page variant 3</a></li>
-													<li><a href="product-4.html">Product page variant 4</a></li>
-													<li><a href="product-5.html">Product page variant 5</a></li>
-													<li><a href="product-6.html">Product page variant 6</a></li>
-													<li><a href="product-7.html">Product page variant 7</a></li>
+											
 												</ul>
 											</li>
-											<li><a href="category.html">Category page</a>
+											<li><a href="#">Category page</a>
 												<ul>
-													<li><a href="category.html">Left sidebar filters</a></li>
+													<li><a href="#">Left sidebar filters</a></li>
 													<li><a href="category-closed-filter.html">Closed filters</a></li>
 													<li><a href="category-horizontal-filter.html">Horizontal filters</a>
 													</li>
@@ -118,13 +84,10 @@
 													<li><a href="category-empty.html">Empty category</a></li>
 												</ul>
 											</li>
-											<li><a href="cart.html">Cart & Checkout</a>
+											<li><a href="cart">Cart & Checkout</a>
 												<ul>
-													<li><a href="cart.html">Cart Page</a></li>
-													<li><a href="cart-empty.html">Empty cart</a></li>
-													<li><a href="checkout.html">Checkout variant 1</a></li>
-													<li><a href="checkout-2.html">Checkout variant 2</a></li>
-													<li><a href="checkout-3.html">Checkout variant 3</a></li>
+													<li><a href="cart">Cart Page</a></li>
+													<li><a href="cart-empty.html">Empty cart</a></li>													
 												</ul>
 											</li>
 											<li><a href="account-create.html">Account</a>
@@ -157,8 +120,8 @@
 										</ul>
 									</div>
 								</li>
-								<li><a href="category.html">Accessories<span class="menu-label">SALE</span></a></li>
-								<li class="mmenu-item--mega"><a href="category.html">Men</a>
+								<li><a href="#">Accessories<span class="menu-label">SALE</span></a></li>
+								<li class="mmenu-item--mega"><a href="#">Men</a>
 									<div class="mmenu-submenu mmenu-submenu--has-bottom">
 										<div class="mmenu-submenu-inside">
 											<div class="container">
@@ -170,83 +133,83 @@
 																class="lazyload fade-up" alt=""></a>
 													</div>
 													<h3 class="submenu-title"><a
-															href="category.html">Pre-Collection<br>Spring-Summer
+															href="#">Pre-Collection<br>Spring-Summer
 															2021</a></h3>
 												</div>
 												<div class="mmenu-cols column-4">
 													<div class="mmenu-col">
 														<h3 class="submenu-title"><a
-																href="category.html">Collections</a></h3>
+																href="#">Collections</a></h3>
 														<ul class="submenu-list">
-															<li><a href="category.html">Martins d'Art 2020/21<span
+															<li><a href="#">Martins d'Art 2020/21<span
 																		class="submenu-link-txt">Available in boutiques
 																		from June 2019</span></a></li>
-															<li><a href="category.html">Spring-Summer 2021<span
+															<li><a href="#">Spring-Summer 2021<span
 																		class="submenu-link-txt">Available in boutiques
 																		from March 2019</span></a></li>
-															<li><a href="category.html">Spring-Summer 2021
+															<li><a href="#">Spring-Summer 2021
 																	Pre-Collection<span class="submenu-link-txt">In
 																		boutiques</span></a></li>
-															<li><a href="category.html">Cruise 2020/21<span
+															<li><a href="#">Cruise 2020/21<span
 																		class="submenu-link-txt">In boutiques</span></a>
 															</li>
-															<li><a href="category.html">Fall-Winter 2020/21</a></li>
+															<li><a href="#">Fall-Winter 2020/21</a></li>
 														</ul>
 													</div>
 													<div class="mmenu-col">
 														<h3 class="submenu-title"><a
-																href="category.html">Ready-to-wear</a></h3>
+																href="#">Ready-to-wear</a></h3>
 														<ul class="submenu-list">
-															<li><a href="category.html" class="active">Jackets</a>
+															<li><a href="#" class="active">Jackets</a>
 																<ul class="sub-level">
-																	<li><a href="category.html">Bomber Jackets</a></li>
-																	<li><a href="category.html">Biker Jacket</a></li>
-																	<li><a href="category.html">Trucker Jacket</a></li>
-																	<li><a href="category.html">Denim Jackets</a></li>
-																	<li><a href="category.html">Blouson Jacket<span
+																	<li><a href="#">Bomber Jackets</a></li>
+																	<li><a href="#">Biker Jacket</a></li>
+																	<li><a href="#">Trucker Jacket</a></li>
+																	<li><a href="#">Denim Jackets</a></li>
+																	<li><a href="#">Blouson Jacket<span
 																				class="menu-label">SALE</span></a></li>
-																	<li><a href="category.html">Overcoat</a></li>
-																	<li><a href="category.html">Trench Coat</a></li>
+																	<li><a href="#">Overcoat</a></li>
+																	<li><a href="#">Trench Coat</a></li>
 																</ul>
 															</li>
-															<li><a href="category.html">Dresses<span
+															<li><a href="#">Dresses<span
 																		class="menu-label menu-label--color3">SALE</span></a>
 															</li>
-															<li><a href="category.html">Blouses & Tops</a></li>
-															<li><a href="category.html">Cardigans & Pullovers</a></li>
-															<li><a href="category.html">Skirts</a></li>
-															<li><a href="category.html">Pants & Shorts</a></li>
-															<li><a href="category.html">Outerwear</a></li>
-															<li><a href="category.html">Swimwear</a></li>
+															<li><a href="#">Blouses & Tops</a></li>
+															<li><a href="#">Cardigans & Pullovers</a></li>
+															<li><a href="#">Skirts</a></li>
+															<li><a href="#">Pants & Shorts</a></li>
+															<li><a href="#">Outerwear</a></li>
+															<li><a href="#">Swimwear</a></li>
 														</ul>
 													</div>
 													<div class="mmenu-col">
 														<h3 class="submenu-title"><a
-																href="category.html">Accessories</a></h3>
+																href="#">Accessories</a></h3>
 														<ul class="submenu-list">
-															<li><a href="category.html">Jackets</a></li>
-															<li><a href="category.html">Dresses</a></li>
-															<li><a href="category.html">Blouses & Tops</a></li>
-															<li><a href="category.html">Cardigans & Pullovers</a></li>
-															<li><a href="category.html">Skirts<span
+															<li><a href="#">Jackets</a></li>
+															<li><a href="#">Dresses</a></li>
+															<li><a href="#">Blouses & Tops</a></li>
+															<li><a href="#">Cardigans & Pullovers</a></li>
+															<li><a href="#">Skirts<span
 																		class="menu-label">SALE</span></a></li>
-															<li><a href="category.html">Pants & Shorts</a></li>
-															<li><a href="category.html">Outerwear</a></li>
+															<li><a href="#">Pants & Shorts</a></li>
+															<li><a href="#">Outerwear</a></li>
 														</ul>
 													</div>
 													<div class="mmenu-col">
-														<h3 class="submenu-title"><a href="category.html">Brands</a>
+														<h3 class="submenu-title"><a href="#">Brands</a>
 														</h3>
 														<ul class="submenu-list">
-															<li><a href="category.html">Jackets</a></li>
-															<li><a href="category.html">Dresses</a></li>
-															<li><a href="category.html">Blouses & Tops</a></li>
-															<li><a href="category.html">Cardigans & Pullovers</a></li>
-															<li><a href="category.html">Skirts<span
+															<li><a href="#">Jackets</a></li>
+															<li><a href="#">Dresses</a></li>
+															<li><a href="#">Blouses & Tops</a></li>
+															<li><a href="#">Cardigans & Pullovers</a></li>
+															<li><a href="#">Skirts<span
 																		class="menu-label menu-label--color1">SALE</span></a>
 															</li>
-															<li><a href="category.html">Pants & Shorts</a></li>
-															<li><a href="category.html">Outerwear</a></li>
+															<li><a href="#">Pants & Shorts</a></li>
+															<li><a href="#">Outerwear</a></li>
 														</ul>
 													</div>
 													<div class="mmenu-bottom justify-content-center">

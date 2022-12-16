@@ -28,7 +28,8 @@
                         </div>
                         <div class="cart-table-prd">
                             <div class="cart-table-prd-image">
-                                <a href="product.html" class="prd-img"><img class="lazyload fade-up" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-01-1.jpg" alt=""></a>
+                                <a href="product
+                                " class="prd-img"><img class="lazyload fade-up" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-01-1.jpg" alt=""></a>
                             </div>
                             <div class="cart-table-prd-content-wrap">
                                 <div class="cart-table-prd-info">
@@ -36,7 +37,8 @@
                                         <div class="price-old">$200.00</div>
                                         <div class="price-new">$180.00</div>
                                     </div>
-                                    <h2 class="cart-table-prd-name"><a href="product.html">Leather Pegged Pants</a>
+                                    <h2 class="cart-table-prd-name"><a href="product
+                                    ">Leather Pegged Pants</a>
                                     </h2>
                                 </div>
                                 <div class="cart-table-prd-qty">
@@ -56,14 +58,16 @@
                         </div>
                         <div class="cart-table-prd">
                             <div class="cart-table-prd-image">
-                                <a href="product.html" class="prd-img"><img class="lazyload fade-up" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-16-1.jpg" alt=""></a>
+                                <a href="product
+                                " class="prd-img"><img class="lazyload fade-up" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-16-1.jpg" alt=""></a>
                             </div>
                             <div class="cart-table-prd-content-wrap">
                                 <div class="cart-table-prd-info">
                                     <div class="cart-table-prd-price">
                                         <div class="price-new">$220.00</div>
                                     </div>
-                                    <h2 class="cart-table-prd-name"><a href="product.html">Cascade Casual Shirt</a>
+                                    <h2 class="cart-table-prd-name"><a href="product
+                                    ">Cascade Casual Shirt</a>
                                     </h2>
                                 </div>
                                 <div class="cart-table-prd-qty">
@@ -83,14 +87,16 @@
                         </div>
                         <div class="cart-table-prd">
                             <div class="cart-table-prd-image">
-                                <a href="product.html" class="prd-img"><img class="lazyload fade-up" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-02-1.jpg" alt=""></a>
+                                <a href="product
+                                " class="prd-img"><img class="lazyload fade-up" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-02-1.jpg" alt=""></a>
                             </div>
                             <div class="cart-table-prd-content-wrap">
                                 <div class="cart-table-prd-info">
                                     <div class="cart-table-prd-price">
                                         <div class="price-new">$75.00</div>
                                     </div>
-                                    <h2 class="cart-table-prd-name"><a href="product.html">Oversize Cotton Dress</a>
+                                    <h2 class="cart-table-prd-name"><a href="product
+                                    ">Oversize Cotton Dress</a>
                                     </h2>
                                 </div>
                                 <div class="cart-table-prd-qty">
@@ -122,7 +128,8 @@
                                     <div class="prd prd--style2 prd-labels--max prd-labels-shadow ">
                                         <div class="prd-inside">
                                             <div class="prd-img-area">
-                                                <a href="product.html" class="prd-img image-hover-scale image-container">
+                                                <a href="product
+                                                " class="prd-img image-hover-scale image-container">
                                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-06-1.jpg" alt="Midi Dress" class="js-prd-img lazyload fade-up">
                                                     <div class="foxic-loader"></div>
                                                     <div class="prd-big-squared-labels">
@@ -176,7 +183,8 @@
                                                     </div>
                                                     <div class="prd-rating justify-content-center"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
                                                     <div class="prd-tag"><a href="#">Seiko</a></div>
-                                                    <h2 class="prd-title"><a href="product.html">Midi Dress</a></h2>
+                                                    <h2 class="prd-title"><a href="product
+                                                    ">Midi Dress</a></h2>
                                                     <div class="prd-description">
                                                         Quisque volutpat condimentum velit. Class aptent taciti
                                                         sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -184,7 +192,8 @@
                                                     </div>
                                                     <div class="prd-action">
                                                         <form action="#">
-                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Midi Dress", "path":"images/skins/fashion/products/product-06-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Midi Dress", "path":"images/skins/fashion/products/product-06-1.jpg", "url":"product
+                                                                ", "aspect_ratio":0.778}'>Add
                                                                 To Cart</button>
                                                         </form>
                                                     </div>
@@ -202,7 +211,8 @@
                                                     <div class="prd-action">
                                                         <div class="prd-action-left">
                                                             <form action="#">
-                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Midi Dress", "path":"images/skins/fashion/products/product-06-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Midi Dress", "path":"images/skins/fashion/products/product-06-1.jpg", "url":"product
+                                                                    ", "aspect_ratio":0.778}'>Add
                                                                     To Cart</button>
                                                             </form>
                                                         </div>
@@ -214,7 +224,8 @@
                                     <div class="prd prd--style2 prd-labels--max prd-labels-shadow ">
                                         <div class="prd-inside">
                                             <div class="prd-img-area">
-                                                <a href="product.html" class="prd-img image-hover-scale image-container">
+                                                <a href="product
+                                                " class="prd-img image-hover-scale image-container">
                                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-17-1.jpg" alt="Stand Collar Shirt" class="js-prd-img lazyload fade-up">
                                                     <div class="foxic-loader"></div>
                                                     <div class="prd-big-squared-labels">
@@ -261,7 +272,8 @@
                                                     </div>
                                                     <div class="prd-rating justify-content-center"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
                                                     <div class="prd-tag"><a href="#">FOXic</a></div>
-                                                    <h2 class="prd-title"><a href="product.html">Stand Collar
+                                                    <h2 class="prd-title"><a href="product
+                                                    ">Stand Collar
                                                             Shirt</a></h2>
                                                     <div class="prd-description">
                                                         Quisque volutpat condimentum velit. Class aptent taciti
@@ -270,7 +282,8 @@
                                                     </div>
                                                     <div class="prd-action">
                                                         <form action="#">
-                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Stand Collar Shirt", "path":"images/skins/fashion/products/product-17-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Stand Collar Shirt", "path":"images/skins/fashion/products/product-17-1.jpg", "url":"product
+                                                                ", "aspect_ratio":0.778}'>Add
                                                                 To Cart</button>
                                                         </form>
                                                     </div>
@@ -290,7 +303,8 @@
                                                     <div class="prd-action">
                                                         <div class="prd-action-left">
                                                             <form action="#">
-                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Stand Collar Shirt", "path":"images/skins/fashion/products/product-17-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Stand Collar Shirt", "path":"images/skins/fashion/products/product-17-1.jpg", "url":"product
+                                                                    ", "aspect_ratio":0.778}'>Add
                                                                     To Cart</button>
                                                             </form>
                                                         </div>
@@ -302,7 +316,8 @@
                                     <div class="prd prd--style2 prd-labels--max prd-labels-shadow ">
                                         <div class="prd-inside">
                                             <div class="prd-img-area">
-                                                <a href="product.html" class="prd-img image-hover-scale image-container">
+                                                <a href="product
+                                                " class="prd-img image-hover-scale image-container">
                                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-21-1.jpg" alt="Genuine Leather" class="js-prd-img lazyload fade-up">
                                                     <div class="foxic-loader"></div>
                                                     <div class="prd-big-squared-labels">
@@ -343,7 +358,8 @@
                                                     </div>
                                                     <div class="prd-rating justify-content-center"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
                                                     <div class="prd-tag"><a href="#">FOXic</a></div>
-                                                    <h2 class="prd-title"><a href="product.html">Genuine Leather</a>
+                                                    <h2 class="prd-title"><a href="product
+                                                    ">Genuine Leather</a>
                                                     </h2>
                                                     <div class="prd-description">
                                                         Quisque volutpat condimentum velit. Class aptent taciti
@@ -352,7 +368,8 @@
                                                     </div>
                                                     <div class="prd-action">
                                                         <form action="#">
-                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Genuine Leather", "path":"images/skins/fashion/products/product-21-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Genuine Leather", "path":"images/skins/fashion/products/product-21-1.jpg", "url":"product
+                                                                ", "aspect_ratio":0.778}'>Add
                                                                 To Cart</button>
                                                         </form>
                                                     </div>
@@ -370,7 +387,8 @@
                                                     <div class="prd-action">
                                                         <div class="prd-action-left">
                                                             <form action="#">
-                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Genuine Leather", "path":"images/skins/fashion/products/product-21-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Genuine Leather", "path":"images/skins/fashion/products/product-21-1.jpg", "url":"product
+                                                                    ", "aspect_ratio":0.778}'>Add
                                                                     To Cart</button>
                                                             </form>
                                                         </div>
@@ -382,7 +400,8 @@
                                     <div class="prd prd--style2 prd-labels--max prd-labels-shadow ">
                                         <div class="prd-inside">
                                             <div class="prd-img-area">
-                                                <a href="product.html" class="prd-img image-hover-scale image-container">
+                                                <a href="product
+                                                " class="prd-img image-hover-scale image-container">
                                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-26-1.jpg" alt="Pureboost Shoes" class="js-prd-img lazyload fade-up">
                                                     <div class="foxic-loader"></div>
                                                     <div class="prd-big-squared-labels">
@@ -421,7 +440,8 @@
                                                     </div>
                                                     <div class="prd-rating justify-content-center"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
                                                     <div class="prd-tag"><a href="#">FOXic</a></div>
-                                                    <h2 class="prd-title"><a href="product.html">Pureboost Shoes</a>
+                                                    <h2 class="prd-title"><a href="product
+                                                    ">Pureboost Shoes</a>
                                                     </h2>
                                                     <div class="prd-description">
                                                         Quisque volutpat condimentum velit. Class aptent taciti
@@ -430,7 +450,8 @@
                                                     </div>
                                                     <div class="prd-action">
                                                         <form action="#">
-                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Pureboost Shoes", "path":"images/skins/fashion/products/product-26-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Pureboost Shoes", "path":"images/skins/fashion/products/product-26-1.jpg", "url":"product
+                                                                ", "aspect_ratio":0.778}'>Add
                                                                 To Cart</button>
                                                         </form>
                                                     </div>
@@ -448,7 +469,8 @@
                                                     <div class="prd-action">
                                                         <div class="prd-action-left">
                                                             <form action="#">
-                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Pureboost Shoes", "path":"images/skins/fashion/products/product-26-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Pureboost Shoes", "path":"images/skins/fashion/products/product-26-1.jpg", "url":"product
+                                                                    ", "aspect_ratio":0.778}'>Add
                                                                     To Cart</button>
                                                             </form>
                                                         </div>
@@ -460,7 +482,8 @@
                                     <div class="prd prd--style2 prd-labels--max prd-labels-shadow ">
                                         <div class="prd-inside">
                                             <div class="prd-img-area">
-                                                <a href="product.html" class="prd-img image-hover-scale image-container">
+                                                <a href="product
+                                                " class="prd-img image-hover-scale image-container">
                                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skins/fashion/products/product-30-1.jpg" alt="Multiple Pocket" class="js-prd-img lazyload fade-up">
                                                     <div class="foxic-loader"></div>
                                                     <div class="prd-big-squared-labels">
@@ -499,7 +522,8 @@
                                                     </div>
                                                     <div class="prd-rating justify-content-center"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
                                                     <div class="prd-tag"><a href="#">FOXic</a></div>
-                                                    <h2 class="prd-title"><a href="product.html">Multiple Pocket</a>
+                                                    <h2 class="prd-title"><a href="product
+                                                    ">Multiple Pocket</a>
                                                     </h2>
                                                     <div class="prd-description">
                                                         Quisque volutpat condimentum velit. Class aptent taciti
@@ -508,7 +532,8 @@
                                                     </div>
                                                     <div class="prd-action">
                                                         <form action="#">
-                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Multiple Pocket", "path":"images/skins/fashion/products/product-30-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                            <button class="btn js-prd-addtocart" data-product='{"name": "Multiple Pocket", "path":"images/skins/fashion/products/product-30-1.jpg", "url":"product
+                                                                ", "aspect_ratio":0.778}'>Add
                                                                 To Cart</button>
                                                         </form>
                                                     </div>
@@ -526,7 +551,8 @@
                                                     <div class="prd-action">
                                                         <div class="prd-action-left">
                                                             <form action="#">
-                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Multiple Pocket", "path":"images/skins/fashion/products/product-30-1.jpg", "url":"product.html", "aspect_ratio":0.778}'>Add
+                                                                <button class="btn js-prd-addtocart" data-product='{"name": "Multiple Pocket", "path":"images/skins/fashion/products/product-30-1.jpg", "url":"product
+                                                                    ", "aspect_ratio":0.778}'>Add
                                                                     To Cart</button>
                                                             </form>
                                                         </div>

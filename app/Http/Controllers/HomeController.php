@@ -20,11 +20,11 @@ class HomeController extends Controller
     }
 
     public function homePage(){
-        $product = Size::find(1);
-        if ($product){
-            dd($product);
+        // $product = Size::find(1);
+        // if ($product){
+        //     dd($product);
             
-        }
+        // }
         return view('home.pages.index');
 
         
@@ -37,15 +37,18 @@ class HomeController extends Controller
 
     }
 
-    public function detailPage($id){
-        $blog = $this->blogService->getBlogById($id);
-        $categories = $this->categoryService->getAllCategoryPublic(10);
-        if (isset($blog) && count($categories) > 0 && $blog->status == 1 ){
-            return view('home.pages.detail', compact('blog', 'categories'));
-        }
-        else{
-            return redirect()->route('home.index');
-        }
-
+    public function detailPage(){
+        // $blog = $this->blogService->getBlogById($id);
+        // $categories = $this->categoryService->getAllCategoryPublic(10);
+        // if (isset($blog) && count($categories) > 0 && $blog->status == 1 ){
+        //     return view('home.pages.detail', compact('blog', 'categories'));
+        // }
+        // else{
+        //     return redirect()->route('home.index');
+        // }
+        return view('home.pages.sport_shop.cart');
+    }
+    public function product(){
+        return view('home.pages.sport_shop.product');
     }
 }
