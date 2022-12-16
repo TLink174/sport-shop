@@ -136,43 +136,43 @@
 							<div class="hdr-inline-link">
 
 								<!-- Header Language -->
-							<div class="dropdn_language">
-								<div class="dropdn dropdn_language dropdn_language--noimg dropdn_caret">
-									<a href="#" class="dropdn-link js-dropdn-link"><span
-											class="js-dropdn-select-current">English</span><i
-											class="icon-angle-down"></i></a>
-									<div class="dropdn-content">
-										<ul>
-											<li class="active"><a href="#"><img src="images/flags/en.png"
-														alt="">English</a></li>
-											<li><a href="#"><img src="images/flags/sp.png" alt="">Spanish</a></li>
-											<li><a href="#"><img src="images/flags/de.png" alt="">German</a></li>
-											<li><a href="#"><img src="images/flags/fr.png" alt="">French</a></li>
-										</ul>
+								<div class="dropdn_language">
+									<div class="dropdn dropdn_language dropdn_language--noimg dropdn_caret">
+										<a href="#" class="dropdn-link js-dropdn-link"><span
+												class="js-dropdn-select-current">English</span><i
+												class="icon-angle-down"></i></a>
+										<div class="dropdn-content">
+											<ul>
+												<li class="active"><a href="#"><img src="images/flags/en.png"
+															alt="">English</a></li>
+												<li><a href="#"><img src="images/flags/sp.png" alt="">Spanish</a></li>
+												<li><a href="#"><img src="images/flags/de.png" alt="">German</a></li>
+												<li><a href="#"><img src="images/flags/fr.png" alt="">French</a></li>
+											</ul>
+										</div>
 									</div>
 								</div>
-							</div>
 								<!-- /Header Language -->
 								<!-- Header Currency -->
-							<div class="dropdn_currency">
-								<div class="dropdn dropdn_caret">
-									<a href="#" class="dropdn-link js-dropdn-link">US dollars<i
-											class="icon-angle-down"></i></a>
-									<div class="dropdn-content">
-										<ul>
-											<li class="active"><a href="#"><span>US dollars</span></a></li>
-											<li><a href="#"><span>Euro</span></a></li>
-											<li><a href="#"><span>UK pounds</span></a></li>
+								<div class="dropdn_currency">
+									<div class="dropdn dropdn_caret">
+										<a href="#" class="dropdn-link js-dropdn-link">US dollars<i
+												class="icon-angle-down"></i></a>
+										<div class="dropdn-content">
+											<ul>
+												<li class="active"><a href="#"><span>US dollars</span></a></li>
+												<li><a href="#"><span>Euro</span></a></li>
+												<li><a href="#"><span>UK pounds</span></a></li>
 
-										</ul>
+											</ul>
+										</div>
 									</div>
 								</div>
-							</div>
 								<!-- /Header Currency -->
 								<div class="hdr_container_desktop">
 									<!-- Header Account -->
 									<div class="dropdn dropdn_account dropdn_fullheight">
-									<ul class="mmenu mmenu-js">
+                                        @<ul class="mmenu mmenu-js">
                                             @if(!auth()->check())
                                                 <li class="mmenu-item--simple">
                                                     <a href="#" class="dropdn-link js-dropdn-link" data-panel="#dropdnAccount"><i
