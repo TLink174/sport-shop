@@ -55,7 +55,7 @@ class AdminUserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $this->userService->create($request);
-        dd($this->userService->getByEmail($request->email)->id);
+        // dd($this->userService->getByEmail($request->email)->id);
         $this->cartService->create($this->userService->getByEmail($request->email)->id);
         return redirect()->route('admin.users.index');
     }
