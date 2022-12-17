@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title_page')
-    Create Category - Admin - {{ config('app.name') }}
+    Create Product - Admin - {{ config('app.name') }}
 @endsection
 @section('name_user')
     Nam 077
@@ -10,51 +10,84 @@
 @endsection
 @section('js_custom')
     <script src="{{asset('/admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+    <script>
+        $(".tag2").select2({
+            tags: true,
+            tokenSeparators: [',']
+        })
+    </script>
+    <script !src="">
+        $('#lfm').filemanager('image');
+    </script>
 @endsection
 @section('menu')
     @php
-        $menu_parent = 'category';
+        $menu_parent = 'product';
         $menu_child = 'edit';
     @endphp
 @endsection
 @section('title_component')
-    Category
+    Product
 @endsection
 @section('title_layout')
-    Create Category
+    Edit Product
 @endsection
 @section('actions_layout')
-    @can('category-list')
-    <a href="{{route('admin.categories.index')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
-        <i class="fa fa-list"></i> List Category
+    @can('product-list')
+    <a href="{{route('admin.product.index')}}" class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">
+        <i class="fa fa-list"></i> List product
     </a>
     @endcan
 @endsection
 @section('title_card')
-    Create Category
+    Create product
 @endsection
 @section('content_card')
-    <form action="{{route('admin.categories.update', $category->id)}}" method="post" class="form-control-sm">
+    <form action="{{route('admin.product.update', $product->id)}}" method="post" class="form-control-sm">
         @csrf
         <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
-            <input name="name" value="{{$category -> name}}" type="text" class="form-control form-control-solid"
-                   placeholder="Enter name category" {{old('name')}}>
-        </div>
-        <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Parent Category</label>
+            <label for="exampleFormControlInput1" class="required form-label">Category Product</label>
             <select class="form-select form-select-solid" data-control="select2"
-                    data-placeholder="Select parent category" data-select2-id="1" name="parent_id">
-                <option></option>
-                <option value="0">None</option>
-                @foreach($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    data-placeholder="Select category" data-select2-id="1" name="id_category">
+                @foreach($categoryProduct as $productCategory)
+                    <option @if($product->id_category == $productCategory->id) selected
+                            @endif value="{{$productCategory->id}}">{{$productCategory->name}}</option>
                 @endforeach
             </select>
         </div>
         <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Name Category</label>
-            <textarea name="description" id="" cols="20" rows="10" class="form-control form-control-solid">{{$category -> name}}</textarea>
+            <label for="exampleFormControlInput1" class="required form-label">Name product</label>
+            <input name="name" value="{{$product -> name}}" type="text" class="form-control form-control-solid"
+                   placeholder="Enter name product" {{old('name')}}>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Size</label>
+            <select class="form-select form-select-solid tag2 "
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="sizes[]">
+                @foreach($sizes as $size)
+                    <option @if(in_array($size->id, $product->sizes->pluck('id')->toArray())) selected
+                            @endif value="{{$size->name}}">{{$size->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Color</label>
+            <select class="form-select form-select-solid tag2 "
+                    data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="colors[]">
+                @foreach($colors as $color)
+                    <option @if(in_array($color->id, $product->colors->pluck('id')->toArray())) selected
+                            @endif value="{{$color->name}}">{{$color->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Price</label>
+            <input name="price" value="{{$product -> price}}" type="" class="form-control form-control-solid"
+                   placeholder="Enter price product" {{old('price')}}>
+        </div>
+        <div class="mb-10">
+            <label for="exampleFormControlInput1" class="required form-label">Description</label>
+            <textarea name="description" id="" cols="20" rows="10" class="form-control form-control-solid">{{$product -> description}}</textarea>
         </div>
         <div class="mb-10">
             <button class="btn btn-primary btn-sm mr-2 mb-2 mb-lg-0">

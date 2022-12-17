@@ -38,6 +38,7 @@ class ProductService
     }
     public function update($request, $id)
     {
+
         $product = $this->product->find($id);
         $product->update([
             'name' => $request->name ?? $product->name,
@@ -48,10 +49,12 @@ class ProductService
             'id_category' => $request->id_category ?? $product->id_category,
         ]);
         $sizeIds = $this->sizeService->createMultipleSizes($request->sizes);
-        $product->sizes->sync($sizeIds);
+        $product->sizes()->sync($sizeIds);
+
         $colorIds = $this->colorService->createMultipleColors($request->colors);
 
-        $product->colors->sync($colorIds);
+        $product->colors()->sync($colorIds);
+
         return $product;
     }
 
@@ -89,6 +92,10 @@ class ProductService
             $product->restore();
         }
         $product->restore();
+    }
+    public function find($id)
+    {
+        return $this->product->find($id);
     }
 
 }

@@ -7,3 +7,6 @@
 
 {{--  --}}
 {{-->>>>>>> bb755fce839e33b3f18b0ce60f380a8939f2e081--}}
+@section('content')
+@include('home.includes.sport_shop.homepage')
+    @endsection

@@ -47,6 +47,10 @@ class HomeController extends Controller
         // }
 
     }
+    public function quickview($id)
+    {
+
+    }
 
     public function detailPage(){
         // $blog = $this->productService->getBlogById($id);
@@ -57,7 +61,9 @@ class HomeController extends Controller
         // else{
         //     return redirect()->route('home.index');
         // }
-        return view('home.pages.sport_shop.cart');
+        $categoryProduct = $this->categoryProductService->getAll();
+        $product = $this->productService->getAll();
+        return view('home.pages.sport_shop.cart', compact('categoryProduct', 'product'));
     }
     public function product()
     {

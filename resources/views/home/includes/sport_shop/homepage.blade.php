@@ -1,3 +1,12 @@
+@php
+    if (!function_exists('currency_format')) {
+function currency_format($number) {
+if (!empty($number)) {
+return number_format($number, 0, ',', ',');
+}
+}
+}
+@endphp
 <div class="page-content">
 		<div class="holder mt-0 py-15 py-md-6 bgcolor">
 			<div class="container">
@@ -5,94 +14,20 @@
 					<div class="creative-product-carousel js-creative-product-carousel">
 						<div class="creative-product-carousel-item">
 							<div class="row flex-nowrap four-in-row">
+                                <div class="creative-product-carousel-text">New<br>Arrival</div>
+                                @foreach($product as $products)
 								<div class="col">
 									<div class="prd-img-area">
 										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-01.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-01-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-										<div class="prd-labels">
-											<div class="label-sale"><span>-50%<br>Sale</span></div>
-										</div>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Legging Red/Black</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-old">$299</div>
-												<div class="price-new">$149</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-select-add-to-cart" data-product='{
-												"name": "Legging Red/Black",
-												"path":"images/products/product-01.jpg",
-												"url":"#",
-												"aspect_ratio":0.778,
-												"variants":{
-													"Red": {
-													"name": "Legging Red/Black",
-														"variant_name": "Red",
-														"aspect_ratio":"0.778",
-														"path":"images/products/product-01.jpg",
-														"url":"#",
-														"price_old":"$299",
-														"price_actual":"$149",
-														"disabled":true},
-													"Mint": {
-													"name": "Legging Mint/Black",
-														"variant_name": "Mint",
-														"aspect_ratio":"0.778",
-														 "path":"images/products/product-01-1.jpg",
-														 "url":"#",
-														 "price_old":"$299",
-														 "price_actual":"$139",
-														 "disabled":true},
-													"Violet": {
-													"name": "Legging Violet/Black",
-														"variant_name": "Violet",
-														"aspect_ratio":"0.778",
-														 "path":"images/products/product-01-2.jpg",
-														 "url":"#",
-														 "price_old":"$299",
-														 "price_actual":"$179",
-														 "disabled":true},
-													"Lime": {
-													"name": "Legging Lime/Black",
-														"variant_name": "Lime",
-														"aspect_ratio":"0.778",
-														 "path":"images/products/product-01-3.jpg",
-														 "url":"#",
-														 "price_old":"$299",
-														 "price_actual":"$119",
-														 "disabled":true}
-													 }
-												 }'>Select Options</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-02.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-02-hover.png"
+											<img src="{{$products->image}}"
 												class="prd-img-first lazyload" alt="">
 										</a>
 									</div>
 									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Leggings Snake print</a></h2>
+										<h2 class="prd-title"><a href="#">{{$products->name}}</a></h2>
 										<div class="creative-product-carousel-hovers">
 											<div class="creative-product-carousel-price">
-												<div class="price-new">$299</div>
+												<div class="price-new">{{currency_format($products->price)}}</div>
 											</div>
 											<div class="creative-product-carousel-action">
 												<form action="#">
@@ -104,295 +39,10 @@
 										</div>
 									</div>
 								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-03.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-03-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Striped Leggings and Top</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-new">$289</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Striped Leggings and Top", "path":"images/products/product-03.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-04.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-04-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Fitness Jumpsuit</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-new">$399</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit", "path":"images/products/product-04.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
+                                @endforeach
+
 							</div>
-							<div class="creative-product-carousel-text">New<br>Arrival</div>
-						</div>
-						<div class="creative-product-carousel-item">
-							<div class="row flex-nowrap four-in-row">
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-05.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-05-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-										<div class="prd-labels">
-											<div class="label-sale"><span>-70%<br>Sale</span></div>
-										</div>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Khaki/Black</a>
-										</h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-old">$399</div>
-												<div class="price-new">$120</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Khaki/Black", "path":"images/products/product-05.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-06.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-06-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-										<div class="prd-labels">
-											<div class="label-sale"><span>-70%<br>Sale</span></div>
-										</div>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Camouflage</a>
-										</h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-old">$399</div>
-												<div class="price-new">$120</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Camouflage", "path":"images/products/product-06.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-07.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-07-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-										<div class="prd-labels">
-											<div class="label-sale"><span>-70%<br>Sale</span></div>
-										</div>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Black</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-old">$399</div>
-												<div class="price-new">$120</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Black", "path":"images/products/product-07.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-08.png"
-												class="prd-img-first lazyload" alt="">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-08-hover.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-										<div class="prd-labels">
-											<div class="label-sale"><span>-50%<br>Sale</span></div>
-										</div>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Fitness Jumpsuit Blue with black
-												accents</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-old">$399</div>
-												<div class="price-new">$199</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Fitness Jumpsuit Blue with black accents", "path":"images/products/product-08.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="creative-product-carousel-text">Sale<br>Limited</div>
-						</div>
-						<div class="creative-product-carousel-item">
-							<div class="row flex-nowrap four-in-row">
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-09.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">T-shirt Black</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-new">$117</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "T-shirt Black", "path":"images/products/product-09.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-10.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Sport Shirt Black</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-new">$87</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Sport Shirt Black", "path":"images/products/product-10.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-11.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">T-shirt White</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-new">$97</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "T-shirt Whit", "path":"images/products/product-11.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="prd-img-area">
-										<a href="#" class="prd-img prd-img--noequal">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-srcset="images/products/product-category-12.png"
-												class="prd-img-first lazyload" alt="">
-										</a>
-									</div>
-									<div class="prd-info">
-										<h2 class="prd-title"><a href="#">Full Zipper Hoodies</a></h2>
-										<div class="creative-product-carousel-hovers">
-											<div class="creative-product-carousel-price">
-												<div class="price-new">$239</div>
-											</div>
-											<div class="creative-product-carousel-action">
-												<form action="#">
-													<button class="btn js-prd-addtocart"
-														data-product='{"name": "Full Zipper Hoodies", "path":"images/products/product-12.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-														To Cart</button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="creative-product-carousel-text">For Men</div>
+
 						</div>
 					</div>
 					<div class="collection-grid-1 collection-grid-1-vertical js-creative-product-carousel-tabs">
@@ -621,19 +271,20 @@
 		<div class="holder ">
 			<div class="container">
 				<div class="row vert-margin justify-content-md-center">
-					<div class="col-sm-5">
-						<div class="js-sticky-collision">
-							<div class="bnr-sticky">
-								<h2 class="custom-color">NEW COLLECTION</h2>
-								<a href="category.html" class="bnr image-hover-scale">
-									<div class="bnr-img image-container" style="padding-bottom: 178%"><img
-											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											data-srcset="images/banners/banner-index-01.png" class="lazyload fade-up"
-											alt=""></div>
-								</a>
-							</div>
-						</div>
-					</div>
+{{--					<div class="col-sm-5">--}}
+{{--						<div class="js-sticky-collision">--}}
+{{--                            @foreach($categoryProduct as $categoryProduct)--}}
+{{--							<div class="bnr-sticky">--}}
+{{--								<h2 class="custom-color">NEW COLLECTION</h2>--}}
+{{--								<a href="#" class="bnr image-hover-scale">--}}
+{{--									<div class="bnr-img image-container" style="padding-bottom: 178%"><img--}}
+{{--											src="{{$categoryProduct->image}}"--}}
+{{--											alt=""></div>--}}
+{{--								</a>--}}
+{{--							</div>--}}
+{{--                                @endforeach--}}
+{{--						</div>--}}
+{{--					</div>--}}
 					<div class="col-sm-13">
 
 						<div class="prd-grid data-to-show-3 data-to-show-md-2 data-to-show-sm-2 data-to-show-xs-2">
@@ -644,26 +295,26 @@
 									<div class="prd-img-area">
 										<a href="#" class="prd-img image-hover-scale image-container">
 											<img src="{{$product->image}}"
-												alt="Legging Red/Black"
+												alt="{{$product->name}}"
 												class="js-prd-img lazyload">
 											<div class="foxic-loader"></div>
-											<div class="prd-big-circle-labels">
+{{--											<div class="prd-big-circle-labels">--}}
 
-												<div class="label-new"><span>New</span></div>
-
-
-												<div class="label-sale"><span>-10% <span
-															class="sale-text">Sale</span></span>
-
-													<div class="countdown-circle">
-														<div class="countdown js-countdown" data-countdown="2021/07/01">
-														</div>
-													</div>
-
-												</div>
+{{--												<div class="label-new"><span>New</span></div>--}}
 
 
-											</div>
+{{--												<div class="label-sale"><span>-10% <span--}}
+{{--															class="sale-text">Sale</span></span>--}}
+
+{{--													<div class="countdown-circle">--}}
+{{--														<div class="countdown js-countdown" data-countdown="2021/07/01">--}}
+{{--														</div>--}}
+{{--													</div>--}}
+
+{{--												</div>--}}
+
+
+{{--											</div>--}}
 										</a>
 										<div class="prd-circle-labels">
 											<a href="#"
@@ -672,7 +323,7 @@
 												class="circle-label-compare circle-label-wishlist--off js-remove-wishlist mt-0"
 												title="Remove From Wishlist"><i class="icon-heart-hover"></i></a>
 											<a href="#" class="circle-label-qview js-prd-quickview prd-hide-mobile"
-												data-src="ajax/ajax-quickview.html"><i class="icon-eye"></i><span>QUICK
+												data-src="{{route('home.quickview')}}"><i class="icon-eye"></i><span>QUICK
 													VIEW</span></a>
 
 										</div>
@@ -687,7 +338,7 @@
 														class="icon-star-fill fill"></i></div>
 												<div class="prd-tag"><a href="#">FOXic</a></div>
 											</div>
-											<h2 class="prd-title"><a href="#">Legging Red/Black</a></h2>
+											<h2 class="prd-title"><a href="#">{{$product->name}}</a></h2>
 											<div class="prd-description">
 												Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad
 												litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante
@@ -705,14 +356,22 @@
 															class="icon-heart-hover"></i></a></div>
 												<div><a href="#"
 														class="circle-label-qview prd-hide-mobile js-prd-quickview"
-														data-src="ajax/ajax-quickview.html"><i
+														data-src="{{route('home.quickview')}}"><i
 															class="icon-eye"></i><span>QUICK VIEW</span></a></div>
 											</div>
 											<div class="prd-price">
 
-												<div class="price-old">$ 200</div>
-
-												<div class="price-new">$ 180</div>
+{{--												<div class="price-old">$ 200</div>--}}
+                                                @php
+                                                    if (!function_exists('currency_format')) {
+        function currency_format($number) {
+            if (!empty($number)) {
+                return number_format($number, 0, ',', ',');
+            }
+        }
+    }
+                                                @endphp
+												<div class="price-new">{{currency_format($product->price)}}<sup>đ</sup></div>
 											</div>
 											<div class="prd-action">
 												<div class="prd-action-left">
