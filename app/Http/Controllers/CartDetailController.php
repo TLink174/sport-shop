@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\CartDetailService;
 use App\Http\Services\CartService;
+use App\Http\Services\CategoryProductService;
 use App\Http\Services\ProductService;
 use App\Models\CartDetail;
 use App\Http\Requests\StoreCartDetailRequest;
@@ -15,22 +16,27 @@ class CartDetailController extends Controller
     private cartService $cartService;
     private ProductService $productService;
     private CartDetailService $cartDetailService;
+    private CategoryProductService $categoryProductService;
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(cartService $cartService, ProductService $productService, CartDetailService $cartDetailService)
+    public function __construct(cartService $cartService, ProductService $productService, CartDetailService $cartDetailService, CategoryProductService $categoryProductService)
     {
         $this->cartService = $cartService;
         $this->productService = $productService;
         $this->cartDetailService = $cartDetailService;
+        $this->categoryProductService = $categoryProductService;
     }
 
     public function index()
     {
-
+        $cartDetail = $this->cartDetailService->getAll();
+        $categoryProduct = $this->categoryProductService->getAll();
+        $product = $this->productService->getAll();
+        return view('home.pages.sport_shop.cart', compact('categoryProduct', 'product', 'cartDetail'));
     }
 
     /**
@@ -38,12 +44,12 @@ class CartDetailController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function create($id_product)
+    public function create($id)
     {
-        $product = $this->productService->getById($id_product);
-        $cart = $this->cartService->findByIdUser(Auth::user()->id);
+        $categoryProduct = $this->categoryProductService->getAll();
+        $product = $this->productService->getById($id);
 
-        return view('', compact('product', 'cart'));
+        return view('home.pages.sport_shop.product', compact('product', 'categoryProduct'));
 
     }
 

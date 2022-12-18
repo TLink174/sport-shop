@@ -58,110 +58,112 @@
 
 ---------------------------------------*/
 
-@import "_variables_books.scss";
+@import "variables_food";
 
-@import "_mixins.scss";
+@import "mixins";
 /*  1. Main Structure  */
-@import "components/_loader.scss";
-@import "components/_structure.scss";
-@import "components/_carousels-loading-hacks.scss";
+@import "components/loader";
+@import "components/structure";
+@import "components/carousels-loading-hacks";
 /*  2. Main Typography  */
 /*  2.1. Headers / Text Blocks  */
-@import "components/_typography.scss";
+@import "components/typography";
 /*  2.2. Buttons  */
-@import "components/_buttons.scss";
+@import "components/buttons";
 /*  2.3. Forms Elements  */
-@import "components/_form.scss";
+@import "components/form";
 /*  2.4. Tags  */
-@import "components/_tags.scss";
+@import "components/tags";
 /*  2.5. Tooltips  */
-@import "components/_tooltip.scss";
+@import "components/tooltip";
 /*  3. Menu  */
 /*  3.1. Megamenu  */
-@import "components/_megamenu.scss";
+@import "components/megamenu";
 /*  3.1. Mobile Menu  */
-@import "components/_mobilemenu";
+@import "components/mobilemenu";
 /*  3. Header  */
 /*  3.1. Promo Topline  */
-@import "components/_promo-topline.scss";
+@import "components/promo-topline";
 /*  3.2. Header Structure  */
-@import "components/_header.scss";
-@import "components/_header2.scss";
-@import "components/_header3.scss";
-@import "components/_header4.scss";
-@import "components/_header5.scss";
-@import "components/_header6.scss";
-@import "components/_header7.scss";
+@import "components/header";
+@import "components/header2";
+@import "components/header3";
+@import "components/header4";
+@import "components/header5";
+@import "components/header6";
+@import "components/header7";
 /*  4. Footer  */
-@import "components/_footer.scss";
-@import "components/_discount-coupon.scss";
+@import "components/footer";
+@import "components/discount-coupon";
 /*  6. Main Slider  */
-@import "components/_bnslider.scss";
-@import "components/_bnslider-video.scss";
+@import "components/bnslider";
+@import "components/bnslider-video";
 /*  7. Banners  */
-@import "components/_banners.scss";
+@import "components/banners";
 /*  8. Product and Category Page  */
 /*  8.1. Product Card  */
-@import "components/_product.scss";
+@import "components/product";
 /*  8.2. Product Page  */
-@import "components/_product-page.scss";
+@import "components/product-page";
 /*  8.3. Category Page  */
-@import "components/_category-filter.scss";
+@import "components/category-filter";
 /*  8.4. Product Swatches  */
-@import "components/_color-swatch.scss";
-@import "components/_size-swatch.scss";
+@import "components/color-swatch";
+@import "components/size-swatch";
 /*  8.4. Product Colors  */
-@import "components/_colors.scss";
+@import "components/colors";
 /*  8.4. Product Countdown  */
-@import "components/_countdown.scss";
+@import "components/countdown";
 /*  8.5. Product Single  */
-@import "components/_product-full.scss";
+@import "components/product-full";
 /*  9. Content Blocks  */
 /*  9.1. Brand Block  */
-@import "components/_brand-product.scss";
-@import "components/_brand-carousel.scss";
+@import "components/brand-product";
+@import "components/brand-carousel";
 /*  9.2. Shop Features Block  */
-@import "components/_shop-features.scss";
+@import "components/shop-features";
 /*  9.3. Subscribe Block  */
-@import "components/_subscribe-form.scss";
+@import "components/subscribe-form";
 /*  9.4. Instagram Block  */
-@import "components/_instagram.scss";
+@import "components/instagram";
 /*  9.5. Person Block  */
-@import "components/_person.scss";
+@import "components/person";
 /*  9.6. Testimonials Block  */
-@import "components/_testimonials.scss";
+@import "components/testimonials";
 /*  9.7. Text plus Icons Block  */
-@import "components/_text-icons-block.scss";
+@import "components/text-icons-block";
 /*  9.8. Facts Block  */
-@import "components/_facts-block.scss";
+@import "components/facts-block";
 /*  9.9. Contact Forms  */
-@import "components/_contact.scss";
+@import "components/contact";
 /*  9.10. Creative Carouse  */
-@import "components/_creative-carousel.scss";
+@import "components/creative-carousel";
 /*  9.11. Welcome Block  */
-@import "components/_welcome-block.scss";
+@import "components/welcome-block";
 /*  10. Pages  */
 /*  10.1. Blog Pages  */
-@import "components/_post.scss";
-@import "components/_reviews.scss";
+@import "components/post";
+@import "components/reviews";
 /*  10.2. Cart Page  */
-@import "components/_cart-table.scss";
+@import "components/cart-table";
 /*  10.3. Coming Soon Page  */
-@import "components/_coming-soon.scss";
+@import "components/coming-soon";
 /*  10.4. Gallery Page  */
-@import "components/_gallery.scss";
+@import "components/gallery";
 /*  10.5. Collections Page  */
-@import "components/_collections.scss";
+@import "components/collections";
 /*  10.6. FAQ Page  */
-@import "components/_faq.scss";
+@import "components/faq";
 /*  11. Tabs  */
-@import "components/_tabs.scss";
+@import "components/tabs";
 /*  12. Breadcrumbs  */
-@import "components/_breadcrumbs.scss";
+@import "components/breadcrumbs";
 /*  13. Modals  */
-@import "components/_modal.scss";
+@import "components/modal";
 /*  14. Side Images  */
-@import "components/_side-fixed.scss";
+@import "components/side-fixed";
 /*  15. Plugins  */
-@import "components/_plugins.scss";
-@import "components/_animation.scss";
+@import "components/plugins";
+@import "components/animation";
+
+

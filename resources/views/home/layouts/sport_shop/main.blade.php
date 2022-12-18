@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Sport Shop</title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
 	@include('home.includes.sport_shop.css')
 	<link
 		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
@@ -816,7 +816,6 @@
 {{--<<<<<<< HEAD--}}
  @include('home.includes.sport_shop.js')
 {{--=======--}}
-	@include('home.includes.sport_shop.js')
 {{-->>>>>>> bb755fce839e33b3f18b0ce60f380a8939f2e081--}}
 </body>
 

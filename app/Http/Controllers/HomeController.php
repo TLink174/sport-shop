@@ -71,4 +71,12 @@ class HomeController extends Controller
         $product = $this->productService->getAll();
         return view('home.pages.sport_shop.product', compact('categoryProduct', 'product'));
     }
+    public function create($id)
+    {
+        $categoryProduct = $this->categoryProductService->getAll();
+        $product = $this->productService->getById($id);
+
+        return view('home.pages.sport_shop.product', compact('product', 'categoryProduct'));
+
+    }
 }

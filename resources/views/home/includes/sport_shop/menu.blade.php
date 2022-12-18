@@ -7,7 +7,7 @@
 								<li class="mmenu-item--simple"><a href="#">Pages</a>
 									<div class="mmenu-submenu">
 										<ul class="submenu-list">
-											<li><a href="product">Product page</a>
+											<li><a href="{{route('home.product')}}">Product page</a>
 											</li>
 											<li><a href="#">Category</a>
 												<ul>
