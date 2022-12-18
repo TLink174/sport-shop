@@ -176,7 +176,7 @@
                                             @if(!auth()->check())
                                                 <li class="mmenu-item--simple">
                                                     <a href="#" class="dropdn-link js-dropdn-link" data-panel="#dropdnAccount"><i
-                                                            class="icon-user"></i><span class="dropdn-link-txt">Account</span></a>
+                                                            class="icon-user"></i><span class="dropdn-link-txt" style="color:white">Account</span></a>
                                                     <div class="mmenu-submenu">
                                                     <ul class="submenu-list">
                                                         <li><a href="{{route('admin.auth.login')}}"><span>Log In</span><i class="icon-login"></i></a></li>
@@ -185,11 +185,14 @@
                                                     </div>
                                                 </li>
                                             @else
-                                                <li>
-                                                    <a class="nav-link dropdown-toggle" href="#">{{Auth::user()->name}}</a>
-                                                    <ul>
+                                                <li class="mmenu-item--simple">
+                                                    <a href="#" class="dropdn-link js-dropdn-link" data-panel="#dropdnAccount"><i
+                                                            class="icon-user"></i><span class="dropdn-link-txt" style="color:white">{{Auth::user()->name}}</span></a>
+                                                    <div class="mmenu-submenu">
+                                                    <ul class="submenu-list">
                                                         <li><a class="dropdown-item" href="{{route('admin.auth.logout')}}">Đăng xuất</a></li>
                                                     </ul>
+                                                    </div>
                                                 </li>
                                             @endif
                                         </ul>
@@ -608,7 +611,7 @@
 		</div>
 
 	</div>
-	@include('home.includes.sport_shop.homepage')
+	@yield('content')
 	<!-- footer area -->
 	@include('home.includes.sport_shop.footer')
 	<!--  End footer area -->

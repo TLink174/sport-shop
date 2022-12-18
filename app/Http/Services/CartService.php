@@ -41,5 +41,9 @@ class CartService
     {
         return $this->cart->find($id);
     }
+    public function findByIdUser($id)
+    {
+        return $this->user->where('id_user', $id)->first();
+    }
 
 }

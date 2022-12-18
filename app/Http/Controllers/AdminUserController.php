@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Http\s\CartService;
+
+use App\Http\Services\CartService;
 use App\Http\Services\RoleService;
 use App\Http\Services\UserService;
 use App\Models\User;
@@ -54,7 +55,6 @@ class AdminUserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $this->userService->create($request);
-        dd($this->userService->getByEmail($request->email)->id);
         $this->cartService->create($this->userService->getByEmail($request->email)->id);
         return redirect()->route('admin.users.index');
     }
