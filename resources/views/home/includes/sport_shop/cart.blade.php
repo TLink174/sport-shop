@@ -59,7 +59,7 @@ return number_format($number, 0, ',', ',');
                                             <td>{{$cartDetail->quantity}}</td>
                                             <td>{{$cartDetail->size}}</td>
                                             <td>{{$cartDetail->color}}</td>
-                                            <td>{{currency_format($productDetail->price*$cartDetail->quantity)}}<sup>đ</sup></td>
+                                            <td>{{currency_format($productDetail->price*$Detail)}}<sup>đ</sup></td>
                                             @endif
 {{--                                            <td>--}}
 {{--                                                <a href="{{route('$admin.cartDetail.edit', $cartDetail->id)}}"--}}
