@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('description');
-            $table->float('price');
+            $table->unsignedBigInteger('price');
             $table->text('image')->nullable();
             $table->unsignedBigInteger('id_category');
             $table->foreign('id_category')->references('id')->on('category_products');

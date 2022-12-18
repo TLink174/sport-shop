@@ -1,5 +1,15 @@
+@php
+    if (!function_exists('currency_format')) {
+function currency_format($number, $suffix = 'đ') {
+if (!empty($number)) {
+return number_format($number, 0, ',', ',');
+}
+}
+}
+@endphp
 <div class="page-content">
     <div class="holder breadcrumbs-wrap mt-0">
+
         <div class="container">
             <ul class="breadcrumbs">
                 <li><a href="index.html">Home</a></li>
@@ -16,14 +26,64 @@
                 <div class="col-lg-11 col-xl-13">
                     <div class="cart-table">
                         <div class="cart-table-prd cart-table-prd--head py-1 d-none d-md-flex">
-                            <div class="cart-table-prd-image text-center">
-                                Image
-                            </div>
                             <div class="cart-table-prd-content-wrap">
-                                <div class="cart-table-prd-info">Name</div>
-                                <div class="cart-table-prd-qty">Qty</div>
-                                <div class="cart-table-prd-price">Price</div>
-                                <div class="cart-table-prd-action">&nbsp;</div>
+                                <table id="kt_datatable_horizontal_scroll" class="table table-row-dashed gy-5 gs-7">
+                                    <thead>
+                                    <tr class="fw-semibold fs-6 text-gray-800">
+                                        <th class="min-w-50">Image</th>
+                                        <th class="min-w-200px">Name</th>
+                                        <th class="min-w-150px">Quantity</th>
+                                        <th class="min-w-200px">Size</th>
+                                        <th class="min-w-200px">Color</th>
+                                        <th class="min-w-200px">Price</th>
+                                        <th class="min-w-200px"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($cartDetail as $cartDetail)
+                                        @foreach($product as $productDetail)
+                                        <tr>
+                                            @if($cartDetail->id_product == $productDetail->id)
+                                            <td>
+
+                                                    <div class="cart-table-prd-image">
+                                                        <img class="lazyload fade-up" src="{{$productDetail->image}}" alt="">
+                                                    </div>
+                                            </td>
+                                            <td>
+                                                {{$productDetail->name}} <br>
+                                                <div class="cart-table-prd-price">
+                                                    <div class="price-new">{{currency_format($productDetail->price)}}<sup>đ</sup></div>
+                                                </div>
+                                            </td>
+                                            <td>{{$cartDetail->quantity}}</td>
+                                            <td>{{$cartDetail->size}}</td>
+                                            <td>{{$cartDetail->color}}</td>
+                                            <td>{{currency_format($productDetail->price*$cartDetail->quantity)}}<sup>đ</sup></td>
+                                            @endif
+{{--                                            <td>--}}
+{{--                                                <a href="{{route('$admin.cartDetail.edit', $cartDetail->id)}}"--}}
+{{--                                                   class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-primary mr-2" title="Edit">--}}
+{{--                                                    <i class="fa fa-edit"></i>--}}
+{{--                                                </a>--}}
+{{--                                                @if($cartDetail->deleted_at == null)--}}
+{{--                                                    <a href="{{route('$admin.cartDetail.delete', $cartDetail->id)}}"--}}
+{{--                                                       class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-danger" title="Delete">--}}
+{{--                                                        <i class="fa fa-trash"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                @else--}}
+{{--                                                    <a href="{{route('$admin.cartDetail.restore', $cartDetail->id)}}"--}}
+{{--                                                       class="btn btn-sm btn-clean btn-icon btn-icon-md btn-circle btn-warning" title="Restore">--}}
+{{--                                                        <i class="fa fa-undo"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                @endif--}}
+{{--                                            </td>--}}
+                                        </tr>
+                                            @endforeach
+                                    @endforeach
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <div class="cart-table-prd">

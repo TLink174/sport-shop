@@ -48,6 +48,15 @@
 @endsection
 @section('content_layout')
     <!--begin::Card-->
+    @php
+        if (!function_exists('currency_format')) {
+function currency_format($number, $suffix = 'đ') {
+if (!empty($number)) {
+return number_format($number, 0, ',', ',');
+}
+}
+}
+    @endphp
     @foreach($productCategories as $productCategory)
     <div class="card shadow-sm card-bordered mb-10">
         <div class="card-header collapsible cursor-pointer rotate" data-bs-toggle="collapse"
@@ -95,7 +104,7 @@
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->slug}}</td>
                                 <td>{{$product->description}}</td>
-                                <td>{{$product->price}}</td>
+                                <td>{{currency_format($product->price)}}<sup>đ</sup></td>
                                 <td>
                                     <img class="img-fluid" src="{{$product->image}}" alt="">
                                 </td>

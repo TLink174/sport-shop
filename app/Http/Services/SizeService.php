@@ -19,6 +19,7 @@ class SizeService
 
     public function createMultipleSizes($sizes)
     {
+//        dd($sizes);
         foreach ($sizes as $item) {
             $sizeCreated = $this->size->firstOrCreate([
                 'name' => $item,

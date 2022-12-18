@@ -307,7 +307,7 @@
 									<li><a href="cart.html">Cart & Checkout<span class="arrow"><i
 													class="icon-angle-right"></i></span></a>
 										<ul class="nav-level-3">
-											<li><a href="cart">Cart Page</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
 											<li><a href="cart-empty.html">Empty cart</a></li>
 											
 										</ul>
@@ -771,5 +771,3 @@
 	</div>
 	@include('home.includes.sport_shop.js')
 </body>
-
-</html>
