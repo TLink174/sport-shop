@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\CartDetailService;
 use App\Http\Services\ProductService;
 use App\Http\Services\CategoryProductService;
 use App\Models\Cart;
@@ -13,20 +14,18 @@ class HomeController extends Controller
 {
     private ProductService $productService;
     private CategoryProductService $categoryProductService;
+    private CartDetailService $cartDetailService;
 
-    public function __construct(ProductService $productService, CategoryProductService $categoryProductService )
+    public function __construct(ProductService $productService, CategoryProductService $categoryProductService, CartDetailService $cartDetailService )
     {
         $this->productService = $productService;
         $this->categoryProductService = $categoryProductService;
+        $this->cartDetailService = $cartDetailService;
     }
 
     public function homePage(){
 //<<<<<<< HEAD
-//        $product = CartDetail::find(2);
-//        if ($product){
-//            dd($product);
-//
-//        }
+
 //=======
         // $product = Size::find(1);
         // if ($product){
@@ -52,7 +51,7 @@ class HomeController extends Controller
 
     }
 
-    public function detailPage(){
+    public function cart(){
         // $blog = $this->productService->getBlogById($id);
         // $categories = $this->categoryProductService->getAllCategoryPublic(10);
         // if (isset($blog) && count($categories) > 0 && $blog->status == 1 ){
@@ -61,9 +60,10 @@ class HomeController extends Controller
         // else{
         //     return redirect()->route('home.index');
         // }
+        $cartDetail = $this->cartDetailService->getAll();
         $categoryProduct = $this->categoryProductService->getAll();
         $product = $this->productService->getAll();
-        return view('home.pages.sport_shop.cart', compact('categoryProduct', 'product'));
+        return view('home.pages.sport_shop.cart', compact('categoryProduct', 'product', 'cartDetail'));
     }
     public function product()
     {

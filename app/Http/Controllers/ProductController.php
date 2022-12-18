@@ -63,8 +63,6 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $this->productService->create($request);
-        $sizes = $this->sizeService->getAll();
-        $colors = $this->colorService->getAll();
         return redirect()->route('admin.product.index');
     }
 

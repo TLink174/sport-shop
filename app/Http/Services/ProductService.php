@@ -33,7 +33,6 @@ class ProductService
         $sizeIds = $this->sizeService->createMultipleSizes($request->sizes);
         $productCreated->sizes()->attach($sizeIds);
         $colorIds = $this->colorService->createMultipleColors($request->colors);
-
         $productCreated->colors()->attach($colorIds);
     }
     public function update($request, $id)

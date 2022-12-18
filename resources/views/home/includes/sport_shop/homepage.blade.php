@@ -362,15 +362,6 @@ return number_format($number, 0, ',', ',');
 											<div class="prd-price">
 
 {{--												<div class="price-old">$ 200</div>--}}
-                                                @php
-                                                    if (!function_exists('currency_format')) {
-        function currency_format($number) {
-            if (!empty($number)) {
-                return number_format($number, 0, ',', ',');
-            }
-        }
-    }
-                                                @endphp
 												<div class="price-new">{{currency_format($product->price)}}<sup>đ</sup></div>
 											</div>
 											<div class="prd-action">
