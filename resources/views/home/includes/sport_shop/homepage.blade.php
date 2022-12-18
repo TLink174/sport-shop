@@ -630,7 +630,7 @@ return number_format($number, 0, ',', ',');
 		<div class="holder ">
 			<div class="container">
 				<div class="row vert-margin justify-content-md-center">
-					<div class="col-sm-5">
+					<!-- <div class="col-sm-5">
 						<div class="js-sticky-collision">
 							<div class="bnr-sticky">
 								<h2 class="custom-color">NEW COLLECTION</h2>
@@ -642,7 +642,7 @@ return number_format($number, 0, ',', ',');
 								</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="col-sm-13">
 
 						<div class="prd-grid data-to-show-3 data-to-show-md-2 data-to-show-sm-2 data-to-show-xs-2">

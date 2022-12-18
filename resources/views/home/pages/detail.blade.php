@@ -1,4 +1,4 @@
-@extends('home.layouts.main')
+<!-- @extends('home.layouts.main')
 @section('css_custom')
     <link
         rel="stylesheet"
@@ -10,4 +10,4 @@
 @endsection
 @section('content')
     @include('home.includes.detail')
-@endsection
+@endsection -->
