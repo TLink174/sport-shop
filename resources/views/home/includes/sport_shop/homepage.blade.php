@@ -406,10 +406,10 @@
 					</svg>
 				</div>
 				<div class="col-lg-11 welcome-block-text-wrap">
-					<div class="welcome-block-text"><i class="custom-color">Hey!</i><br>I’m foxic</div>
+					<div class="welcome-block-text"><i class="custom-color">Hey!</i><br>I’m Sport Shop</div>
 					<div class="welcome-block-info">
 						<p>You will be surprised at the flexibility and comfort in the process of customizing the
-							theme. We give a tooth that FOXic theme on your store will make hundreds of sales per
+							theme. We give a tooth that Sport Shop theme on your store will make hundreds of sales per
 							day, and this is not the limit. This is facilitated by a well-thought-out UI and site
 							style: a wide site with well-thought-out mobile interface.
 							Buy our theme and enjoy!</p>
@@ -541,7 +541,7 @@
 					<div class="js-sticky-collision">
 						<div class="bnr-sticky">
 							<h2 class="custom-color">NEW COLLECTION</h2>
-							<a href="category.html" class="bnr image-hover-scale">
+							<a href="#" class="bnr image-hover-scale">
 								<div class="bnr-img image-container" style="padding-bottom: 178%"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="images/banners/banner-index-01.png" class="lazyload fade-up" alt=""></div>
 							</a>
 						</div>
@@ -557,7 +557,7 @@
 								<div class="prd-img-area">
 									<a href="#" class="prd-img image-hover-scale image-container">
 										<img src="{{$product->image}}" alt="Legging Red/Black" class="js-prd-img lazyload">
-										<div class="foxic-loader"></div>
+										<div class="Sport Shop-loader"></div>
 										<div class="prd-big-circle-labels">
 
 											<div class="label-new"><span>New</span></div>
@@ -612,7 +612,7 @@
 									<div class="prd-info-wrap">
 										<div class="prd-info-top">
 											<div class="prd-rating"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
-											<div class="prd-tag"><a href="#">FOXic</a></div>
+											<div class="prd-tag"><a href="#">Sport Shop</a></div>
 										</div>
 										<h2 class="prd-title"><a href="#">Legging Red/Black</a></h2>
 										<div class="prd-description">
@@ -641,7 +641,7 @@
 											</div>
 											<div class="prd-action-right">
 												<div class="prd-action-right-inside">
-													<div class="prd-tag"><a href="#">FOXic</a></div>
+													<div class="prd-tag"><a href="#">Sport Shop</a></div>
 													<div class="prd-rating"><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i><i class="icon-star-fill fill"></i></div>
 												</div>
 											</div>

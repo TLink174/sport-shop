@@ -88,7 +88,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->productService->findHasSoftDeletes();
+        $product = $this->productService->getByid($id);
         $sizes = $this->sizeService->getAll();
         $colors = $this->colorService->getAll();
         $categoryProduct = $this->categoryProductService->getAll();
