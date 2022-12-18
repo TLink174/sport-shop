@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminPermissionController;
 use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AdminTagController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CartDetailController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\HomeController;
@@ -33,15 +34,22 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::group(['prefix' => '/'], function (){
     Route::get('/', [HomeController::class, 'homePage'])->name('home.index');
-    Route::get('/quickview', [HomeController::class, 'homePage'])->name('home.quickview');
-    Route::get('/cart', [HomeController::class, 'cart'])->name('home.detail');
+    Route::get('/cart', [HomeController::class, 'cart'])->name('home.cart');
     Route::get('/product', [HomeController::class, 'product'])->name('home.product');
+    Route::get('/product/{id}', [HomeController::class, 'create'])->name('home.cart.create');
 
 });
-Roure::group(['prefix' => 'home', 'middleware' => ['web', 'auth']], function (){
 
-});
-
+//Route::group(['prefix' => 'home', 'middleware' => ['auth']], function (){
+//    Route::group(['prefix' => 'cart'], function () {
+//        Route::get('/', [CartDetailController::class, 'index'])->name('home.cart.index');
+//       Route::get('/product/{id}', [CartDetailController::class, 'create'])->name('home.cart.create');
+//        Route::post('/store', [CartDetailController::class, 'store'])->name('home.cart.store');
+//        Route::get('/edit/{id}', [CartDetailController::class, 'edit'])->name('home.cart.edit');
+//        Route::post('/update/{id}', [CartDetailController::class, 'update'])->name('home.cart.update');
+//        Route::get('/delete/{id}', [CartDetailController::class, 'destroy'])->name('home.cart.delete');
+//    });
+//});
 
 
 
@@ -50,6 +58,8 @@ Roure::group(['prefix' => 'home', 'middleware' => ['web', 'auth']], function (){
  Route::post('/admin/login-post', [AdminController::class, 'loginPost'])->name('admin.auth.login-post');
  Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.auth.register');
  Route::post('/admin/register-post', [AdminController::class, 'registerPost'])->name('admin.auth.register-post');
+
+
  Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
      Route::get('/logout', [AdminController::class, 'logout'])->name('admin.auth.logout');
      Route::get('/index', [AdminController::class, 'index'])->name('admin.index')->middleware('role::class');
