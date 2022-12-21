@@ -8,6 +8,11 @@ return number_format($number, 0, ',', ',');
 }
 @endphp
 @include('home.includes.sport_shop.css')
+@section('js.custom')
+    <script>
+
+    </script>
+@endsection
 <div class="page-content">
     <div class="holder breadcrumbs-wrap mt-0">
 
@@ -59,8 +64,8 @@ return number_format($number, 0, ',', ',');
                                             </td>
                                             <td>{{$cartDetail->quantity}}</td>
                                             <td>{{$cartDetail->size}}</td>
-                                            <td>{{$cartDetail->color}}</td>
-                                            <td>{{currency_format($productDetail->price)}}<sup>đ</sup></td>
+                                            <td><div style="width: 25px; height: 25px; background-color: {{$cartDetail->color}}; border: 1px solid black; border-radius: 5px;"></div></td>
+                                            <td id="price">{{currency_format($productDetail->price*$cartDetail->quantity)}}<sup>đ</sup></td>
                                             @endif
 {{--                                            <td>--}}
 {{--                                                <a href="{{route('$admin.cartDetail.edit', $cartDetail->id)}}"--}}
@@ -97,19 +102,10 @@ return number_format($number, 0, ',', ',');
                     </div>
                 </div>
                 <div class="col-lg-7 col-xl-5 mt-3 mt-md-0">
-                    <div class="cart-promo-banner">
-                        <div class="cart-promo-banner-inside">
-                            <div class="txt1">Save 50%</div>
-                            <div class="txt2">Only Today!</div>
-                        </div>
-                    </div>
                     <div class="card-total">
-                        <div class="text-right">
-                            <button class="btn btn--grey"><span>UPDATE CART</span><i class="icon-refresh"></i></button>
-                        </div>
                         <div class="row d-flex">
                             <div class="col card-total-txt">Total</div>
-                            <div class="col-auto card-total-price text-right">$ 475.00</div>
+                            <div class="col-auto card-total-price text-right"></div>
                         </div>
                         <button class="btn btn--full btn--lg"><span>Checkout</span></button>
                         <div class="card-text-info text-right">

@@ -323,7 +323,7 @@ return number_format($number, 0, ',', ',');
                                                                                                                class="circle-label-compare circle-label-wishlist--off js-remove-wishlist mt-0"
                                                                                                                title="Remove From Wishlist"><i class="icon-heart-hover"></i></a>
                                             <a href="#" class="circle-label-qview js-prd-quickview prd-hide-mobile"
-                                               data-src="{{route('home.quickview')}}"><i class="icon-eye"></i><span>QUICK
+                                               data-src="#"><i class="icon-eye"></i><span>QUICK
 													VIEW</span></a>
 
                                         </div>
@@ -356,7 +356,7 @@ return number_format($number, 0, ',', ',');
                                                             class="icon-heart-hover"></i></a></div>
                                                 <div><a href="#"
                                                         class="circle-label-qview prd-hide-mobile js-prd-quickview"
-                                                        data-src="{{route('home.quickview')}}"><i
+                                                        data-src="#"><i
                                                             class="icon-eye"></i><span>QUICK VIEW</span></a></div>
                                             </div>
                                             <div class="prd-price">

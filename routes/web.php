@@ -32,24 +32,27 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     Lfm::routes();
 });
 
-Route::group(['prefix' => '/'], function (){
-    Route::get('/', [HomeController::class, 'homePage'])->name('home.index');
-    Route::get('/cart', [HomeController::class, 'cart'])->name('home.cart');
-    Route::get('/product', [HomeController::class, 'product'])->name('home.product');
-    Route::get('/product/{id}', [HomeController::class, 'create'])->name('home.cart.create');
+Route::get('/', [HomeController::class, 'homePage'])->name('home.index');
+//Route::group(['prefix' => '/'], function (){
+//    Route::get('/', [HomeController::class, 'homePage'])->name('home.index');
+//    Route::get('/cart', [HomeController::class, 'cart'])->name('home.cart');
 
-});
-
-//Route::group(['prefix' => 'home', 'middleware' => ['auth']], function (){
-//    Route::group(['prefix' => 'cart'], function () {
-//        Route::get('/', [CartDetailController::class, 'index'])->name('home.cart.index');
-//       Route::get('/product/{id}', [CartDetailController::class, 'create'])->name('home.cart.create');
-//        Route::post('/store', [CartDetailController::class, 'store'])->name('home.cart.store');
-//        Route::get('/edit/{id}', [CartDetailController::class, 'edit'])->name('home.cart.edit');
-//        Route::post('/update/{id}', [CartDetailController::class, 'update'])->name('home.cart.update');
-//        Route::get('/delete/{id}', [CartDetailController::class, 'destroy'])->name('home.cart.delete');
-//    });
+////    Route::get('/product/{id}', [HomeController::class, 'create'])->name('home.cart.create');
+//
 //});
+
+Route::group(['prefix' => '/', 'middleware' => ['auth']], function (){
+
+    Route::get('/product', [HomeController::class, 'product'])->name('home.product');
+    Route::group(['prefix' => 'cart'], function () {
+        Route::get('/{id}', [CartDetailController::class, 'index'])->name('home.cart.index');
+        Route::get('/product/{id}', [CartDetailController::class, 'create'])->name('home.cart.create');
+        Route::post('/store/{id}', [CartDetailController::class, 'store'])->name('home.cart.store');
+        Route::get('/edit/{id}', [CartDetailController::class, 'edit'])->name('home.cart.edit');
+        Route::post('/update/{id}', [CartDetailController::class, 'update'])->name('home.cart.update');
+        Route::get('/delete/{id}', [CartDetailController::class, 'destroy'])->name('home.cart.delete');
+    });
+});
 
 
 

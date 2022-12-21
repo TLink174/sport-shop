@@ -30,8 +30,8 @@ return number_format($number, 0, ',', ',');
 												<div class="price-new">{{currency_format($products->price)}}<sup>đ</sup></div>
 											</div>
 											<div class="creative-product-carousel-action">
-												<form action="">
-													<button class="btn js-prd-addtocart">Add To Cart</button>
+												<form action="{{route('home.cart.create', $products->id)}}">
+                                                   <button class="btn js-prd-addtocart" >Add To Cart</button>
 												</form>
 											</div>
 										</div>
@@ -291,7 +291,7 @@ return number_format($number, 0, ',', ',');
 								<div class="prd-inside">
 
 									<div class="prd-img-area">
-										<a href="#" class="prd-img image-hover-scale image-container">
+										<a href="{{route('home.cart.create', $product->id)}}" class="prd-img image-hover-scale image-container">
 											<img src="{{$product->image}}"
 												alt="{{$product->name}}"
 												class="js-prd-img lazyload">
@@ -314,17 +314,17 @@ return number_format($number, 0, ',', ',');
 
 {{--											</div>--}}
 										</a>
-										<div class="prd-circle-labels">
-											<a href="#"
-												class="circle-label-compare circle-label-wishlist--add js-add-wishlist mt-0"
-												title="Add To Wishlist"><i class="icon-heart-stroke"></i></a><a href="#"
-												class="circle-label-compare circle-label-wishlist--off js-remove-wishlist mt-0"
-												title="Remove From Wishlist"><i class="icon-heart-hover"></i></a>
-											<a href="#" class="circle-label-qview js-prd-quickview prd-hide-mobile"
-												data-src=""><i class="icon-eye"></i><span>QUICK
-													VIEW</span></a>
+{{--										<div class="prd-circle-labels">--}}
+{{--											<a href="#"--}}
+{{--												class="circle-label-compare circle-label-wishlist--add js-add-wishlist mt-0"--}}
+{{--												title="Add To Wishlist"><i class="icon-heart-stroke"></i></a><a href="#"--}}
+{{--												class="circle-label-compare circle-label-wishlist--off js-remove-wishlist mt-0"--}}
+{{--												title="Remove From Wishlist"><i class="icon-heart-hover"></i></a>--}}
+{{--											<a href="#" class="circle-label-qview js-prd-quickview prd-hide-mobile"--}}
+{{--												data-src=""><i class="icon-eye"></i><span>QUICK--}}
+{{--													VIEW</span></a>--}}
 
-										</div>
+{{--										</div>--}}
 									</div>
 									<div class="prd-info">
 										<div class="prd-info-wrap">
@@ -364,10 +364,8 @@ return number_format($number, 0, ',', ',');
 											</div>
 											<div class="prd-action">
 												<div class="prd-action-left">
-													<form action="#">
-														<button class="btn js-prd-addtocart"
-															data-product='{"name": "Legging Red/Black", "path":"images/products/product-01.jpg", "url":"#", "aspect_ratio":0.778}'>Add
-															To Cart</button>
+													<form action="{{route('home.cart.create', $product->id)}}">
+														<button class="btn js-prd-addtocart">Add To Cart</button>
 													</form>
 												</div>
 												<div class="prd-action-right">

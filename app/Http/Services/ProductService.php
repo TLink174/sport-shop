@@ -32,7 +32,7 @@ class ProductService
         ]);
         $sizeIds = $this->sizeService->createMultipleSizes($request->sizes);
         $productCreated->sizes()->attach($sizeIds);
-        $colorIds = $this->colorService->createMultipleColors($request->colors);
+        $colorIds = $this->colorService->updateMultipleColors($request->colors);
         $productCreated->colors()->attach($colorIds);
     }
     public function update($request, $id)
@@ -47,12 +47,11 @@ class ProductService
             'image' => $request->image ?? $product->image,
             'id_category' => $request->id_category ?? $product->id_category,
         ]);
+        $colorIds = $this->colorService->updateMultipleColors($request->colors);
+        $product->colors()->sync($colorIds);
         $sizeIds = $this->sizeService->createMultipleSizes($request->sizes);
         $product->sizes()->sync($sizeIds);
 
-        $colorIds = $this->colorService->createMultipleColors($request->colors);
-
-        $product->colors()->sync($colorIds);
 
         return $product;
     }

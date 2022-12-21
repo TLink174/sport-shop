@@ -3,6 +3,7 @@
 
 namespace App\Http\Services;
 
+use App\Models\ProductSize;
 use App\Models\Size;
 use Illuminate\Support\Str;
 
@@ -10,11 +11,13 @@ class SizeService
 {
 
     private Size $size;
+    private ProductSize $productSize;
 
 
-    public function __construct(Size $size)
+    public function __construct(Size $size, ProductSize $productSize)
     {
         $this->size = $size;
+        $this->productSize = $productSize;
     }
 
     public function createMultipleSizes($sizes)
@@ -49,11 +52,17 @@ class SizeService
     {
         return $this->size->all();
     }
+    public function getByIdProduct($id)
+    {
+        return $this->productSize->where('id_product', $id)->get();
+
+    }
 
     public function getById($id)
     {
         return $this->size->find($id);
     }
+
 
     public function getPaginated(int $int)
     {

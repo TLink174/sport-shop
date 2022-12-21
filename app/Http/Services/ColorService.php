@@ -4,17 +4,19 @@
 namespace App\Http\Services;
 
 use App\Models\Color;
+use App\Models\ProductColor;
 use Illuminate\Support\Str;
 
 class ColorService
 {
 
     private Color $color;
+    private ProductColor $productColor;
 
-
-    public function __construct(Color $color)
+    public function __construct(Color $color, ProductColor $productColor)
     {
         $this->color = $color;
+        $this->productColor = $productColor;
     }
 
     public function createMultipleColors($colors)
@@ -22,6 +24,17 @@ class ColorService
         foreach ($colors as $item) {
             $colorCreated = $this->color->firstOrCreate([
                 'name' => $item,
+                'value' => $item,
+            ]);
+            $colorIds[] = $colorCreated->id;
+        }
+        return $colorIds;
+    }
+
+    public function updateMultipleColors($colors)
+    {
+        foreach ($colors as $item) {
+            $colorCreated = $this->color->firstOrCreate([
                 'value' => $item,
             ]);
             $colorIds[] = $colorCreated->id;
@@ -49,6 +62,12 @@ class ColorService
         return $this->color->all();
     }
 
+    public function getByIdProduct($id)
+    {
+        return $this->productColor->where('id_product', $id)->get();
+
+    }
+
     public function getById($id)
     {
         return $this->color->find($id);
@@ -63,6 +82,7 @@ class ColorService
     {
         return $this->color->find($id);
     }
+
     public function restore($id)
     {
         $this->color->restore($id);

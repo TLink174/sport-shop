@@ -76,7 +76,7 @@
                     data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="colors[]">
                 @foreach($colors as $color)
                     <option @if(in_array($color->id, $product->colors->pluck('id')->toArray())) selected
-                            @endif value="{{$color->name}}">{{$color->name}}</option>
+                            @endif value="{{$color->value}}">{{$color->name}}</option>
                 @endforeach
             </select>
         </div>
