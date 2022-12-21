@@ -14,7 +14,7 @@ class Size extends Model
     use SoftDeletes;
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, ProductColor::class, 'id_size', 'id_product');
+        return $this->belongsToMany(Product::class, ProductSize::class, 'id_size', 'id_product');
 
     }
 }

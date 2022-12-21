@@ -18,12 +18,17 @@
                                                     @endforeach
 												</ul>
 											</li>
+
 											<li><a href="cart">Cart & Checkout</a>
 												<ul>
-													<li><a href="cart">Cart Page</a></li>
-													<li><a href="cart-empty.html">Empty cart</a></li>
+                                                    @if(!auth()->check())
+													<li><a href="{{route('admin.auth.login')}}">Cart Page</a></li>
+                                                    @else
+                                                        <li><a href="{{route('home.cart.index', Auth::user()->id)}}">Cart Page</a></li>
+                                                    @endif
 												</ul>
 											</li>
+
 										</ul>
 									</div>
 								</li>

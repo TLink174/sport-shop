@@ -21,7 +21,7 @@ class CartDetailService
         $this->user = $user;
         $this->cartDetail = $cartDetail;
     }
-    public function create($request, $id_cart, $id_product, $price)
+    public function create($request, $id_cart, $id_product)
     {
         $cartDetailCreated = $this->cartDetail->create([
             'id_cart' => $id_cart,
@@ -29,7 +29,6 @@ class CartDetailService
             'color' => $request->color,
             'size' => $request->size,
             'quantity' => $request->quantity,
-            'price' => ($request->quantity*$price),
         ]);
     }
     public function delete($id)
@@ -49,6 +48,11 @@ class CartDetailService
     public function find($id)
     {
         return $this->cartDetail->find($id);
+    }
+    public function getByIdCart($id)
+    {
+        return $this->cartDetail->where('id_cart', $id)->get();
+
     }
 
 }

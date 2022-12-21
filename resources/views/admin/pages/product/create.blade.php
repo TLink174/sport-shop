@@ -91,7 +91,7 @@
             <select class="form-select form-select-solid tag2 "
                     data-placeholder="Select an option" data-allow-clear="true" multiple="multiple" name="colors[]">
                 @foreach($colors as $color)
-                    <option value="{{$color->name}}">{{$color->name}}</option>
+                    <option value="{{$color->value}}">{{$color->name}}</option>
                 @endforeach
             </select>
         </div>

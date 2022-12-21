@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\CartDetailService;
+use App\Http\Services\ColorService;
 use App\Http\Services\ProductService;
 use App\Http\Services\CategoryProductService;
+use App\Http\Services\SizeService;
 use App\Models\Cart;
 use App\Models\CartDetail;
 use App\Models\Size;
@@ -15,12 +17,16 @@ class HomeController extends Controller
     private ProductService $productService;
     private CategoryProductService $categoryProductService;
     private CartDetailService $cartDetailService;
+    private SizeService $sizeService;
+    private ColorService $colorService;
 
-    public function __construct(ProductService $productService, CategoryProductService $categoryProductService, CartDetailService $cartDetailService )
+    public function __construct(ProductService $productService, CategoryProductService $categoryProductService, CartDetailService $cartDetailService, SizeService $sizeService, ColorService $colorService)
     {
         $this->productService = $productService;
         $this->categoryProductService = $categoryProductService;
         $this->cartDetailService = $cartDetailService;
+        $this->sizeService = $sizeService;
+        $this->colorService = $colorService;
     }
 
     public function homePage(){
@@ -44,10 +50,6 @@ class HomeController extends Controller
         // if (count($blogs) > 0 && count($categories) > 0){
 
         // }
-
-    }
-    public function quickview($id)
-    {
 
     }
 
@@ -75,8 +77,10 @@ class HomeController extends Controller
     {
         $categoryProduct = $this->categoryProductService->getAll();
         $product = $this->productService->getById($id);
-
-        return view('home.pages.sport_shop.product', compact('product', 'categoryProduct'));
+        $sizes = $this->sizeService->getAll();
+        $colors = $this->colorService->getAll();
+        return view('home.pages.sport_shop.product', compact('product', 'categoryProduct', 'colors', 'sizes'));
 
     }
+
 }
